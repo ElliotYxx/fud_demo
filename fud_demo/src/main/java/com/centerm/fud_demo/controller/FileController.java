@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.servlet.ServletRequest;
+
 
 /**
  * Class description
@@ -29,13 +31,12 @@ public class FileController {
     private FileService fileService;
 
 
-    @GetMapping("/upload")
+    @GetMapping("/toUpload")
     public String uploading() {
         return "user/uploading";
     }
 
     @PostMapping("/uploading")
-    @ResponseBody
     public String uploading(@RequestParam("file") MultipartFile file) {
         try {
             FileUtil.uploadFile(file.getBytes(), filePath, file.getOriginalFilename());
@@ -48,13 +49,21 @@ public class FileController {
 
         log.info("文件上传成功");
 
-        return "uploading success";
+        return "toUpload";
     }
-    @RequestMapping("getAllFileByUsername")
-    public List<File> getAllFileByUsername(String username)
+
+    @RequestMapping("download")
+    public String download(String username, ServletRequest request)
     {
        List<File> fileList=fileService.getAllFileByUsername(username);
-        return fileList;
+       request.setAttribute("fileList",fileList);
+        return "forward: /file/toDownload";
+    }
+
+    @GetMapping("toDownload")
+    public String toDownload()
+    {
+        return "user/download";
     }
 
 

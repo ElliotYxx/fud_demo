@@ -22,32 +22,32 @@ public class UserController {
     @GetMapping("/toDownload")
     public String toDownload()
     {
-        return "/user/download";
+        return "user/download";
     }
     @GetMapping("/toUploading")
     public String toUploading()
     {
-        return "/user/uploading";
+        return "user/uploading";
     }
     @GetMapping("/toUser_information")
     public String toUser_information()
     {
-        return "/user/toUser_information";
+        return "user/toUser_information";
     }
     @GetMapping("toUser_index")
     public String toUser_index()
     {
-        return "/user/user_index";
+        return "user/user_index";
     }
     @GetMapping("/toUser_edit")
     public String toUser_edit()
     {
-        return "/user/user_edit";
+        return "user/user_edit";
     }
     @GetMapping("/toLogin")
     public String toLogin()
     {
-        return "/login";
+        return "login";
     }
     @PostMapping("/login")
     public ModelAndView login(ServletRequest request)
@@ -63,7 +63,8 @@ public class UserController {
             return mv;
         }
         log.info("用户名"+username+"登录成功");
-        mv.setViewName("/user/user_index");
+        mv.setViewName("user/user_index");
+       request.setAttribute("user",user);
         return mv;
     }
 }
