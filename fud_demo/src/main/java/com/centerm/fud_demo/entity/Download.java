@@ -5,10 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class User {
+public class Download {
     private Integer id;
-    private String username;
-    private String password;
-    private Integer permission;
     private Date create_time;
+    private Integer user_id;
+    private Integer file_id;
 }
