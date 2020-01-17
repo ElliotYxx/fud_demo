@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>用户密码变更</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
 </head>
 <body>
-
+<form method="post" th:action="@{/user/edit}">
+    <input type="text" th:value="*{user.username}" name="username" id="username" placeholder="username"/>
+    <input type="text" name="password" id="password" placeholder="password">
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

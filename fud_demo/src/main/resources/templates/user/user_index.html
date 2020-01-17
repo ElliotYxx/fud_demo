@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>用户界面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
 </head>
 <body>
-
+    <a href="/toDownload">文件下载</a>
+    <a href="/toUploading">文件上传</a>
+    <a href="/toUser_information">用户信息</a>
+<div>
+    <table>
+        <tr>
+            <td>用户名：</td><td th:text="${user.username}"></td>
+            <td>权限：</td><td th:text="${username.permission}"></td>
+            <td>创建时间：</td><td th:text="${username.create_time}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
