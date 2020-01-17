@@ -2,10 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.UserDao">
-    <select id="findUsernameById" parameterType="string" resultType="int">
+    <select id="findUsernameById" parameterType="int" resultType="string">
         SELECT fud.user.username,fud.user.permission,fud.user.permission
         FROM user
         WHERE fud.user.id=#{id}
+    </select>
+    <select id="findUserByUsernameAndPassword" resultType="com.centerm.fud_demo.entity.User">
+        SELECT fud.user.*
+        FROM  fud.user
+        WHERE fud.user.username=#{0} and fud.user.password=#{1}
     </select>
 
 </mapper>

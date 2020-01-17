@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="430daa2a-fc19-45f3-8b61-5636c298bff6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/DataSourceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/AdminDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/fud_demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,139 +68,115 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.452">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#437#438#0" expanded="true" />
-                    <element signature="e#461#462#0" expanded="true" />
-                    <element signature="e#682#683#0" expanded="true" />
-                    <element signature="e#707#708#0" expanded="true" />
-                    <element signature="e#806#807#0" expanded="true" />
-                    <element signature="e#830#831#0" expanded="true" />
-                    <element signature="e#926#927#0" expanded="true" />
-                    <element signature="e#951#952#0" expanded="true" />
-                    <element signature="e#1039#1040#0" expanded="true" />
-                    <element signature="e#1080#1081#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/AdminController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/AdminServiceImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/AdminDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="516">
-                  <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_edit.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#205#206#0" expanded="true" />
-                    <element signature="e#232#233#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_edit.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
+                <element signature="e#830#831#0" expanded="true" />
+                <element signature="e#926#927#0" expanded="true" />
+                <element signature="e#951#952#0" expanded="true" />
+                <element signature="e#1039#1040#0" expanded="true" />
+                <element signature="e#1080#1081#0" expanded="true" />
+                <element signature="e#1087#1088#0" expanded="true" />
+                <element signature="e#1127#1128#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/css/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/AdminServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -256,19 +221,19 @@
         <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_information.html" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/DataSourceConfig.java" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/FileUtil.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_index.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_edit.html" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java" />
         <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/AdminDao.java" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -537,7 +502,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579243557927" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579245516588" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../shiro_springboot_mybatis_test1" />
@@ -596,7 +561,7 @@
       <workItem from="1579166680777" duration="599000" />
       <workItem from="1579222228042" duration="2721000" />
       <workItem from="1579230739601" duration="822000" />
-      <workItem from="1579231637400" duration="8689000" />
+      <workItem from="1579231637400" duration="10647000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1579157790673</created>
@@ -668,11 +633,18 @@
       <option name="project" value="LOCAL" />
       <updated>1579240627990</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="进一步优化骨架">
+      <created>1579243585120</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1579243585120</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14540000" />
+    <option name="totallyTimeSpent" value="16498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-7" width="2560" height="1087" extended-state="6" />
@@ -739,7 +711,8 @@
     <MESSAGE value="建立springboot基础骨架,debug" />
     <MESSAGE value="精细化系统骨架，细化权限入口" />
     <MESSAGE value="优化登录后台系统结构" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化登录后台系统结构" />
+    <MESSAGE value="进一步优化骨架" />
+    <option name="LAST_COMMIT_MESSAGE" value="进一步优化骨架" />
   </component>
   <component name="WindowStateProjectService">
     <state x="834" y="444" width="309" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
@@ -880,44 +853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,18 +868,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#435#436#0" expanded="true" />
             <element signature="e#496#497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -969,33 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#1039#1040#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1013,6 +913,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/AdminDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1020,10 +927,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/AdminDao.java">
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        <state relative-caret-position="72">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1127#1128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
         </state>
       </provider>
     </entry>
