@@ -2,7 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.FileDao">
-    <select id="getAllFileByUsername">
-
+    <select id="getAllFileByUsername" parameterType="string" resultType="com.centerm.fud_demo.entity.File">
+      SELECT name,size,description,createtime
+      FROM file
+      WHERE user_id=(SELECT id FROM user WHERE username=#{username})
     </select>
 </mapper>

@@ -1,17 +1,16 @@
 package com.centerm.fud_demo.controller;
 
-import java.io.File;
-import java.io.FileOutputStream;
-
+import java.util.List;
+import com.centerm.fud_demo.entity.File;
+import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.utils.FileUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import lombok.extern.slf4j.Slf4j;
 
-import static com.centerm.fud_demo.utils.FileUtil.uploadFile;
 
 /**
  * Class description
@@ -26,11 +25,13 @@ import static com.centerm.fud_demo.utils.FileUtil.uploadFile;
 public class FileController {
     @Value("${filePath}")
     private String filePath;
+    @Autowired
+    private FileService fileService;
 
 
     @GetMapping("/upload")
     public String uploading() {
-        return "uploading";
+        return "user/uploading";
     }
 
     @PostMapping("/uploading")
@@ -50,9 +51,10 @@ public class FileController {
         return "uploading success";
     }
     @RequestMapping("getAllFileByUsername")
-    public Boolean getAllFileByUsername()
+    public List<File> getAllFileByUsername(String username)
     {
-    return null;
+       List<File> fileList=fileService.getAllFileByUsername(username);
+        return fileList;
     }
 
 
