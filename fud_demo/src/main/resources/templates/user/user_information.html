@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>用户信息</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
 </head>
 <body>
-
+<div>
+    <table>
+        <tr>
+            <td>用户名：</td><td th:text="${user.username}"></td>
+            <td>权限：</td><td th:text="${user.permission}"></td>
+            <td>创建时间：</td><td th:text="${user.create_time}"></td>
+            <td><a th:href="@{/user/toEdit(id=${user.id})}">密码修改</a></td>
+            <td><a th:href="@{/user/logout}">退出登录</a></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

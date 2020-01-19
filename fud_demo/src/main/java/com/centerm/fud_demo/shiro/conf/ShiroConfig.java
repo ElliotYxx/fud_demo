@@ -1,6 +1,7 @@
 package com.centerm.fud_demo.shiro.conf;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
+import com.centerm.fud_demo.exception.ExceptionHandler;
 import com.centerm.fud_demo.shiro.UserRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
@@ -63,7 +64,7 @@ public class ShiroConfig {
     @Bean(name = "exceptionHandler")
     public HandlerExceptionResolver handlerExceptionResolver()
     {
-        return null;
+        return new ExceptionHandler();
     }
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor()
