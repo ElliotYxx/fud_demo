@@ -3,11 +3,17 @@ package com.centerm.fud_demo.controller;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.util.SavedRequest;
+import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletRequest;
@@ -24,6 +30,8 @@ public class UserController {
     {
         return "user/download";
     }
+    @GetMapping("/toRegister")
+    public String toRegister(){return "user/register";}
     @GetMapping("/toUploading")
     public String toUploading()
     {
@@ -49,22 +57,71 @@ public class UserController {
     {
         return "login";
     }
+
     @PostMapping("/login")
     public ModelAndView login(ServletRequest request)
     {
         ModelAndView mv=new ModelAndView();
         String username=request.getParameter("username");
         String password=request.getParameter("password");
-        User user=userService.findUserByUsernameAndPassword(username,password);
-        if (user==null)
+        User user=new User(username,password);
+        Subject subject= SecurityUtils.getSubject();
+        UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
+        if(!subject.isAuthenticated())
         {
-            log.warn("用户名或者密码错误，登录失败");
-            mv.setViewName("redirect:/toLogin");
+            subject.login(token);
+        }
+        SavedRequest savedRequest= WebUtils.getSavedRequest(request);
+        if (savedRequest!=null)
+        {
+            log.warn("用户 "+username+" 用户名或者密码错误，登录失败");
+            mv.setViewName("login");
+            return mv;
+        }else {
+            log.info("用户名 " + username + " 登录成功");
+            mv.setViewName("user/user_index");
+            request.setAttribute("user", user);
             return mv;
         }
-        log.info("用户名"+username+"登录成功");
-        mv.setViewName("user/user_index");
-       request.setAttribute("user",user);
+    }
+    @PostMapping("/register")
+    public ModelAndView register(ServletRequest request)
+    {
+        ModelAndView mv=new ModelAndView();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (username.equals("") || password.equals("")) {
+            mv.setViewName("register");
+        }
+        User user=new User(username,password);
+        User matching=userService.findByUsername(username);
+        if (matching==null)
+        {
+            userService.createUser(user);
+            log.info("用户 "+username+" 注册成功");
+            mv.setViewName("login");
+        }else
+        {
+            mv.setViewName("register");
+        }
+        return mv;
+    }
+    @PostMapping("edit")
+    public ModelAndView edit(ServletRequest request)
+    {   userService.changePassword(request.getParameter("username"),request.getParameter("password"));
+        ModelAndView mv=new ModelAndView();
+        mv.setViewName("/toUser_index");
+        return mv;
+    }
+
+    @RequestMapping("/logout")
+    @ResponseBody
+    public ModelAndView logout(User user)
+    {
+        Subject subject= SecurityUtils.getSubject();
+        subject.logout();
+        ModelAndView mv=new ModelAndView();
+        mv.setViewName("login");
         return mv;
     }
 }

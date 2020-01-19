@@ -2,14 +2,18 @@ package com.centerm.fud_demo.controller;
 
 import java.util.List;
 import com.centerm.fud_demo.entity.File;
+import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.utils.FileUtil;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletRequest;
 
@@ -27,6 +31,7 @@ import javax.servlet.ServletRequest;
 public class FileController {
     @Value("${filePath}")
     private String filePath;
+
     @Autowired
     private FileService fileService;
 
@@ -34,6 +39,12 @@ public class FileController {
     @GetMapping("/toUpload")
     public String uploading() {
         return "user/uploading";
+    }
+
+    @GetMapping("toDownload")
+    public String toDownload()
+    {
+        return "user/download";
     }
 
     @PostMapping("/uploading")
@@ -59,13 +70,6 @@ public class FileController {
        request.setAttribute("fileList",fileList);
         return "forward: /file/toDownload";
     }
-
-    @GetMapping("toDownload")
-    public String toDownload()
-    {
-        return "user/download";
-    }
-
 
 }
 

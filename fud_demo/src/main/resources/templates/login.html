@@ -9,7 +9,8 @@
       <form th:action="@{/user/login}" method="post">
           <input type="text" name="username" id="username">
           <input type="text" name="password" id="password">
-          <input type="submit" value="提交">
+          <input type="submit" value="登录">
       </form>
+        <a th:href="@{/user/toRegister}">注册用户</a>
 </body>
 </html>

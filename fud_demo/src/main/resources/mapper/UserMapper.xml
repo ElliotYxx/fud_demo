@@ -3,14 +3,46 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.UserDao">
     <select id="findUsernameById" parameterType="int" resultType="string">
-        SELECT fud.user.username,fud.user.permission,fud.user.permission
-        FROM user
-        WHERE fud.user.id=#{id}
+        SELECT fud.user.username,fud.role.role_name
+        FROM fud.user u,fud.role r,fud.user_role ur
+        WHERE u.id=#{id}
+        AND u.id=ur.user_id
+        AND r.id=ur.role_id
     </select>
     <select id="findUserByUsernameAndPassword" resultType="com.centerm.fud_demo.entity.User">
         SELECT fud.user.*
         FROM  fud.user
-        WHERE fud.user.username=#{0} and fud.user.password=#{1}
+        WHERE fud.user.username=#{param1} and fud.user.password=#{param2}
+    </select>
+    <select id="findByUsername" resultType="com.centerm.fud_demo.entity.User" parameterType="string">
+        SELECT *
+        FROM fud.user
+        WHERE  username=#{username}
+    </select>
+    <insert id="createUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.centerm.fud_demo.entity.User">
+        INSERT INTO fud.user(username,password)
+        VALUES (#{username},#{password})
+    </insert>
+    <update id="updateUser" parameterType="com.centerm.fud_demo.entity.User">
+        UPDATE fud.user
+        SET fud.user.password=#{password}
+        WHERE fud.user.id=#{id}
+    </update>
+    <select id="findRoles" resultType="string" parameterType="string">
+        SELECT fud.role.role_name
+        FROM fud.user u,fud.role r,fud.user_role ur
+        WHERE u.username=#{username}
+        AND u.id=ur.user_id
+        AND r.id=ur.user_id
+    </select>
+    <select id="findPermissions" resultType="string" parameterType="string">
+        SELECT fud.permission.permission
+        FROM fud.user u,fud.role r,fud.permission p,fud.role_permission rp,fud.user_role ur
+        WHERE u.username=#{username}
+        AND u.id=ur.user_id
+        AND r.id=ur.role_id
+        AND r.id=rp.role_id
+        AND p.id=rp.permission_id
     </select>
 
 </mapper>

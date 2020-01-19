@@ -15,6 +15,7 @@
             <td>用户名：</td><td th:text="${user.username}"></td>
             <td>权限：</td><td th:text="${user.permission}"></td>
             <td>创建时间：</td><td th:text="${user.create_time}"></td>
+            <td><a th:href="@{/user/logout}">退出登录</a></td>
         </tr>
     </table>
 </div>

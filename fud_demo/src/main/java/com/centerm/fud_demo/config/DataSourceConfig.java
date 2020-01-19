@@ -23,16 +23,16 @@ public class DataSourceConfig {
     public static final String PACKAGE="com.centerm.fud_demo.dao";
     public static final String MAPPER_LOCATION="classpath:mapper/*.xml";
 
-    @Value("${master.datasource.url}")
+    @Value("${spring.datasource.url}")
     private String url;
 
-    @Value("${master.datasource.username}")
+    @Value("${spring.datasource.username}")
     private String username;
 
-    @Value("${master.datasource.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
-    @Value("${master.datasource.driverClassName}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;
 
 
@@ -72,11 +72,6 @@ public class DataSourceConfig {
     @Value("${spring.datasource.maxPoolPreparedStatementPerConnectionSize}")
     private int maxPoolPreparedStatementPerConnectionSize;
 
-    @Value("${spring.datasource.filters}")
-    private String filters;
-
-    @Value("{spring.datasource.connectionProperties}")
-    private String connectionProperties;
 
     @Bean(name = "dataSource")
     public DataSource dataSource()
@@ -100,12 +95,6 @@ public class DataSourceConfig {
         dataSource.setTestOnReturn(testOnReturn);
         dataSource.setPoolPreparedStatements(poolPreparedStatements);
         dataSource.setMaxPoolPreparedStatementPerConnectionSize(maxPoolPreparedStatementPerConnectionSize);
-        try {
-            dataSource.setFilters(filters);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        dataSource.setConnectionProperties(connectionProperties);
         return dataSource;
     }
     @Bean
