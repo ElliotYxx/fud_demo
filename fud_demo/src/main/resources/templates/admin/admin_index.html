@@ -6,6 +6,16 @@
     <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
 </head>
 <body>
-
+    <div>
+        <td>
+            <tr th:value="管理员#{user.username}"></tr>
+        </td>
+        <td>
+            <tr><a th:href="@{/admin/toAdmin_download}">下载监控</a></tr>
+        </td>
+        <td>
+            <tr><a th:href="@{/admin/toAdmin_permission}">权限授予</a> </tr>
+        </td>
+    </div>
 </body>
 </html>
