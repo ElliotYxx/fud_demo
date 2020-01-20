@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>管理员下载监控</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
 </head>
-<body>
-
+<body class="container">
+<br/>
+<h1 align="center">下载列表</h1>
+<br/><br/>
+<div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>文件名称</th>
+            <th>上传时间</th>
+            <th>下载次数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="file:${fileList}">
+            <th scope="row" th:text="${file.id}"/>
+            <td th:text="${file.name}"></td>
+            <td th:text="${file.create_time}"></td>
+            <td th:text="${file.download_times}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

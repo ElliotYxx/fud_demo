@@ -1,6 +1,8 @@
 package com.centerm.fud_demo.controller;
 
 import com.centerm.fud_demo.entity.User;
+import com.centerm.fud_demo.exception.MultiAccountOnlineException;
+import com.centerm.fud_demo.exception.UsernameRepeatingException;
 import com.centerm.fud_demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
@@ -13,9 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
@@ -58,8 +60,9 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(HttpServletRequest request) throws Exception
+    public String login(HttpServletRequest request)throws Exception
     {
+        HttpSession httpSession=request.getSession(true);
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         User user=new User(username,password);
@@ -69,6 +72,10 @@ public class UserController {
         {
             subject.login(token);
         }
+        if(userService.getUserOnlineState(user.getId()).equals(1))
+        {
+            throw new MultiAccountOnlineException();
+        }
         String exception=(String)request.getAttribute("shiroLoginFailure");
         if (exception!=null)
         {
@@ -77,12 +84,14 @@ public class UserController {
         }else {
             log.info("用户名 " + username + " 登录成功");
             User to_index=userService.findByUsername(username);
+            httpSession.setAttribute(to_index.getUsername(),to_index.getUsername());
+            userService.setUserOnline(to_index.getId());
             request.getSession().setAttribute("user", to_index);
            return "logged/user_index";
         }
     }
     @PostMapping("/register")
-    public ModelAndView register(ServletRequest request)
+    public ModelAndView register(ServletRequest request)throws Exception
     {
         ModelAndView mv=new ModelAndView();
         String username = request.getParameter("username");
@@ -99,7 +108,7 @@ public class UserController {
             mv.setViewName("login");
         }else
         {
-            mv.setViewName("register");
+            throw new UsernameRepeatingException();
         }
         return mv;
     }
@@ -113,8 +122,12 @@ public class UserController {
 
     @RequestMapping("/logout")
     @ResponseBody
-    public ModelAndView logout(User user)
+    public ModelAndView logout(HttpServletRequest request,User user)
     {
+        HttpSession httpSession=request.getSession(true);
+        httpSession.removeAttribute(user.getUsername());
+        httpSession.invalidate();
+        userService.setUserOffline(user.getId());
         Subject subject= SecurityUtils.getSubject();
         subject.logout();
         ModelAndView mv=new ModelAndView();

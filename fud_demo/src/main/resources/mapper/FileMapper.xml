@@ -5,6 +5,21 @@
     <select id="getAllFileByUsername" parameterType="string" resultType="com.centerm.fud_demo.entity.File">
       SELECT fud.file.name,fud.file.size,fud.file.description,fud.file.create_time
       FROM file
-      WHERE fud.file.user_id=(SELECT fud.user.id FROM fud.user WHERE fud.user.username=#{username})
+      WHERE fud.file.user_id=
+      (SELECT fud.user.id
+        FROM fud.user
+        WHERE fud.user.username=#{username})
+    </select>
+    <select id="getAllFile" resultType="com.centerm.fud_demo.entity.File">
+        SELECT fud.file.*
+        FROM fud.file
+    </select>
+    <select id="getDownloadNumbers" resultType="java.lang.Integer">
+        SELECT fud.download.file_id,count(*) AS count
+        FROM fud.download
+        GROUP BY
+          fud.download.file_id
+        ORDER BY
+          COUNT DESC
     </select>
 </mapper>

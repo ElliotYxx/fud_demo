@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="UTF-8">
     <title>管理员页面</title>
@@ -7,15 +7,25 @@
 </head>
 <body>
     <div>
-        <td>
-            <tr th:value="管理员#{user.username}"></tr>
-        </td>
-        <td>
-            <tr><a th:href="@{/admin/toAdmin_download}">下载监控</a></tr>
-        </td>
-        <td>
-            <tr><a th:href="@{/admin/toAdmin_permission}">权限授予</a> </tr>
-        </td>
+        <table>
+            <tr>
+                <td><h4>管理员</h4></td><td th:text="${session.user.username}"></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/admin/toAdmin_download}">下载监控</a></td><td></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/admin/toAdmin_ban}">账号封禁与解除</a></td><td></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/admin/toAdmin_userView}">在线人数查看</a></td><td></td>
+            </tr>
+            <tr>
+                <shiro:hasRole name="SUPERVIP">
+                <td><a th:href="@{/admin/toAdmin_permission}">管理员权限授予</a></td><td></td>
+                </shiro:hasRole>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

@@ -41,8 +41,16 @@ public class ExceptionHandler implements HandlerExceptionResolver {
             attributes.put("code", "1000004");
             attributes.put("msg", "未输入账户名和密码");
             mv.addObject("map",attributes);
-        }else {
+        }else  if (e instanceof UsernameRepeatingException) {
             attributes.put("code", "1000005");
+            attributes.put("msg", "注册用户名重复");
+            mv.addObject("map",attributes);
+        }else if (e instanceof MultiAccountOnlineException) {
+            attributes.put("code", "1000006");
+            attributes.put("msg", "多账号同时在线异常");
+            mv.addObject("map",attributes);
+        }else {
+            attributes.put("code", "1000007");
             attributes.put("msg", e.getMessage());
             mv.addObject("map",attributes);
         }

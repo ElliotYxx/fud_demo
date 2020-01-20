@@ -1,5 +1,6 @@
 package com.centerm.fud_demo.shiro.conf;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import com.centerm.fud_demo.exception.ExceptionHandler;
 import com.centerm.fud_demo.shiro.UserRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -82,9 +83,9 @@ public class ShiroConfig {
         advisorAutoProxyCreator.setProxyTargetClass(true);
         return advisorAutoProxyCreator;
     }
-    /*@Bean
+    @Bean
     public ShiroDialect shiroDialect()
     {
         return new ShiroDialect();
-    }*/
+    }
 }

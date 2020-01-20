@@ -54,4 +54,19 @@ public class UserServiceImpl implements UserService {
         PasswordHelper.encryptPassword(user);
         userDao.updateUser(user);
     }
+
+    @Override
+    public Boolean setUserOnline(int user_id) {
+        return userDao.setUserOnline(user_id);
+    }
+
+    @Override
+    public Boolean setUserOffline(int user_id) {
+        return userDao.setUserOffline(user_id);
+    }
+
+    @Override
+    public Integer getUserOnlineState(int user_id) {
+        return userDao.getUserOnlineState(user_id);
+    }
 }

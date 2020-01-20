@@ -7,4 +7,6 @@ import java.util.List;
 @Component
 public interface FileService {
     List<File> getAllFileByUsername(String username);
+    public  List<File> getAllFile();
+    public List<Integer> getDownloadNumbers();
 }

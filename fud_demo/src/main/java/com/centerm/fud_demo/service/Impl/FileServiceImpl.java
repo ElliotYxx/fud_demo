@@ -16,4 +16,14 @@ public class FileServiceImpl implements FileService {
     public List<File> getAllFileByUsername(String username) {
         return fileDao.getAllFileByUsername(username);
     }
+
+    @Override
+    public List<File> getAllFile() {
+        return fileDao.getAllFile();
+    }
+
+    @Override
+    public List<Integer> getDownloadNumbers() {
+        return fileDao.getDownloadNumbers();
+    }
 }

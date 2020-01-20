@@ -14,4 +14,7 @@ public interface UserService {
     public Set<String> findPermissions(String username);
     public void createUser(User user);
     public void changePassword(String username,String password);
+    public Boolean setUserOnline(int user_id);
+    public Boolean setUserOffline(int user_id);
+    public Integer getUserOnlineState(int user_id);
 }

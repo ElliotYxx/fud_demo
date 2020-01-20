@@ -12,6 +12,7 @@ public class User {
     private String password;
     private Date create_time;
     private Integer state;
+    private Integer is_Online;
     //salt 为用户名
 
     public User(String username, String password) {
@@ -28,5 +29,14 @@ public class User {
         this.password = password;
         this.create_time = create_time;
         this.state = state;
+    }
+
+    public User(Integer id, String username, String password, Date create_time, Integer state, Integer is_Online) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.create_time = create_time;
+        this.state = state;
+        this.is_Online = is_Online;
     }
 }
