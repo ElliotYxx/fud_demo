@@ -6,16 +6,16 @@
     <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
 </head>
 <body>
-    <a th:href="@{/file/download(id=${user.id})}">文件下载</a>
-    <a th:href="@{/file/toUpload(id=${user.id})}">文件上传</a>
-    <a th:href="@{/user/toUser_information(id=${user.id})}">用户信息</a>
+    <a th:href="@{/file/download}">文件下载</a>
+    <a th:href="@{/file/toUpload}">文件上传</a>
+    <a th:href="@{/user/toUser_information}">用户信息</a>
 <div>
     <table>
         <tr>
-            <td>用户名：</td><td th:text="${user.username}"></td>
+            <td>用户名：</td><td th:text="${session.user.username}"></td>
         </tr>
         <tr>
-            <td>创建时间：</td><td th:text="${user.create_time}"></td>
+            <td>创建时间：</td><td th:text="${session.user.create_time}"></td>
         </tr>
         <tr>
             <td><a th:href="@{/user/logout}">退出登录</a></td>

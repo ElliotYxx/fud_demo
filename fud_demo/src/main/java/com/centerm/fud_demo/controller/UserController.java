@@ -6,8 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.web.util.SavedRequest;
-import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,7 +58,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(HttpServletRequest request)
+    public String login(HttpServletRequest request) throws Exception
     {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
@@ -79,7 +77,7 @@ public class UserController {
         }else {
             log.info("用户名 " + username + " 登录成功");
             User to_index=userService.findByUsername(username);
-            request.setAttribute("user", to_index);
+            request.getSession().setAttribute("user", to_index);
            return "logged/user_index";
         }
     }

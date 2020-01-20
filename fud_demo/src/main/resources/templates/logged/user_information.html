@@ -9,11 +9,16 @@
 <div>
     <table>
         <tr>
-            <td>用户名：</td><td th:text="${user.username}"></td>
-            <td>权限：</td><td th:text="${user.permission}"></td>
-            <td>创建时间：</td><td th:text="${user.create_time}"></td>
-            <td><a th:href="@{/user/toEdit(id=${user.id})}">密码修改</a>
-            </td><td><a th:href="@{/user/logout}">退出登录</a></td>
+            <td>用户名：</td><td th:text="${session.user.username}"></td>
+        </tr>
+        <tr>
+            <td>创建时间：</td><td th:text="${session.user.create_time}"></td>
+        </tr>
+        <tr>
+            <td><a th:href="@{/user/toUser_edit}">密码修改</a></td>
+        </tr>
+        <tr>
+            <td><a th:href="@{/user/logout}">退出登录</a></td>
         </tr>
     </table>
 </div>

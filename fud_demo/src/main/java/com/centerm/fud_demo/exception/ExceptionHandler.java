@@ -1,6 +1,7 @@
 package com.centerm.fud_demo.exception;
 
 import com.alibaba.fastjson.support.spring.FastJsonJsonView;
+import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -19,7 +20,6 @@ public class ExceptionHandler implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
         ModelAndView mv = new ModelAndView();
-        FastJsonJsonView view = new FastJsonJsonView();
         Map<String, Object> attributes = new HashMap<>();
         if (e instanceof UnauthorizedException) {
             attributes.put("code", "1000001");
@@ -37,8 +37,12 @@ public class ExceptionHandler implements HandlerExceptionResolver {
             attributes.put("code", "1000003");
             attributes.put("msg", "账号已被锁定");
             mv.addObject("map",attributes);
-        } else {
+        } else if (e instanceof AuthenticationException) {
             attributes.put("code", "1000004");
+            attributes.put("msg", "未输入账户名和密码");
+            mv.addObject("map",attributes);
+        }else {
+            attributes.put("code", "1000005");
             attributes.put("msg", e.getMessage());
             mv.addObject("map",attributes);
         }

@@ -1,6 +1,5 @@
 package com.centerm.fud_demo.shiro.conf;
 
-
 import com.centerm.fud_demo.exception.ExceptionHandler;
 import com.centerm.fud_demo.shiro.UserRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -26,13 +25,13 @@ public class ShiroConfig {
         Map<String,String> filterMap=new LinkedHashMap<>();
         shiroFilterFactoryBean.setLoginUrl("/user/toLogin");
         shiroFilterFactoryBean.setUnauthorizedUrl("/user/toLogin");
-        shiroFilterFactoryBean.setSuccessUrl("/user/toUser_index");
+        filterMap.put("/superVIP/**","authc");
         filterMap.put("/admin/**","authc");
         filterMap.put("/user/login/**","anon");
         filterMap.put("/user/register/**","anon");
         filterMap.put("/user/toLogin/**","anon");
         filterMap.put("/user/toRegister/**","anon");
-        filterMap.put("/user/**","authc");
+        filterMap.put("/**","user");
         filterMap.put("/user/logout","logout");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
         return shiroFilterFactoryBean;

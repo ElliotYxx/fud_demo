@@ -7,7 +7,7 @@
 </head>
 <body>
 <form method="post" th:action="@{/user/edit}">
-    <input type="text" th:value="*{user.username}" name="username" id="username" placeholder="username"/>
+    <input th:value="${session.user.username}" id="username" name="username">
     <input type="text" name="password" id="password" placeholder="password">
     <input type="submit" value="更新">
 </form>
