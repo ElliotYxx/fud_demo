@@ -52,9 +52,9 @@
         UPDATE fud.user
         SET fud.user.is_online=0
     </update>
-    <select id="getUserOnlineState" parameterType="int" resultType="int">
-        SELECT fud.is_online
+    <select id="getUserOnlineState" parameterType="string" resultType="java.lang.Boolean">
+        SELECT fud.user.is_online
         FROM fud.user
-        WHERE fud.user.id=#{user_id}
+        WHERE fud.user.username=#{username}
     </select>
 </mapper>

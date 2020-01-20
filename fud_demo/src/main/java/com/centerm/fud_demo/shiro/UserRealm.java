@@ -29,7 +29,7 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException{
        String username=(String)token.getPrincipal();
         User user=userService.findByUsername(username);
         try {
@@ -44,6 +44,7 @@ public class UserRealm extends AuthorizingRealm {
         {
             throw new LockedAccountException();
         }
+
         SimpleAuthenticationInfo authenticationInfo=new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(), ByteSource.Util.bytes(user.getUsername()),getName());
         return authenticationInfo;
     }

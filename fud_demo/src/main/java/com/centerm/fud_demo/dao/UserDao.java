@@ -16,5 +16,5 @@ public interface UserDao {
     public void updateUser(User user);
     public Boolean setUserOnline(int user_id);
     public Boolean setUserOffline(int user_id);
-    public int getUserOnlineState(int user_id);
+    public Boolean getUserOnlineState(String username);
 }

@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer getUserOnlineState(int user_id) {
-        return userDao.getUserOnlineState(user_id);
+    public Boolean getUserOnlineState(String username) {
+        return userDao.getUserOnlineState(username);
     }
 }

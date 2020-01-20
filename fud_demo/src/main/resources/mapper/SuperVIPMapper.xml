@@ -1,0 +1,12 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.centerm.fud_demo.dao.SuperVIPDao">
+    <insert id="becomeAdmin" parameterType="string">
+         INSERT INTO fud.user_role(user_id,role_id)
+         VALUES (#{user_id},2)
+    </insert>
+    <delete id="removeAdmin" parameterType="string">
+        DELETE FROM fud.user_role
+        WHERE fud.user_role.user_id=#{user_id}
+    </delete>
+</mapper>

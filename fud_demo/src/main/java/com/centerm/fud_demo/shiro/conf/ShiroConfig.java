@@ -64,7 +64,7 @@ public class ShiroConfig {
     {
         return new LifecycleBeanPostProcessor();
     }
-    @Bean(name = "handlerExceptionHandler")
+   @Bean(name = "handlerExceptionHandler")
     public HandlerExceptionResolver handlerExceptionResolver()
     {
         return new ExceptionHandler();

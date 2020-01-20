@@ -60,19 +60,21 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(HttpServletRequest request)throws Exception
+    public String login(HttpServletRequest request) throws MultiAccountOnlineException
     {
         HttpSession httpSession=request.getSession(true);
+
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         User user=new User(username,password);
+
         Subject subject= SecurityUtils.getSubject();
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
         if(!subject.isAuthenticated())
         {
             subject.login(token);
         }
-        if(userService.getUserOnlineState(user.getId()).equals(1))
+        if(httpSession.getAttribute(username)!=null)
         {
             throw new MultiAccountOnlineException();
         }
@@ -85,7 +87,6 @@ public class UserController {
             log.info("用户名 " + username + " 登录成功");
             User to_index=userService.findByUsername(username);
             httpSession.setAttribute(to_index.getUsername(),to_index.getUsername());
-            userService.setUserOnline(to_index.getId());
             request.getSession().setAttribute("user", to_index);
            return "logged/user_index";
         }
@@ -126,8 +127,6 @@ public class UserController {
     {
         HttpSession httpSession=request.getSession(true);
         httpSession.removeAttribute(user.getUsername());
-        httpSession.invalidate();
-        userService.setUserOffline(user.getId());
         Subject subject= SecurityUtils.getSubject();
         subject.logout();
         ModelAndView mv=new ModelAndView();

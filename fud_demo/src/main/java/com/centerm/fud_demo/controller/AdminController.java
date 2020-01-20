@@ -4,8 +4,10 @@ import com.centerm.fud_demo.entity.File;
 import com.centerm.fud_demo.entity.Permission;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.exception.AccountBanException;
+import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.service.AdminService;
 import com.centerm.fud_demo.service.FileService;
+import com.centerm.fud_demo.service.UserService;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ public class AdminController {
     private AdminService adminService;
     @Autowired
     private FileService fileService;
+    @Autowired
+    private UserService userService;
     @GetMapping("/toAdmin_download")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
     public String toAdmin_download(ServletRequest request)
@@ -43,9 +47,11 @@ public class AdminController {
     }
     @GetMapping("/toAdmin_userView")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String toAdmin_userView()
+    public String toAdmin_userView(ServletRequest request)
     {
         List<User> userList=adminService.getOnlineUser();
+        request.setAttribute("userList",userList);
+        request.setAttribute("userNum", Listener.userCount);
         return "admin/admin_userView";
     }
     @GetMapping("/toAdmin_ban")
@@ -57,30 +63,32 @@ public class AdminController {
     }
     @RequestMapping("/banUser")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String banUser(HttpServletRequest request)throws Exception
+    public ModelAndView banUser(HttpServletRequest request)throws AccountBanException
     {
-        User target=(User) request.getSession().getAttribute("user");
+        ModelAndView mv=new ModelAndView();
+        String username=request.getParameter("username");
+        User target=userService.findByUsername(username);
        Integer user_state = target.getState();
        Integer user_id=target.getId();
+       System.out.println(user_id+" "+target.getUsername());
        if(user_state.equals(0))
        {
            //执行账号封禁
            Boolean is_success= adminService.banUser(user_id);
-           if(is_success.equals(0))
+           if (is_success.equals(0))
            {
-               //账号封禁失败
                throw new AccountBanException();
            }
        }else {
            //执行账号解锁
            Boolean is_success = adminService.releaseUser(user_id);
-           if(is_success.equals(0))
+           if (is_success.equals(0))
            {
-               //账号解锁失败
                throw new AccountBanException();
            }
        }
-      return "admin/toAdmin_ban";
+     mv.setViewName("redirect:/admin/toAdmin_ban");
+       return mv;
     }
 
 }
