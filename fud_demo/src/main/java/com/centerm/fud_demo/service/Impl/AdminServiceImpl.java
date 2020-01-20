@@ -32,4 +32,9 @@ public class AdminServiceImpl implements AdminService {
     public Boolean releaseUser(int user_id) {
         return adminDao.releaseUser(user_id);
     }
+
+    @Override
+    public List<User> getOnlineUser() {
+        return adminDao.getOnlineUser();
+    }
 }

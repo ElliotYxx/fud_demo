@@ -45,6 +45,7 @@ public class AdminController {
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
     public String toAdmin_userView()
     {
+        List<User> userList=adminService.getOnlineUser();
         return "admin/admin_userView";
     }
     @GetMapping("/toAdmin_ban")

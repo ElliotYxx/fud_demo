@@ -11,4 +11,5 @@ public interface AdminDao {
     public int getUserState(int user_id);
     public Boolean banUser(int user_id);
     public Boolean releaseUser(int user_id);
+    public List<User> getOnlineUser();
 }

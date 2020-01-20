@@ -21,4 +21,9 @@
        SET fud.user.state=0
        WHERE fud.user.id=#{user_id}
     </update>
+    <select id="getOnlineUser" resultType="com.centerm.fud_demo.entity.User">
+        SELECT fud.user.*
+        FROM fud.user
+        WHERE fud.user.is_online=1
+    </select>
 </mapper>
