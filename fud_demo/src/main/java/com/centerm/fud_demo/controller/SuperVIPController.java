@@ -11,7 +11,7 @@ public class SuperVIPController {
     @RequestMapping("/handleVIP")
     public String removeVIP(ServletRequest request)
     {
-
+        return null;
     }
 
 }
