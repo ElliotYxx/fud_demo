@@ -13,8 +13,11 @@
     <table>
         <tr>
             <td>用户名：</td><td th:text="${user.username}"></td>
-            <td>权限：</td><td th:text="${user.permission}"></td>
+        </tr>
+        <tr>
             <td>创建时间：</td><td th:text="${user.create_time}"></td>
+        </tr>
+        <tr>
             <td><a th:href="@{/user/logout}">退出登录</a></td>
         </tr>
     </table>

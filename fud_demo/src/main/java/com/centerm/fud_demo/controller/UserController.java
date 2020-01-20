@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/user")
@@ -28,29 +29,29 @@ public class UserController {
     @GetMapping("/toDownload")
     public String toDownload()
     {
-        return "user/download";
+        return "logged/user_download";
     }
     @GetMapping("/toRegister")
-    public String toRegister(){return "user/register";}
+    public String toRegister(){return "register";}
     @GetMapping("/toUploading")
     public String toUploading()
     {
-        return "user/uploading";
+        return "logged/user_uploading";
     }
     @GetMapping("/toUser_information")
     public String toUser_information()
     {
-        return "user/toUser_information";
+        return "logged/user_information";
     }
-    @GetMapping("toUser_index")
+    @GetMapping("/toUser_index")
     public String toUser_index()
     {
-        return "user/user_index";
+        return "logged/user_index";
     }
     @GetMapping("/toUser_edit")
     public String toUser_edit()
     {
-        return "user/user_edit";
+        return "logged/user_edit";
     }
     @GetMapping("/toLogin")
     public String toLogin()
@@ -59,9 +60,8 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ModelAndView login(ServletRequest request)
+    public String login(HttpServletRequest request)
     {
-        ModelAndView mv=new ModelAndView();
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         User user=new User(username,password);
@@ -71,17 +71,16 @@ public class UserController {
         {
             subject.login(token);
         }
-        SavedRequest savedRequest= WebUtils.getSavedRequest(request);
-        if (savedRequest!=null)
+        String exception=(String)request.getAttribute("shiroLoginFailure");
+        if (exception!=null)
         {
             log.warn("用户 "+username+" 用户名或者密码错误，登录失败");
-            mv.setViewName("login");
-            return mv;
+            return "login";
         }else {
             log.info("用户名 " + username + " 登录成功");
-            mv.setViewName("user/user_index");
-            request.setAttribute("user", user);
-            return mv;
+            User to_index=userService.findByUsername(username);
+            request.setAttribute("user", to_index);
+           return "logged/user_index";
         }
     }
     @PostMapping("/register")
@@ -110,7 +109,7 @@ public class UserController {
     public ModelAndView edit(ServletRequest request)
     {   userService.changePassword(request.getParameter("username"),request.getParameter("password"));
         ModelAndView mv=new ModelAndView();
-        mv.setViewName("/toUser_index");
+        mv.setViewName("logged/user_index");
         return mv;
     }
 

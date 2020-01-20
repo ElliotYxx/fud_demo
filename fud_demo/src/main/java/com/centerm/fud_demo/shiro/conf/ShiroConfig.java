@@ -1,6 +1,6 @@
 package com.centerm.fud_demo.shiro.conf;
 
-import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
+
 import com.centerm.fud_demo.exception.ExceptionHandler;
 import com.centerm.fud_demo.shiro.UserRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -13,7 +13,6 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -25,12 +24,16 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean=new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String,String> filterMap=new LinkedHashMap<>();
-        shiroFilterFactoryBean.setLoginUrl("/user/");
-        shiroFilterFactoryBean.setSuccessUrl("");
+        shiroFilterFactoryBean.setLoginUrl("/user/toLogin");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/user/toLogin");
+        shiroFilterFactoryBean.setSuccessUrl("/user/toUser_index");
         filterMap.put("/admin/**","authc");
+        filterMap.put("/user/login/**","anon");
+        filterMap.put("/user/register/**","anon");
+        filterMap.put("/user/toLogin/**","anon");
+        filterMap.put("/user/toRegister/**","anon");
         filterMap.put("/user/**","authc");
-        filterMap.put("/","anon");
-        filterMap.put("/user/","logout");
+        filterMap.put("/user/logout","logout");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
         return shiroFilterFactoryBean;
     }
@@ -52,7 +55,7 @@ public class ShiroConfig {
     public HashedCredentialsMatcher hashedCredentialsMatcher()
     {
         HashedCredentialsMatcher hashedCredentialsMatcher=new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("md5");
+        hashedCredentialsMatcher.setHashAlgorithmName("MD5");
         hashedCredentialsMatcher.setHashIterations(5);
         return hashedCredentialsMatcher;
     }
@@ -61,7 +64,7 @@ public class ShiroConfig {
     {
         return new LifecycleBeanPostProcessor();
     }
-    @Bean(name = "exceptionHandler")
+    @Bean(name = "handlerExceptionHandler")
     public HandlerExceptionResolver handlerExceptionResolver()
     {
         return new ExceptionHandler();
@@ -80,9 +83,9 @@ public class ShiroConfig {
         advisorAutoProxyCreator.setProxyTargetClass(true);
         return advisorAutoProxyCreator;
     }
-    @Bean
+    /*@Bean
     public ShiroDialect shiroDialect()
     {
         return new ShiroDialect();
-    }
+    }*/
 }

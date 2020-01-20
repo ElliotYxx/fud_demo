@@ -37,6 +37,10 @@ public class UserRealm extends AuthorizingRealm {
         {
             throw new UnknownAccountException();
         }
+        if (user.getState().equals(1))
+        {
+            throw new LockedAccountException();
+        }
         SimpleAuthenticationInfo authenticationInfo=new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(), ByteSource.Util.bytes(user.getUsername()),getName());
         return authenticationInfo;
     }

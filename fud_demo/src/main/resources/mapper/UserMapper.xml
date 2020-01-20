@@ -17,11 +17,11 @@
     <select id="findByUsername" resultType="com.centerm.fud_demo.entity.User" parameterType="string">
         SELECT *
         FROM fud.user
-        WHERE  username=#{username}
+        WHERE username=#{username}
     </select>
     <insert id="createUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.centerm.fud_demo.entity.User">
-        INSERT INTO fud.user(username,password)
-        VALUES (#{username},#{password})
+        INSERT INTO fud.user(username,password,create_time,state)
+        VALUES (#{username},#{password},now(),0)
     </insert>
     <update id="updateUser" parameterType="com.centerm.fud_demo.entity.User">
         UPDATE fud.user
