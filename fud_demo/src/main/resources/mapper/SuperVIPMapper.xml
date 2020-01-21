@@ -9,4 +9,9 @@
         DELETE FROM fud.user_role
         WHERE fud.user_role.user_id=#{user_id}
     </delete>
+    <select id="getUserRoles" parameterType="string" resultType="int">
+        SELECT fud.user_role.role_id
+        FROM fud.user_role
+        WHERE
+    </select>
 </mapper>

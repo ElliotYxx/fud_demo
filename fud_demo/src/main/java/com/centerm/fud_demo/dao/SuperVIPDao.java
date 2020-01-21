@@ -6,4 +6,5 @@ import org.springframework.stereotype.Component;
 public interface SuperVIPDao {
     public Boolean becomeAdmin(int user_id);
     public Boolean removeAdmin(int user_id);
+    public int getUserRoles(int user_id);
 }

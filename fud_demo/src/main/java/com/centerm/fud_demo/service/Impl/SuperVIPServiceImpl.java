@@ -16,4 +16,9 @@ public class SuperVIPServiceImpl implements SuperVIPService {
     public Boolean removeAdmin(int user_id) {
         return superVIPDao.removeAdmin(user_id);
     }
+
+    @Override
+    public int getUserRoles(int user_id) {
+        return superVIPDao.getUserRoles(user_id);
+    }
 }

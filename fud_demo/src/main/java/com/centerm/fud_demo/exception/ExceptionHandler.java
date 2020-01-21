@@ -49,8 +49,12 @@ public class ExceptionHandler implements HandlerExceptionResolver {
             attributes.put("code", "1000006");
             attributes.put("msg", "多账号同时在线异常");
             mv.addObject("map",attributes);
-        }else {
+        }else  if (e instanceof SuperVipRemoveAdminException) {
             attributes.put("code", "1000007");
+            attributes.put("msg", "superVIP不可以被取消管理员权限");
+            mv.addObject("map",attributes);
+        }else{
+            attributes.put("code", "1000008");
             attributes.put("msg", e.getMessage());
             mv.addObject("map",attributes);
         }
