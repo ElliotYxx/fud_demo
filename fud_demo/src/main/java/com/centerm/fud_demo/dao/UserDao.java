@@ -14,7 +14,4 @@ public interface UserDao {
     public Set<String> findPermissions(String username);
     public void createUser(User user);
     public void updateUser(User user);
-    public Boolean setUserOnline(int user_id);
-    public Boolean setUserOffline(int user_id);
-    public Boolean getUserOnlineState(String username);
 }

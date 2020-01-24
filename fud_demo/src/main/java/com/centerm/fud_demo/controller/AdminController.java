@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
 @RequestMapping("/admin")
@@ -41,23 +42,24 @@ public class AdminController {
     }
     @GetMapping("/toAdmin_index")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String toAdmin_index()
+    public String toAdmin_index(ServletRequest request)
     {
+       AtomicInteger userNum=Listener.sessionCount;
+        request.setAttribute("userNum",userNum);
         return "admin/admin_index";
     }
     @GetMapping("/toAdmin_userView")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
     public String toAdmin_userView(ServletRequest request)
     {
-        List<User> userList=adminService.getOnlineUser();
-        request.setAttribute("userList",userList);
-        request.setAttribute("userNum", Listener.userCount);
+        request.setAttribute("userNum", Listener.sessionCount);
         return "admin/admin_userView";
     }
     @GetMapping("/toAdmin_ban")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String toAdmin_ban(ServletRequest request) {
-      List<User> userList = adminService.getAllUser();
+    public String toAdmin_ban(HttpServletRequest request) {
+        int user_id=(int) request.getSession().getAttribute("id");
+      List<User> userList = adminService.getUserExceptAdminAndSuperVIP(user_id);
       request.setAttribute("userList",userList);
         return "admin/admin_ban";
     }

@@ -27,8 +27,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsername(String username) {
-        User user=userDao.findByUsername(username);
-        return user;
+        return userDao.findByUsername(username);
+
     }
 
     @Override
@@ -55,18 +55,4 @@ public class UserServiceImpl implements UserService {
         userDao.updateUser(user);
     }
 
-    @Override
-    public Boolean setUserOnline(int user_id) {
-        return userDao.setUserOnline(user_id);
-    }
-
-    @Override
-    public Boolean setUserOffline(int user_id) {
-        return userDao.setUserOffline(user_id);
-    }
-
-    @Override
-    public Boolean getUserOnlineState(String username) {
-        return userDao.getUserOnlineState(username);
-    }
 }

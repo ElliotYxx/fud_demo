@@ -15,13 +15,13 @@
         WHERE fud.user.username=#{param1} and fud.user.password=#{param2}
     </select>
     <select id="findByUsername" resultType="com.centerm.fud_demo.entity.User" parameterType="string">
-        SELECT *
+        SELECT fud.user.*
         FROM fud.user
-        WHERE username=#{username}
+        WHERE fud.user.username=#{username}
     </select>
     <insert id="createUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.centerm.fud_demo.entity.User">
-        INSERT INTO fud.user(username,password,create_time,state,is_online)
-        VALUES (#{username},#{password},now(),0,0)
+        INSERT INTO fud.user(username,password,create_time,state)
+        VALUES (#{username},#{password},now(),0)
     </insert>
     <update id="updateUser" parameterType="com.centerm.fud_demo.entity.User">
         UPDATE fud.user
@@ -43,18 +43,5 @@
         AND r.id=ur.role_id
         AND r.id=rp.role_id
         AND p.id=rp.permission_id
-    </select>
-    <update id="setUserOnline" parameterType="int">
-        UPDATE fud.user
-        SET fud.user.is_online=1
-    </update>
-    <update id="setUserOffline" parameterType="int">
-        UPDATE fud.user
-        SET fud.user.is_online=0
-    </update>
-    <select id="getUserOnlineState" parameterType="string" resultType="java.lang.Boolean">
-        SELECT fud.user.is_online
-        FROM fud.user
-        WHERE fud.user.username=#{username}
     </select>
 </mapper>

@@ -34,7 +34,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<User> getOnlineUser() {
-        return adminDao.getOnlineUser();
+    public List<User> getUserExceptAdminAndSuperVIP(int user_id) {
+        return adminDao.getUserExceptAdminAndSuperVIP(user_id);
     }
 }

@@ -17,13 +17,17 @@
        WHERE fud.user.id=#{user_id}
     </update>
     <update id="releaseUser" parameterType="int">
-         UPDATE fud.user
+       UPDATE fud.user
        SET fud.user.state=false
        WHERE fud.user.id=#{user_id}
     </update>
-    <select id="getOnlineUser" resultType="com.centerm.fud_demo.entity.User">
-        SELECT fud.user.*
+    <select id="getUserExceptAdminAndSuperVIP" resultType="com.centerm.fud_demo.entity.User" parameterType="int">
+        SELECT *
         FROM fud.user
-        WHERE fud.user.is_online=true
+        WHERE fud.user.id != (
+          SELECT fud.user_role.user_id
+          FROM fud.user_role
+          WHERE fud.user_role.role_id =2 AND fud.user_role.role_id =3
+                    ) AND fud.user.id != #{user_id}
     </select>
 </mapper>

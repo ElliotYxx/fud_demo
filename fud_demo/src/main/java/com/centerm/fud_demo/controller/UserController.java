@@ -3,6 +3,7 @@ package com.centerm.fud_demo.controller;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.exception.MultiAccountOnlineException;
 import com.centerm.fud_demo.exception.UsernameRepeatingException;
+import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
 @RequestMapping("/user")
@@ -59,39 +61,35 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/login")
-    public String login(HttpServletRequest request) throws MultiAccountOnlineException
+    @RequestMapping("/login")
+    public String login(HttpServletRequest request)
     {
-        HttpSession httpSession=request.getSession(true);
-
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         User user=new User(username,password);
-
+        if (username==null||password==null)
+        {
+            return "login";
+        }
         Subject subject= SecurityUtils.getSubject();
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
-        if(!subject.isAuthenticated())
-        {
-            subject.login(token);
-        }
-        if(httpSession.getAttribute(username)!=null)
-        {
-            throw new MultiAccountOnlineException();
-        }
+
+            if (!subject.isAuthenticated()) {
+                subject.login(token);
+            }
+
         String exception=(String)request.getAttribute("shiroLoginFailure");
-        if (exception!=null)
-        {
-            log.warn("用户 "+username+" 用户名或者密码错误，登录失败");
-            return "login";
-        }else {
-            log.info("用户名 " + username + " 登录成功");
+        if (exception==null){
+            log.info("用户 " + username + " 登录成功");
             User to_index=userService.findByUsername(username);
-            httpSession.setAttribute(to_index.getUsername(),to_index.getUsername());
             request.getSession().setAttribute("user", to_index);
            return "logged/user_index";
+        }else
+        {
+            return "login";
         }
     }
-    @PostMapping("/register")
+    @RequestMapping("/register")
     public ModelAndView register(ServletRequest request)throws Exception
     {
         ModelAndView mv=new ModelAndView();
@@ -123,11 +121,10 @@ public class UserController {
 
     @RequestMapping("/logout")
     @ResponseBody
-    public ModelAndView logout(HttpServletRequest request,User user)
+    public ModelAndView logout(HttpServletRequest request)
     {
-        HttpSession httpSession=request.getSession(true);
-        httpSession.removeAttribute(user.getUsername());
         Subject subject= SecurityUtils.getSubject();
+        log.info("用户 "+((User)request.getSession().getAttribute("user")).getUsername()+" 登出成功");
         subject.logout();
         ModelAndView mv=new ModelAndView();
         mv.setViewName("login");

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="430daa2a-fc19-45f3-8b61-5636c298bff6" name="Default Changelist" comment="" />
+    <list default="true" id="430daa2a-fc19-45f3-8b61-5636c298bff6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/fud_demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fud_demo/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+            <state relative-caret-position="349">
+              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
             </state>
           </provider>
           <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
@@ -84,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
+            <state relative-caret-position="546">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="507">
               <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -153,7 +155,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
+            <state relative-caret-position="1131">
               <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -553,6 +555,7 @@
       <workItem from="1579231637400" duration="16143000" />
       <workItem from="1579251460565" duration="1212000" />
       <workItem from="1579876688373" duration="96000" />
+      <workItem from="1579876792988" duration="132000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1579157790673</created>
@@ -652,11 +655,18 @@
       <option name="project" value="LOCAL" />
       <updated>1579250721541</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="加入ehcache缓存">
+      <created>1579876899503</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1579876899503</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23302000" />
+    <option name="totallyTimeSpent" value="23434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-7" width="3440" height="1447" extended-state="6" />
@@ -670,7 +680,6 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Statistic" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.75846994" />
@@ -689,6 +698,7 @@
       <window_info anchor="bottom" id="Jindent" order="15" weight="0.011013215" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.0" />
       <window_info anchor="bottom" id="SQL Generator" order="17" weight="0.32896176" />
+      <window_info anchor="bottom" id="Statistic" order="18" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -730,7 +740,8 @@
     <MESSAGE value="加入bootstrap" />
     <MESSAGE value="上传下载功能大体实现" />
     <MESSAGE value="druid数据库连接池更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="druid数据库连接池更新" />
+    <MESSAGE value="加入ehcache缓存" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入ehcache缓存" />
   </component>
   <component name="WindowStateProjectService">
     <state x="834" y="444" width="309" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
@@ -886,8 +897,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fud_demo/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+        <state relative-caret-position="349">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
         </state>
       </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
@@ -901,7 +912,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
+        <state relative-caret-position="546">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -918,7 +929,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="507">
           <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -956,7 +967,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
+        <state relative-caret-position="1131">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
