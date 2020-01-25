@@ -34,7 +34,6 @@ public class UserRealm extends AuthorizingRealm {
        User user=null;
         try {
             user=userService.findByUsername(username);
-            log.info(user.getUsername() + " " + user.getPassword());
         }catch (NullPointerException e)
         {}
         if(user==null)

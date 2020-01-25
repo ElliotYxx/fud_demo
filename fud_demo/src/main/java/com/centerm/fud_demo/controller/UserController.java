@@ -90,13 +90,13 @@ public class UserController {
         }
     }
     @RequestMapping("/register")
-    public ModelAndView register(ServletRequest request)throws Exception
+    public String register(ServletRequest request)throws Exception
     {
-        ModelAndView mv=new ModelAndView();
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if (username.equals("") || password.equals("")) {
-            mv.setViewName("register");
+        if (username==null||password==null) {
+            return "register";
         }
         User user=new User(username,password);
         User matching=userService.findByUsername(username);
@@ -104,12 +104,12 @@ public class UserController {
         {
             userService.createUser(user);
             log.info("用户 "+username+" 注册成功");
-            mv.setViewName("login");
+
         }else
         {
             throw new UsernameRepeatingException();
         }
-        return mv;
+       return "login";
     }
     @PostMapping("edit")
     public ModelAndView edit(ServletRequest request)

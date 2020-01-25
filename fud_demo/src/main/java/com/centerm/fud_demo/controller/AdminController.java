@@ -8,8 +8,12 @@ import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.service.AdminService;
 import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UserService;
+import com.centerm.fud_demo.shiro.UserRealm;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +29,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
 @RequestMapping("/admin")
+@Slf4j
 public class AdminController {
     @Autowired
     private AdminService adminService;
@@ -58,7 +63,8 @@ public class AdminController {
     @GetMapping("/toAdmin_ban")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
     public String toAdmin_ban(HttpServletRequest request) {
-        int user_id=(int) request.getSession().getAttribute("id");
+        User user=(User)request.getSession().getAttribute("user");
+        int user_id=user.getId();
       List<User> userList = adminService.getUserExceptAdminAndSuperVIP(user_id);
       request.setAttribute("userList",userList);
         return "admin/admin_ban";
@@ -72,7 +78,6 @@ public class AdminController {
         User target=userService.findByUsername(username);
        Integer user_state = target.getState();
        Integer user_id=target.getId();
-       System.out.println(user_id+" "+target.getUsername());
        if(user_state.equals(0))
        {
            //执行账号封禁
@@ -81,6 +86,7 @@ public class AdminController {
            {
                throw new AccountBanException();
            }
+           log.info("用户 "+username+"　被封禁");
        }else {
            //执行账号解锁
            Boolean is_success = adminService.releaseUser(user_id);
@@ -88,7 +94,12 @@ public class AdminController {
            {
                throw new AccountBanException();
            }
+           log.info("用户 "+username+"　被解除封禁");
        }
+        DefaultWebSecurityManager securityManager;
+        securityManager = (DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
+        UserRealm shiroRealm = (UserRealm) securityManager.getRealms().iterator().next();
+        shiroRealm.clearAllCache();
      mv.setViewName("redirect:/admin/toAdmin_ban");
        return mv;
     }

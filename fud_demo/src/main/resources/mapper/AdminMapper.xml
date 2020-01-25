@@ -22,12 +22,15 @@
        WHERE fud.user.id=#{user_id}
     </update>
     <select id="getUserExceptAdminAndSuperVIP" resultType="com.centerm.fud_demo.entity.User" parameterType="int">
-        SELECT *
+        SELECT fud.user.*
         FROM fud.user
-        WHERE fud.user.id != (
+        LEFT JOIN fud.user_role
+        ON fud.user_role.user_id=fud.user.id
+        WHERE fud.user_role.role_id !=2 AND fud.user_role.role_id !=3
+       /* WHERE fud.user.id NOT IN (
           SELECT fud.user_role.user_id
           FROM fud.user_role
-          WHERE fud.user_role.role_id =2 AND fud.user_role.role_id =3
-                    ) AND fud.user.id != #{user_id}
+          WHERE fud.user_role.role_id =2 AND fud.user_role.role_id =3)
+        ORDER BY fud.user.id*/
     </select>
 </mapper>

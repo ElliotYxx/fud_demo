@@ -25,9 +25,9 @@
                 <td><a th:href="@{/admin/toAdmin_userView}">在线人数查看</a></td><td></td>
             </tr>
             <tr>
-                <shiro:hasRole name="SUPERVIP">
-                <td><a th:href="@{/admin/toAdmin_permission}">管理员权限授予</a></td><td></td>
-                </shiro:hasRole>
+                <shiro:hasAnyRoles name="SUPERVIP">
+                <td><a th:href="@{/superVIP/toSuperVIP_permission}">管理员权限授予</a></td><td></td>
+                </shiro:hasAnyRoles>
             </tr>
         </table>
     </div>

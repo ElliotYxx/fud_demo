@@ -4,6 +4,8 @@ import com.centerm.fud_demo.exception.SuperVipRemoveAdminException;
 import com.centerm.fud_demo.service.SuperVIPService;
 import com.centerm.fud_demo.shiro.UserRealm;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +21,14 @@ public class SuperVIPController {
     @Autowired
     private SuperVIPService superVIPService;
     @GetMapping("/toSuperVIP_permission")
+    @RequiresRoles(value = "SUPERVIP")
+    public String toSuperVip_permission()
+    {
+        return "/superVIP/superVIP_permission";
+    }
 
     @RequestMapping("/handleAdmin")
+    @RequiresRoles(value = "SUPERVIP")
     public ModelAndView handleAdmin(ServletRequest request) throws Exception
     {
         ModelAndView mv=new ModelAndView();

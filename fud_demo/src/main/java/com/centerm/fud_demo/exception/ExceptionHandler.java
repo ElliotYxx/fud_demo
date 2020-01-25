@@ -24,21 +24,27 @@ public class ExceptionHandler implements HandlerExceptionResolver {
         if (e instanceof UnauthorizedException) {
             attributes.put("code", "1000001");
             attributes.put("msg", "用户无权限");
+            log.warn("ip "+httpServletRequest.getRemoteAddr()+" 权限不足");
         } else if (e instanceof UnknownAccountException) {
             attributes.put("code", "1000002");
             attributes.put("msg", "用户名密码错误");
+            log.warn("ip "+httpServletRequest.getRemoteAddr()+" 登录失败");
         } else if (e instanceof IncorrectCredentialsException) {
             attributes.put("code", "1000002");
             attributes.put("msg", "用户名密码有误");
+            log.warn("ip "+httpServletRequest.getRemoteAddr()+" 登录失败");
         } else if (e instanceof LockedAccountException) {
             attributes.put("code", "1000003");
             attributes.put("msg", "账号已被锁定");
+            log.warn("ip "+httpServletRequest.getRemoteAddr()+" 登录失败");
         } else if (e instanceof AuthenticationException) {
             attributes.put("code", "1000004");
             attributes.put("msg", "未输入账户名和密码");
+            log.warn("ip "+httpServletRequest.getRemoteAddr()+" 登录失败");
         }else  if (e instanceof UsernameRepeatingException) {
             attributes.put("code", "1000005");
             attributes.put("msg", "注册用户名重复");
+            log.warn("ip "+httpServletRequest.getRemoteAddr()+" 注册失败");
         }else if (e instanceof MultiAccountOnlineException) {
             attributes.put("code", "1000006");
             attributes.put("msg", "多账号同时在线异常");//好顶
@@ -50,7 +56,6 @@ public class ExceptionHandler implements HandlerExceptionResolver {
             attributes.put("msg", e.getMessage());
         }
         mv.addObject("map",attributes);
-        log.warn("ip "+httpServletRequest.getRemoteAddr()+" 登录失败");
        mv.setViewName("error");
         return mv;
     }
