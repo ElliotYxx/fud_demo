@@ -1,17 +1,49 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.centerm.fud_demo.dao.SuperVIPDao">
-    <insert id="becomeAdmin" parameterType="string">
+    <!--<resultMap id="getUserAndRole" type="com.centerm.fud_demo.entity.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="create_time" column="create_time"/>
+        <result property="state" column="state"/>
+        <association property="id" javaType="com.centerm.fud_demo.entity.User_role">
+            <result property="role_id" column="role_id"/>
+            <result property="user_id" column="user_id"/>
+        </association>
+    </resultMap>-->
+    <insert id="becomeAdmin" parameterType="int">
          INSERT INTO fud.user_role(user_id,role_id)
          VALUES (#{user_id},2)
     </insert>
-    <delete id="removeAdmin" parameterType="string">
+    <delete id="removeAdmin" parameterType="int">
         DELETE FROM fud.user_role
         WHERE fud.user_role.user_id=#{user_id}
     </delete>
-    <select id="getUserRoles" parameterType="string" resultType="int">
+    <select id="getUserRoles" parameterType="int" resultType="int">
         SELECT fud.user_role.role_id
         FROM fud.user_role
-        WHERE
+        where fud.user_role.user_id=#{user_id}
     </select>
+    <select id="getAllUserExceptSuperVIP" resultType="com.centerm.fud_demo.entity.User">
+        SELECT u.id,u.username,u.create_time,u.state
+        FROM fud.user u
+        LEFT JOIN  fud.user_role ur
+        ON ur.user_id=u.id
+        WHERE ur.role_id !=3
+    </select>
+    <select id="getAllUserRoles" resultType="java.lang.Integer">
+        SELECT fud.user_role.role_id
+        FROM fud.user_role
+        WHERE fud.user_role.role_id !=3
+        ORDER BY user_id
+    </select>
+    <insert id="addUser" parameterType="int">
+      INSERT INTO fud.user_role(user_id,role_id)
+      VALUES (#{user_id},1)
+    </insert>
+    <delete id="removeUser" parameterType="int">
+        DELETE from fud.user_role
+        WHERE fud.user_role.user_id=#{user_id}
+    </delete>
 </mapper>

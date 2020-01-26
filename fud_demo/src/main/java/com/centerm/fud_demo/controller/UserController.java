@@ -92,7 +92,6 @@ public class UserController {
     @RequestMapping("/register")
     public String register(ServletRequest request)throws Exception
     {
-
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (username==null||password==null) {
@@ -103,7 +102,9 @@ public class UserController {
         if (matching==null)
         {
             userService.createUser(user);
-            log.info("用户 "+username+" 注册成功");
+            int user_id=userService.findUserIdByUsername(username);
+            userService.createUserRole(user_id);
+            log.info("用户 "+username+" 注册成功"+",默认权限为user");
 
         }else
         {

@@ -55,4 +55,13 @@ public class UserServiceImpl implements UserService {
         userDao.updateUser(user);
     }
 
+    @Override
+    public void createUserRole(int user_id) {
+        userDao.createUserRole(user_id);
+    }
+
+    @Override
+    public int findUserIdByUsername(String username) {
+        return userDao.findUserIdByUsername(username);
+    }
 }

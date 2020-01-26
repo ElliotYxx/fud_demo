@@ -44,4 +44,13 @@
         AND r.id=rp.role_id
         AND p.id=rp.permission_id
     </select>
+    <insert id="createUserRole" parameterType="int">
+        INSERT INTO fud.user_role(user_id,role_id)
+        VALUES (#{user_id},1)
+    </insert>
+    <select id="findUserIdByUsername" parameterType="string" resultType="int">
+        SELECT fud.user.id
+        FROM fud.user
+        WHERE fud.user.username=#{username}
+    </select>
 </mapper>

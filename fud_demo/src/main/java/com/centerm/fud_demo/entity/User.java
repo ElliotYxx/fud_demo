@@ -13,6 +13,7 @@ public class User {
     private Date create_time;
     private Integer state;
     private Integer is_Online;
+    private String role;
     //salt 为用户名
 
     public User(String username, String password) {

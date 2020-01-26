@@ -27,10 +27,5 @@
         LEFT JOIN fud.user_role
         ON fud.user_role.user_id=fud.user.id
         WHERE fud.user_role.role_id !=2 AND fud.user_role.role_id !=3
-       /* WHERE fud.user.id NOT IN (
-          SELECT fud.user_role.user_id
-          FROM fud.user_role
-          WHERE fud.user_role.role_id =2 AND fud.user_role.role_id =3)
-        ORDER BY fud.user.id*/
     </select>
 </mapper>

@@ -14,4 +14,6 @@ public interface UserDao {
     public Set<String> findPermissions(String username);
     public void createUser(User user);
     public void updateUser(User user);
+    public void createUserRole(int user_id);
+    public int findUserIdByUsername(String username);
 }

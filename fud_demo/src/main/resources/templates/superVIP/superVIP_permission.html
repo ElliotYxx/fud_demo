@@ -27,10 +27,14 @@
             <td th:text="${user.username}"></td>
             <td th:text="${user.create_time}"></td>
             <td th:text="${user.state}"></td>
+            <td th:text="${user.role}"></td>
             <td><a th:href="@{/superVIP/handleAdmin(id=${user.id})}">操作</a></td>
         </tr>
         </tbody>
     </table>
+    <div>
+        <a th:href="@{/admin/toAdmin_index}">返回管理员页面</a>
+    </div>
 </div>
 </body>
 

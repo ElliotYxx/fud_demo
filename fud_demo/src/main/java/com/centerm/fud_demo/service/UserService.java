@@ -14,4 +14,6 @@ public interface UserService {
     public Set<String> findPermissions(String username);
     public void createUser(User user);
     public void changePassword(String username,String password);
+    public void createUserRole(int user_id);
+    public int findUserIdByUsername(String username);
 }
