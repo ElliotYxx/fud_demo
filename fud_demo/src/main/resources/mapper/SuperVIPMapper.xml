@@ -31,6 +31,7 @@
         LEFT JOIN  fud.user_role ur
         ON ur.user_id=u.id
         WHERE ur.role_id !=3
+        ORDER BY u.id
     </select>
     <select id="getAllUserRoles" resultType="java.lang.Integer">
         SELECT fud.user_role.role_id

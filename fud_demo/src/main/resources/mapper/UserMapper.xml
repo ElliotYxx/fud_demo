@@ -33,7 +33,7 @@
         FROM fud.user u,fud.role r,fud.user_role ur
         WHERE u.username=#{username}
         AND u.id=ur.user_id
-        AND r.id=ur.user_id
+        AND r.id=ur.role_id
     </select>
     <select id="findPermissions" resultType="string" parameterType="string">
         SELECT p.permission

@@ -62,23 +62,20 @@ public class SuperVIPController {
             //已经是管理员，注销管理员
             superVIPService.removeAdmin(user_id);
             superVIPService.addUser(user_id);
-            DefaultWebSecurityManager securityManager=(DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
-            UserRealm userRealm=(UserRealm)securityManager.getRealms().iterator().next();
-            userRealm.clearAllCache();
         }else if (superVIPService.getUserRoles(user_id)==1)
         {
-            System.out.println(user_id);
             //还不是管理员，成为管理员
             superVIPService.removeUser(user_id);
             superVIPService.becomeAdmin(user_id);
-            DefaultWebSecurityManager securityManager=(DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
-            UserRealm userRealm=(UserRealm)securityManager.getRealms().iterator().next();
-            userRealm.clearAllCache();
         } else
         {
             throw new SuperVipRemoveAdminException();
         }
-        mv.setViewName("redirect:/superVIP/toSuperVIP_permission");
+        DefaultWebSecurityManager securityManager=(DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
+        UserRealm userRealm=(UserRealm)securityManager.getRealms().iterator().next();
+        userRealm.clearAllCache();
+        /*userRealm.getAuthorizationCache().remove(SecurityUtils.getSubject().getPrincipal());*/
+        mv.setViewName("forward:/superVIP/toSuperVIP_permission");
         return mv;
     }
 

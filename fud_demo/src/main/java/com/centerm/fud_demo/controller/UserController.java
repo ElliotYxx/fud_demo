@@ -5,10 +5,13 @@ import com.centerm.fud_demo.exception.MultiAccountOnlineException;
 import com.centerm.fud_demo.exception.UsernameRepeatingException;
 import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.service.UserService;
+import com.centerm.fud_demo.shiro.UserRealm;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -66,6 +69,7 @@ public class UserController {
     {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
+        System.out.println(request.getSession().getServletContext().getSessionTimeout());
         User user=new User(username,password);
         if (username==null||password==null)
         {

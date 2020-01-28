@@ -12,6 +12,9 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Set;
+
 @Component
 @Slf4j
 public class UserRealm extends AuthorizingRealm {
@@ -22,8 +25,14 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
        String username=(String)principals.getPrimaryPrincipal();
+       System.out.println(username);
         SimpleAuthorizationInfo authorizationInfo=new SimpleAuthorizationInfo();
         authorizationInfo.setRoles(userService.findRoles(username));
+        Set<String> set=userService.findRoles(username);
+        for (String s:set)
+        {
+            System.out.println(s);
+        }
         authorizationInfo.setStringPermissions(userService.findPermissions(username));
         return authorizationInfo;
     }
@@ -75,6 +84,7 @@ public class UserRealm extends AuthorizingRealm {
      * 自定义方法：清除所有 授权缓存
      */
     public void clearAllCachedAuthorizationInfo() {
+        System.out.println("清除");
         getAuthorizationCache().clear();
     }
 
@@ -82,6 +92,7 @@ public class UserRealm extends AuthorizingRealm {
      * 自定义方法：清除所有 认证缓存
      */
     public void clearAllCachedAuthenticationInfo() {
+        System.out.println("清除");
         getAuthenticationCache().clear();
     }
 

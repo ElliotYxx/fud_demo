@@ -132,21 +132,24 @@ public class ShiroConfig {
     public SecurityManager securityManager()
     {
         DefaultWebSecurityManager securityManager=new DefaultWebSecurityManager();
-        securityManager.setRealm(myShiroRealm());
+        securityManager.setRealm(myShiroRealm(ehCacheManager()));
         securityManager.setCacheManager(ehCacheManager());
         securityManager.setSessionManager(sessionManager());
         return securityManager;
     }
     @Bean
-    public UserRealm myShiroRealm()
+    public UserRealm myShiroRealm(EhCacheManager ehCacheManager)
     {
         UserRealm userRealm=new UserRealm();
         userRealm.setCachingEnabled(true);
+        userRealm.setCacheManager(ehCacheManager);
+
         userRealm.setAuthorizationCacheName("authorizationCache");
         userRealm.setAuthorizationCachingEnabled(true);
 
         userRealm.setAuthenticationCacheName("authenticationCache");
         userRealm.setAuthenticationCachingEnabled(true);
+
         userRealm.setCredentialsMatcher(hashedCredentialsMatcher());
         return userRealm;
     }
@@ -178,9 +181,9 @@ public class ShiroConfig {
     @Bean
     public EhCacheManager ehCacheManager()
     {
-        EhCacheManager cacheManager=new EhCacheManager();
-        cacheManager.setCacheManagerConfigFile("classpath:config/ehcache-shiro.xml");
-        return cacheManager;
+        EhCacheManager em=new EhCacheManager();
+        em.setCacheManagerConfigFile("classpath:config/ehcache-shiro.xml");
+        return em;
     }
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator()
