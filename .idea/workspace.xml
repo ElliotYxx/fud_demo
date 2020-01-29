@@ -2,10 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="430daa2a-fc19-45f3-8b61-5636c298bff6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_10_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/HttpsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/Swagger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/EncryptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/VerificationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/fud_demo_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/fud_demo_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/fud_demo_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/fud_demo_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65af22b3-bfb2-43cd-bf3c-fe9b28fad6d7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/65af22b3-bfb2-43cd-bf3c-fe9b28fad6d7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fud.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/fud_demo/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,133 +65,8 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="fud: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="fud: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="download: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="fud: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="file: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="fud: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="user: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fud_demo/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-            </state>
-          </provider>
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/AdminServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/FudDemoApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/FileService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1131">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -182,51 +90,12 @@
       </map>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/uploading.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.sql" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/entity/Download.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/entity/File.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/entity/User.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/FileDao.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/register.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_information.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/FileUtil.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_edit.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/AdminDao.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/admin/admin_index.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_index.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/download.html" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/DruidConfig.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/DataSourceConfig.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/AdminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/FudDemoApplication.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/FileService.java" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java" />
-        <option value="$PROJECT_DIR$/fud_demo/pom.xml" />
-      </list>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -235,45 +104,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="28" />
-    <option name="width" value="1675" />
-    <option name="height" value="1412" />
-  </component>
   <component name="ProjectId" id="1WSzJ0LgmfrJ4Zo9T6CYSKmI8UH" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -295,26 +128,21 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="jindent.plugin.idea.JindentConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fud_demo" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils" />
+      <recent name="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/fud_demo/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="FudDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -356,6 +184,17 @@
       <workItem from="1579876688373" duration="96000" />
       <workItem from="1579876792988" duration="132000" />
       <workItem from="1579877013032" duration="201000" />
+      <workItem from="1580279085949" duration="513000" />
+      <workItem from="1580279609957" duration="165000" />
+      <workItem from="1580279784082" duration="113000" />
+      <workItem from="1580279907441" duration="99000" />
+      <workItem from="1580280016801" duration="258000" />
+      <workItem from="1580280292549" duration="392000" />
+      <workItem from="1580280692196" duration="318000" />
+      <workItem from="1580281017512" duration="63000" />
+      <workItem from="1580281087293" duration="932000" />
+      <workItem from="1580284135681" duration="481000" />
+      <workItem from="1580284636989" duration="73000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1579157790673</created>
@@ -472,52 +311,6 @@
     <option name="localTasksCounter" value="17" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23635000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="-7" width="3440" height="1447" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20290284" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.058039214" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053877" side_tool="true" weight="0.6721311" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.04918033" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.4994612" weight="0.44043717" />
-      <window_info anchor="bottom" id="Jindent" order="15" weight="0.011013215" />
-      <window_info anchor="bottom" id="Database Console" order="16" weight="0.0" />
-      <window_info anchor="bottom" id="SQL Generator" order="17" weight="0.32896176" />
-      <window_info anchor="bottom" id="Statistic" order="18" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Key Promoter X" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.13122039" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="Bean Validation" order="10" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -530,9 +323,6 @@
         <option value="1" />
       </list>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
@@ -551,233 +341,67 @@
     <option name="LAST_COMMIT_MESSAGE" value="实现单点登录功能，部分实现登录人数统计" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="834" y="444" width="309" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
-    <state x="834" y="444" width="309" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1853.1053@67.27.1853.1053" />
-    <state x="555" y="121" width="867" height="863" key="CommitChangelistDialog2" />
-    <state x="555" y="121" width="867" height="863" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" />
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" />
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fud_demo/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://65af22b3-bfb2-43cd-bf3c-fe9b28fad6d7/schema/fud/table/file" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/FileDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/entity/Download.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/entity/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/utils/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_edit.html" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/AdminDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/admin/admin_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/uploading.html" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/ServletInitializer.java" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_information.html" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/mapper/FileMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://65af22b3-bfb2-43cd-bf3c-fe9b28fad6d7/schema/fud/table/download" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/65af22b3-bfb2-43cd-bf3c-fe9b28fad6d7/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/user_index.html" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/download.html" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/DataSourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3024">
-          <caret line="96" column="107" selection-start-line="96" selection-start-column="107" selection-end-line="96" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/config/DruidConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/test/java/com/centerm/fud_demo/FudDemoApplicationTests.java" />
-    <entry file="file://$PROJECT_DIR$/fud_demo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/AdminServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/FudDemoApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/FileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/service/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <state x="834" y="444" width="309" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580283990947" />
+    <state x="834" y="444" width="309" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580283990947" />
+    <state x="555" y="121" width="867" height="863" key="CommitChangelistDialog2" timestamp="1580283990947" />
+    <state x="555" y="121" width="867" height="863" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1580283990947" />
+    <state x="1324" y="216" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580284706724">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="1324" y="216" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1580284706724" />
+    <state width="411" height="337" key="GridCell.Tab.0.bottom" timestamp="1580284617616">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617616" />
+    <state width="411" height="337" key="GridCell.Tab.0.center" timestamp="1580284617615">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617615" />
+    <state width="411" height="337" key="GridCell.Tab.0.left" timestamp="1580284617615">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617615" />
+    <state width="411" height="337" key="GridCell.Tab.0.right" timestamp="1580284617615">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617615" />
+    <state width="411" height="337" key="GridCell.Tab.1.bottom" timestamp="1580284617617">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617617" />
+    <state width="411" height="337" key="GridCell.Tab.1.center" timestamp="1580284617616">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617616" />
+    <state width="411" height="337" key="GridCell.Tab.1.left" timestamp="1580284617616">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617616" />
+    <state width="411" height="337" key="GridCell.Tab.1.right" timestamp="1580284617617">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617617" />
+    <state width="411" height="337" key="GridCell.Tab.2.bottom" timestamp="1580284617618">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617618" />
+    <state width="411" height="337" key="GridCell.Tab.2.center" timestamp="1580284617618">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617618" />
+    <state width="411" height="337" key="GridCell.Tab.2.left" timestamp="1580284617617">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617617" />
+    <state width="411" height="337" key="GridCell.Tab.2.right" timestamp="1580284617618">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="411" height="337" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580284617618" />
+    <state x="777" y="235" width="1024" height="845" key="SettingsEditor" timestamp="1580284696850">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="777" y="235" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1580284696850" />
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1580283990947" />
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1580283990947" />
   </component>
 </project>

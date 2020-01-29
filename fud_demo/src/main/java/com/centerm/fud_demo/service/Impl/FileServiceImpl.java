@@ -8,13 +8,28 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 文件相关操作实现类
+ * @author sheva
+ */
 @Service
 public class FileServiceImpl implements FileService {
+
     @Autowired
     private FileDao fileDao;
     @Override
     public List<File> getAllFileByUsername(String username) {
         return fileDao.getAllFileByUsername(username);
+    }
+
+    @Override
+    public Boolean addFile(File file) {
+        return fileDao.addFile(file);
+    }
+
+    @Override
+    public File getFileById(Integer id) {
+        return fileDao.getFileById(id);
     }
 
     @Override
@@ -26,4 +41,5 @@ public class FileServiceImpl implements FileService {
     public List<Integer> getDownloadNumbers() {
         return fileDao.getDownloadNumbers();
     }
+
 }

@@ -7,9 +7,9 @@ import java.util.List;
 
 @Component
 public interface AdminDao {
-    public List<User> getAllUser();
-    public int getUserState(int user_id);
-    public Boolean banUser(int user_id);
-    public Boolean releaseUser(int user_id);
-    public List<User> getUserExceptAdminAndSuperVIP(int user_id);
+    List<User> getAllUser();
+    int getUserState(int user_id);
+    Boolean banUser(int user_id);
+    Boolean releaseUser(int user_id);
+    List<User> getUserExceptAdminAndSuperVIP(int user_id);
 }

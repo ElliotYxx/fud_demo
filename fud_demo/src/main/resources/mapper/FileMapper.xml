@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.FileDao">
+    <parameterMap id="File" type="com.centerm.fud_demo.entity.File"/>
     <select id="getAllFileByUsername" parameterType="string" resultType="com.centerm.fud_demo.entity.File">
       SELECT fud.file.name,fud.file.size,fud.file.description,fud.file.create_time
       FROM file
@@ -9,6 +10,14 @@
       (SELECT fud.user.id
         FROM fud.user
         WHERE fud.user.username=#{username})
+    </select>
+    <insert id="addFile" parameterMap="File">
+        INSERT INTO file(name, local_url, size, user_id, md5, create_time)
+        VALUES(#{name}, #{local_url}, #{size}, #{user_id}, #{md5}, #{create_time})
+    </insert>
+    <select id="getFileById" parameterType="integer" resultType="com.centerm.fud_demo.entity.File">
+        SELECT fud.file.id, fud.file.name, fud.file.create_time from fud.file
+        where id = #{id}
     </select>
     <select id="getAllFile" resultType="com.centerm.fud_demo.entity.File">
         SELECT fud.file.*
