@@ -172,17 +172,6 @@
         $li.find('span.time').text(timeStr);
         $percent.css('width', percentage * 100 + '%');
     });
-    /*    uploader.on('uploadSuccess', function (file) {
-            var index = file.id.slice(8);
-            $('#' + file.id).find('p.state').text('已上传');
-            $.post(/!*[[@{/upload/combine}]]*!/, {
-                "guid": md5Arr[index],
-                fileName: file.name,
-            }, function () {
-                uploader.removeFile(file);
-            }, "json");
-        });*/
-
     //上传失败时
     uploader.on('uploadError', function (file) {
         $('#' + file.id).find('p.state').text('上传出错');
@@ -251,11 +240,10 @@
         if (seconds > 0) {
             str += seconds + " 秒 ";
         } else {
-            /* str += parseInt(date) + " 毫秒"; */
+
             str += " < 1 秒";
         }
         return str;
     }
-    /*]]>*/
 </script>
 </html>

@@ -4,6 +4,7 @@ import com.centerm.fud_demo.service.DownloadService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,13 +24,12 @@ public class DownloadController {
     DownloadService downloadService;
 
     /**
-     * 有待测试
-     * @param id
+     * @param id 文件id
      * @param response
      * @return
      */
     @ApiOperation("下载文件")
-    @RequestMapping("toDownload")
+    @GetMapping("toDownload")
     public String toDownload(Long id, HttpServletResponse response, HttpServletRequest request) throws Exception {
         downloadService.downloadFile(id, response, request);
         return "logged/user_index";

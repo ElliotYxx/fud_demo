@@ -19,11 +19,8 @@ public class UploadController {
 
     @Autowired
     UploadService uploadService;
-
-
     /**
-     * 跳转到首页
-     *
+     * 跳转到上传界面
      * @return
      */
     @GetMapping("index")
@@ -45,10 +42,9 @@ public class UploadController {
 
     /**
      * 上传分片
-     *
-     * @param file
-     * @param chunk
-     * @param guid
+     * @param file 文件
+     * @param chunk　块
+     * @param guid　md5标识
      * @throws IOException
      */
     @PostMapping("save")

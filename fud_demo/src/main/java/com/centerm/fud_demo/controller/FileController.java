@@ -20,9 +20,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 
 /**
  * File相关操作控制类
@@ -33,19 +30,8 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class FileController {
 
-    @Value("${filePath}")
-    private String uploadPath;
-    @Value("${backupPath}")
-    private String backupPath;
-    @Value("${downloadPath}")
-    private String downloadPath;
-
-    private static Logger logger = (Logger) LoggerFactory.getLogger(FileController.class);
-
     @Autowired
     private FileService fileService;
-
-
 
     @ApiOperation("文件列表")
     @RequestMapping("list")
@@ -54,9 +40,6 @@ public class FileController {
         model.addAttribute("fileList", fileList);
         return "logged/user_index";
     }
-
-
-
 }
 
 

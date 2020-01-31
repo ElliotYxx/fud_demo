@@ -3,6 +3,7 @@ import com.centerm.fud_demo.dao.FileDao;
 import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UploadService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ import java.util.Date;
  * @date 2020/1/30 下午2:20
  */
 @Service
+@Slf4j
 public class UploadServiceImpl implements UploadService {
 
     @Value("${filePath}")
@@ -33,11 +35,10 @@ public class UploadServiceImpl implements UploadService {
     FileDao fileDao;
     @Override
     public void upload(MultipartFile file, Integer chunk, String guid) throws Exception {
-
-        String filePath = uploadPath + File.separator + "temp" + File.separator + guid;
-        File tempfile = new File(filePath);
-        if (!tempfile.exists()) {
-            tempfile.mkdirs();
+        String filePath = uploadPath + "temp" + File.separator + guid;
+        File tempFile = new File(filePath);
+        if (!tempFile.exists()) {
+            tempFile.mkdirs();
         }
         RandomAccessFile raFile = null;
         BufferedInputStream inputStream = null;
@@ -70,9 +71,9 @@ public class UploadServiceImpl implements UploadService {
     @Override
     public void combineBlock(String guid, String fileName) {
         //分片文件临时目录
-        File tempPath = new File(uploadPath + File.separator + "temp" + File.separator + guid);
+        File tempPath = new File(uploadPath + "temp" + File.separator + guid);
         //真实上传路径
-        File realPath = new File(uploadPath + File.separator + "real");
+        File realPath = new File(uploadPath + "real");
         if (!realPath.exists()) {
             realPath.mkdir();
         }
@@ -82,7 +83,8 @@ public class UploadServiceImpl implements UploadService {
         FileChannel fcin = null;
         FileChannel fcout = null;
         try {
-            System.out.println("合并文件——开始 [ 文件名称：" + fileName + " ，MD5值：" + guid + " ]");
+            log.info("combine block start...");
+            log.info("file name is " + fileName + ", MD5: " + guid);
             os = new FileOutputStream(realFile, true);
             fcout = os.getChannel();
             if (tempPath.exists()) {
@@ -124,17 +126,19 @@ public class UploadServiceImpl implements UploadService {
                     System.gc();
                     tempPath.delete();
                 }
-                System.out.println("文件合并——结束 [ 文件名称：" + fileName + " ，MD5值：" + guid + " ]");
+                log.info("combine finished...");
+                log.info("file name is " + fileName + ", MD5: " + guid);
                 //备份
                 backup(uploadPath + "real" + File.separator, backupPath, fileName, guid);
             }
         } catch (Exception e) {
-            System.out.println("文件合并——失败 " + e.getMessage());
+            log.error("combine failed...");
+            log.error(e.getMessage());
         }
     }
 
     public void backup(String copyFrom, String copyTo, String fileName, String guid){
-        System.out.println("备份开始");
+        log.info("backup start...");
         long start = System.currentTimeMillis();
         File source = new File(copyFrom + fileName);
         File target = new File(copyTo + fileName);
@@ -142,15 +146,13 @@ public class UploadServiceImpl implements UploadService {
         FileInputStream in = null;
         FileOutputStream out = null;
         if (!source.exists() || !source.isFile()){
-            throw new IllegalArgumentException("file not exists!");
+            log.error("source doesn't exists or source isn't a file...");
         }
         String fileSize = String.valueOf(source.length());
         String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
-
         if (!targetFolder.exists()){
             targetFolder.mkdirs();
         }
-
         try{
             target.createNewFile();
             in = new FileInputStream(source);
@@ -162,21 +164,22 @@ public class UploadServiceImpl implements UploadService {
             outChannel.close();
             in.close();
             out.close();
-
         }catch (FileNotFoundException e){
-            e.printStackTrace();
+            log.error("File not found...");
         }catch (IOException e){
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         FileRecord fileRecord = new FileRecord(fileName, copyFrom + fileName,
                 fileSize, 2, guid, fileType, new Date());
         fileDao.addFile(fileRecord);
         long end = System.currentTimeMillis();
-        System.out.println("备份用时：　" + (end-start) + " ms");
+        log.info("backup finished...");
+        log.info("backup lasts：" + (end-start) + "ms");
    }
 
     @Override
     public void checkMd5(HttpServletRequest request, HttpServletResponse response) {
+        log.info("checkMd5...");
         //当前分片
         String chunk = request.getParameter("chunk");
         //分片大小
@@ -184,7 +187,7 @@ public class UploadServiceImpl implements UploadService {
         //当前文件的MD5值
         String guid = request.getParameter("guid");
         //分片上传路径
-        String tempPath = uploadPath + File.separator + "temp";
+        String tempPath = uploadPath + "temp";
         File checkFile = new File(tempPath + File.separator + guid + File.separator + chunk);
         response.setContentType("text/html;charset=utf-8");
         try {
@@ -195,10 +198,7 @@ public class UploadServiceImpl implements UploadService {
                 response.getWriter().write("{\"ifExist\":0}");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
-
-
-
 }

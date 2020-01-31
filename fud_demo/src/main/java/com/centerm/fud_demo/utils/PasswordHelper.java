@@ -7,7 +7,8 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 
 public class PasswordHelper {
-    private static String algorithmName="MD5"; //定义算法md5
+    //定义算法md5
+    private static String algorithmName="MD5";
     private final static int hashIterations=5;
     public static void encryptPassword(User user)
     {
