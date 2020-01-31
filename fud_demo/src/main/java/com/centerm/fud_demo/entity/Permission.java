@@ -7,4 +7,5 @@ public class Permission {
     private Integer permission_id;
     private String permission;
     private String perms;
+
 }

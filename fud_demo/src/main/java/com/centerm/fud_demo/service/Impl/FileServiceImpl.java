@@ -1,11 +1,17 @@
 package com.centerm.fud_demo.service.Impl;
 
 import com.centerm.fud_demo.dao.FileDao;
-import com.centerm.fud_demo.entity.File;
+import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URLEncoder;
 import java.util.List;
 
 /**
@@ -15,25 +21,33 @@ import java.util.List;
 @Service
 public class FileServiceImpl implements FileService {
 
+    @Value("${filePath}")
+    private String filePath;
+    @Value("${backupPath}")
+    private String backupPath;
+    @Value("${downloadPath}")
+    private String downloadPath;
+
     @Autowired
     private FileDao fileDao;
+
     @Override
-    public List<File> getAllFileByUsername(String username) {
+    public List<FileRecord> getAllFileByUsername(String username) {
         return fileDao.getAllFileByUsername(username);
     }
 
     @Override
-    public Boolean addFile(File file) {
-        return fileDao.addFile(file);
+    public Boolean addFile(FileRecord fileRecord) {
+        return fileDao.addFile(fileRecord);
     }
 
     @Override
-    public File getFileById(Integer id) {
+    public FileRecord getFileById(Long id) {
         return fileDao.getFileById(id);
     }
 
     @Override
-    public List<File> getAllFile() {
+    public List<FileRecord> getAllFile() {
         return fileDao.getAllFile();
     }
 

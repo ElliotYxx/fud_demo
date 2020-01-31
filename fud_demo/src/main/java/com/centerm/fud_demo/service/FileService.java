@@ -1,11 +1,8 @@
 package com.centerm.fud_demo.service;
 
-import com.centerm.fud_demo.dao.FileDao;
-import com.centerm.fud_demo.entity.File;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
+import com.centerm.fud_demo.entity.FileRecord;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -18,23 +15,25 @@ public interface FileService {
      * @param username 用户名
      * @return
      */
-    List<File> getAllFileByUsername(String username);
+    List<FileRecord> getAllFileByUsername(String username);
 
     /**
      * 添加文件
-     * @param file 需要上传的文件
+     * @param fileRecord 需要上传的文件
      * @return
      */
-    Boolean addFile(File file);
+    Boolean addFile(FileRecord fileRecord);
 
     /**
      * 通过id获取文件
      * @param id 文件id
      * @return file实体类
      */
-    File getFileById(Integer id);
+    FileRecord getFileById(Long id);
 
-    List<File> getAllFile();
+    List<FileRecord> getAllFile();
 
     List<Integer> getDownloadNumbers();
+
+
 }

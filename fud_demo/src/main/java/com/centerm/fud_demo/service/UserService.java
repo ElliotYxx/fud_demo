@@ -9,11 +9,11 @@ import java.util.Set;
 public interface UserService {
     String findUsernameById(int id);
     User findUserByUsernameAndPassword(String username,String password);
-    public User findByUsername(String username);
-    public Set<String> findRoles(String username);
-    public Set<String> findPermissions(String username);
-    public void createUser(User user);
-    public void changePassword(String username,String password);
-    public void createUserRole(int user_id);
-    public int findUserIdByUsername(String username);
+    User findByUsername(String username);
+    Set<String> findRoles(String username);
+    Set<String> findPermissions(String username);
+    void createUser(User user);
+    void changePassword(String username,String password);
+    void createUserRole(int user_id);
+    int findUserIdByUsername(String username);
 }

@@ -31,11 +31,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/toDownload")
-    public String toDownload()
-    {
-        return "logged/user_download";
-    }
     @GetMapping("/toRegister")
     public String toRegister(){return "register";}
     @GetMapping("/toUploading")

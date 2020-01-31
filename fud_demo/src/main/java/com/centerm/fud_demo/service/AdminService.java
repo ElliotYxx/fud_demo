@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface AdminService {
-    public List<User> getAllUser();
-    public Integer getUserState(int user_id);
-    public Boolean banUser(int user_id);
-    public Boolean releaseUser(int user_id);
-    public List<User> getUserExceptAdminAndSuperVIP(int user_id);
+    List<User> getAllUser();
+    Integer getUserState(int user_id);
+    Boolean banUser(int user_id);
+    Boolean releaseUser(int user_id);
+    List<User> getUserExceptAdminAndSuperVIP(int user_id);
 }

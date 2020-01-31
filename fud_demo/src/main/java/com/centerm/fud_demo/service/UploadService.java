@@ -1,0 +1,37 @@
+package com.centerm.fud_demo.service;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * @author Sheva
+ * @version 1.0
+ * @date 2020/1/30 下午2:17
+ */
+public interface UploadService {
+
+    /**
+     * 文件上传
+     * @param file　文件
+     * @param chunk　块
+     * @param guid　md5值
+     * @throws Exception
+     */
+    void upload(MultipartFile file, Integer chunk, String guid) throws Exception;
+
+    /**
+     * 文件块的合并
+     * @param guid md5
+     * @param fileName 文件名
+     */
+    void combineBlock(String guid, String fileName);
+
+    /**
+     * 检查md5值
+     * @param request
+     * @param response
+     */
+    void checkMd5(HttpServletRequest request, HttpServletResponse response);
+}

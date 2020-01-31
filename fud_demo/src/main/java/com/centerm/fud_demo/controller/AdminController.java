@@ -1,7 +1,5 @@
 package com.centerm.fud_demo.controller;
-
-import com.centerm.fud_demo.entity.File;
-import com.centerm.fud_demo.entity.Permission;
+import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.exception.AccountBanException;
 import com.centerm.fud_demo.listener.Listener;
@@ -41,7 +39,7 @@ public class AdminController {
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
     public String toAdmin_download(ServletRequest request)
     {
-        List<File> fileList=fileService.getAllFile();
+        List<FileRecord> fileList=fileService.getAllFile();
         request.setAttribute("fileList",fileList);
         return "admin/admin_download";
     }
@@ -65,8 +63,8 @@ public class AdminController {
     public String toAdmin_ban(HttpServletRequest request) {
         User user=(User)request.getSession().getAttribute("user");
         int user_id=user.getId();
-      List<User> userList = adminService.getUserExceptAdminAndSuperVIP(user_id);
-      request.setAttribute("userList",userList);
+        List<User> userList = adminService.getUserExceptAdminAndSuperVIP(user_id);
+        request.setAttribute("userList",userList);
         return "admin/admin_ban";
     }
     @RequestMapping("/banUser")

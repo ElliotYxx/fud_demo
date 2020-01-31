@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<a th:href="@{/admin/toAdmin_index}">实时刷新</a>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><h5>管理员</h5></td><td th:text="${session.user.username}"></td>
+            </tr>
+            <tr>
+                <td><h5>实时在线人数</h5></td><td th:text="${userNum}"></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/admin/toAdmin_download}">下载监控</a></td><td></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/admin/toAdmin_ban(id=${session.user.id})}">账号封禁与解除</a></td><td></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/admin/toAdmin_userView}">在线人数查看</a></td><td></td>
+            </tr>
+            <tr>
+                <shiro:hasAnyRoles name="SUPERVIP">
+                <td><a th:href="@{/superVIP/toSuperVIP_permission}">管理员权限授予</a></td><td></td>
+                </shiro:hasAnyRoles>
+            </tr>
+            <tr>
+                <td><a th:href="@{/user/toUser_index}">返回用户界面</a> </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
