@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
     @Override
-    public String findUsernameById(int id) {
+    public String findUsernameById(Long id) {
         String username=userDao.findUsernameById(id);
         return username;
     }
@@ -37,11 +37,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Set<String> findPermissions(String username) {
-        return userDao.findPermissions(username);
-    }
-
-    @Override
     public void createUser(User user) {
         PasswordHelper.encryptPassword(user);
         userDao.createUser(user);
@@ -56,12 +51,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createUserRole(int user_id) {
+    public void createUserRole(Long user_id) {
         userDao.createUserRole(user_id);
     }
 
     @Override
-    public int findUserIdByUsername(String username) {
+    public Long findUserIdByUsername(String username) {
         return userDao.findUserIdByUsername(username);
     }
 }

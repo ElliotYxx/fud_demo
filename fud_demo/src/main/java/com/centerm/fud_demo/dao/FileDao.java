@@ -5,8 +5,18 @@ import com.centerm.fud_demo.entity.FileRecord;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+
+/**
+ * File相关操作映射
+ * @author sheva
+ */
 @Mapper
 public interface FileDao {
+   /**
+    * 根据用户名查询上传的文件
+    * @param username 用户名
+    * @return 文件记录集合
+    */
    List<FileRecord> getAllFileByUsername(String username);
    /**
     * 添加文件
@@ -34,4 +44,21 @@ public interface FileDao {
     * @return
     */
    Boolean addDownloadRecord(DownloadRecord downloadRecord);
+
+   /**
+    * 获取最热门下载
+    * @return fileRecord集合
+    */
+   List<FileRecord> getMostDownloadRecord();
+
+   /**
+    * 获取某个用户上传的文件的总下载次数
+    * @param userId 用户id
+    * @return 总下载次数
+    */
+   Long getDownloadTimesByUserId(Long userId);
+
+   Long getDownloadTimes();
+
+   Long getUploadTimes();
 }

@@ -7,6 +7,7 @@ import com.centerm.fud_demo.service.AdminService;
 import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UserService;
 import com.centerm.fud_demo.shiro.UserRealm;
+import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.Logical;
@@ -23,6 +24,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 管理员控制类
+ * @author jerry
+ */
 @Controller
 @RequestMapping("/admin")
 @Slf4j
@@ -60,7 +65,7 @@ public class AdminController {
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
     public String toAdmin_ban(HttpServletRequest request) {
         User user=(User)request.getSession().getAttribute("user");
-        int user_id=user.getId();
+        Long user_id=user.getId();
         List<User> userList = adminService.getUserExceptAdminAndSuperVIP(user_id);
         request.setAttribute("userList",userList);
         return "admin/admin_ban";
@@ -72,8 +77,8 @@ public class AdminController {
         ModelAndView mv=new ModelAndView();
         String username=request.getParameter("username");
         User target=userService.findByUsername(username);
-       Integer user_state = target.getState();
-       Integer user_id=target.getId();
+        Integer user_state = target.getState();
+        Long user_id=target.getId();
        if(user_state.equals(0))
        {
            //执行账号封禁
@@ -96,8 +101,8 @@ public class AdminController {
         securityManager = (DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
         UserRealm shiroRealm = (UserRealm) securityManager.getRealms().iterator().next();
         shiroRealm.clearAllCache();
-     mv.setViewName("redirect:/admin/toAdmin_ban");
-       return mv;
+        mv.setViewName("redirect:/admin/toAdmin_ban");
+        return mv;
     }
 
 }

@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface AdminService {
     List<User> getAllUser();
-    Integer getUserState(int user_id);
-    Boolean banUser(int user_id);
-    Boolean releaseUser(int user_id);
-    List<User> getUserExceptAdminAndSuperVIP(int user_id);
+    Integer getUserState(Long user_id);
+    Boolean banUser(Long user_id);
+    Boolean releaseUser(Long user_id);
+    List<User> getUserExceptAdminAndSuperVIP(Long user_id);
 }

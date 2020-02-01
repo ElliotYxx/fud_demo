@@ -32,12 +32,18 @@ public class UploadServiceImpl implements UploadService {
     @Value("${backupPath}")
     private String backupPath;
 
-    private Integer userId = null;
+    private Long userId = null;
 
     @Autowired
     FileDao fileDao;
+
     @Override
-    public void upload(MultipartFile file, Integer chunk, String guid, Integer uploaderId) throws Exception {
+    public Long getUploadTimes() {
+        return fileDao.getUploadTimes();
+    }
+
+    @Override
+    public void upload(MultipartFile file, Integer chunk, String guid, Long uploaderId) throws Exception {
         String filePath = uploadPath + "temp" + File.separator + guid;
         File tempFile = new File(filePath);
         userId = uploaderId;
@@ -71,6 +77,8 @@ public class UploadServiceImpl implements UploadService {
             }
         }
     }
+
+
 
     @Override
     public void combineBlock(String guid, String fileName) {

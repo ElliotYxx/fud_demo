@@ -22,6 +22,7 @@ public class UploadController {
     UploadService uploadService;
 
     User uploader = null;
+
     /**
      * 跳转到上传界面
      * @return

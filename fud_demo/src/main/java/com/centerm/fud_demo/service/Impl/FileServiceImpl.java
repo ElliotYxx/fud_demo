@@ -57,9 +57,5 @@ public class FileServiceImpl implements FileService {
         return fileDao.getDownloadNumbers();
     }
 
-    @Override
-    public Boolean addDownloadRecord(DownloadRecord downloadRecord) {
-        return fileDao.addDownloadRecord(downloadRecord);
-    }
 
 }

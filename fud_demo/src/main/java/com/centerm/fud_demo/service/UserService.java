@@ -7,13 +7,12 @@ import java.util.Set;
 
 
 public interface UserService {
-    String findUsernameById(int id);
+    String findUsernameById(Long id);
     User findUserByUsernameAndPassword(String username,String password);
     User findByUsername(String username);
     Set<String> findRoles(String username);
-    Set<String> findPermissions(String username);
     void createUser(User user);
     void changePassword(String username,String password);
-    void createUserRole(int user_id);
-    int findUserIdByUsername(String username);
+    void createUserRole(Long user_id);
+    Long findUserIdByUsername(String username);
 }

@@ -16,6 +16,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.List;
 
 /**
  * @author Sheva
@@ -27,6 +28,27 @@ import java.net.URLEncoder;
 public class DownloadServiceImpl implements DownloadService {
     @Autowired
     FileDao fileDao;
+
+    @Override
+    public Boolean addDownloadRecord(DownloadRecord downloadRecord) {
+        return null;
+    }
+
+    @Override
+    public List<FileRecord> getMostDownloadRecord() {
+        return fileDao.getMostDownloadRecord();
+    }
+
+    @Override
+    public Long getDownloadTimesByUserId(Long userId) {
+        return fileDao.getDownloadTimesByUserId(userId);
+    }
+
+    @Override
+    public Long getDownloadTimes() {
+        return fileDao.getDownloadTimes();
+    }
+
     @Override
     public void downloadFile(Long id, HttpServletResponse response, HttpServletRequest request) {
         response.reset();
@@ -78,4 +100,5 @@ public class DownloadServiceImpl implements DownloadService {
             }
         }
     }
+
 }

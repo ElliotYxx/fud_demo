@@ -19,22 +19,22 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Integer getUserState(int user_id) {
+    public Integer getUserState(Long user_id) {
       return   adminDao.getUserState(user_id);
     }
 
     @Override
-    public Boolean banUser(int user_id) {
+    public Boolean banUser(Long user_id) {
         return adminDao.banUser(user_id);
     }
 
     @Override
-    public Boolean releaseUser(int user_id) {
+    public Boolean releaseUser(Long user_id) {
         return adminDao.releaseUser(user_id);
     }
 
     @Override
-    public List<User> getUserExceptAdminAndSuperVIP(int user_id) {
+    public List<User> getUserExceptAdminAndSuperVIP(Long user_id) {
         return adminDao.getUserExceptAdminAndSuperVIP(user_id);
     }
 }

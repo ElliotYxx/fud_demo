@@ -17,9 +17,17 @@ public interface UploadService {
      * @param file　文件
      * @param chunk　块
      * @param guid　md5值
+     * @param uploaderId 上传者id
      * @throws Exception
      */
-    void upload(MultipartFile file, Integer chunk, String guid, Integer uploaderId) throws Exception;
+    void upload(MultipartFile file, Integer chunk, String guid, Long uploaderId) throws Exception;
+
+
+    /**
+     * 获取总上传次数
+     * @return
+     */
+    Long getUploadTimes();
 
     /**
      * 文件块的合并

@@ -6,13 +6,17 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 超级管理员映射
+ * @author jerry
+ */
 @Component
 public interface SuperVIPDao {
-    public Boolean becomeAdmin(int user_id);
-    public Boolean removeAdmin(int user_id);
-    public int getUserRoles(int user_id);
-    public List<User> getAllUserExceptSuperVIP();
-    public List<Integer> getAllUserRoles();
-    public void addUser(int user_id);
-    public void removeUser(int user_id);
+    Boolean becomeAdmin(int user_id);
+    Boolean removeAdmin(int user_id);
+    int getUserRoles(int user_id);
+    List<User> getAllUserExceptSuperVIP();
+    List<Integer> getAllUserRoles();
+    void addUser(int user_id);
+    void removeUser(int user_id);
 }

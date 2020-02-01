@@ -40,12 +40,7 @@ public interface FileService {
 
     List<Integer> getDownloadNumbers();
 
-    /**
-     * 添加下载记录
-     * @param downloadRecord
-     * @return
-     */
-    Boolean addDownloadRecord(DownloadRecord downloadRecord);
+
 
 
 }

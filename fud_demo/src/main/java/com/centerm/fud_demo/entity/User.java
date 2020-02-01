@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 public class User {
-    private Integer id;
+    private Long id;
     private String username;
     private String password;
     private Date create_time;
@@ -24,7 +24,7 @@ public class User {
     public User() {
     }
 
-    public User(Integer id, String username, String password, Date create_time, Integer state) {
+    public User(Long id, String username, String password, Date create_time, Integer state) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -32,7 +32,7 @@ public class User {
         this.state = state;
     }
 
-    public User(Integer id, String username, String password, Date create_time, Integer state, Integer is_Online) {
+    public User(Long id, String username, String password, Date create_time, Integer state, Integer is_Online) {
         this.id = id;
         this.username = username;
         this.password = password;

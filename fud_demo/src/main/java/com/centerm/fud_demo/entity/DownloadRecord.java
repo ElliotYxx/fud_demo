@@ -6,8 +6,8 @@ import java.util.Date;
 
 @Data
 public class DownloadRecord {
-    private Integer id;
+    private Long id;
     private Date create_time;
-    private Integer user_id;
-    private Integer file_id;
+    private Long user_id;
+    private Long file_id;
 }

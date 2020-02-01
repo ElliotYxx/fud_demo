@@ -1,7 +1,7 @@
 package com.centerm.fud_demo.shiro.conf;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-import com.centerm.fud_demo.exception.ExceptionHandler;
+import com.centerm.fud_demo.exception.GlobalExceptionHandler;
 import com.centerm.fud_demo.filter.KickoutSessionControllerFilter;
 import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.shiro.UserRealm;
@@ -58,9 +58,8 @@ public class ShiroConfig {
         filterMap.put("/user/toRegister/**","anon");
         filterMap.put("/user/login","anon");
         filterMap.put("/user/register","anon");
-        filterMap.put("/**","user");
+        filterMap.put("/user/**","user");
         filterMap.put("/user/logout","logout");
-        filterMap.put("/**","authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
         return shiroFilterFactoryBean;
     }
@@ -166,17 +165,12 @@ public class ShiroConfig {
     {
         return new LifecycleBeanPostProcessor();
     }
-   @Bean(name = "handlerExceptionHandler")
-    public HandlerExceptionResolver handlerExceptionResolver()
-    {
-        return new ExceptionHandler();
-    }
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor()
     {
-       AuthorizationAttributeSourceAdvisor advisor=new AuthorizationAttributeSourceAdvisor();
-       advisor.setSecurityManager(securityManager());
-       return advisor;
+        AuthorizationAttributeSourceAdvisor advisor=new AuthorizationAttributeSourceAdvisor();
+        advisor.setSecurityManager(securityManager());
+        return advisor;
     }
     @Bean
     public EhCacheManager ehCacheManager()

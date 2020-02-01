@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.UserDao">
-    <select id="findUsernameById" parameterType="int" resultType="string">
+    <select id="findUsernameById" parameterType="long" resultType="string">
         SELECT fud.user.username,fud.role.role_name
         FROM fud.user u,fud.role r,fud.user_role ur
         WHERE u.id=#{id}
@@ -35,20 +35,11 @@
         AND u.id=ur.user_id
         AND r.id=ur.role_id
     </select>
-    <select id="findPermissions" resultType="string" parameterType="string">
-        SELECT p.permission
-        FROM fud.user u,fud.role r,fud.permission p,fud.role_permission rp,fud.user_role ur
-        WHERE u.username=#{username}
-        AND u.id=ur.user_id
-        AND r.id=ur.role_id
-        AND r.id=rp.role_id
-        AND p.id=rp.permission_id
-    </select>
-    <insert id="createUserRole" parameterType="int">
+    <insert id="createUserRole" parameterType="long">
         INSERT INTO fud.user_role(user_id,role_id)
         VALUES (#{user_id},1)
     </insert>
-    <select id="findUserIdByUsername" parameterType="string" resultType="int">
+    <select id="findUserIdByUsername" parameterType="string" resultType="long">
         SELECT fud.user.id
         FROM fud.user
         WHERE fud.user.username=#{username}

@@ -5,11 +5,15 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * 管理员映射
+ * @author jerry
+ */
 @Component
 public interface AdminDao {
     List<User> getAllUser();
-    int getUserState(int user_id);
-    Boolean banUser(int user_id);
-    Boolean releaseUser(int user_id);
-    List<User> getUserExceptAdminAndSuperVIP(int user_id);
+    int getUserState(Long user_id);
+    Boolean banUser(Long user_id);
+    Boolean releaseUser(Long user_id);
+    List<User> getUserExceptAdminAndSuperVIP(Long user_id);
 }

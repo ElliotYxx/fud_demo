@@ -24,8 +24,8 @@ public class UserRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-       String username=(String)principals.getPrimaryPrincipal();
-       System.out.println(username);
+        String username=(String)principals.getPrimaryPrincipal();
+        System.out.println(username);
         SimpleAuthorizationInfo authorizationInfo=new SimpleAuthorizationInfo();
         authorizationInfo.setRoles(userService.findRoles(username));
         Set<String> set=userService.findRoles(username);
@@ -33,18 +33,16 @@ public class UserRealm extends AuthorizingRealm {
         {
             System.out.println(s);
         }
-        authorizationInfo.setStringPermissions(userService.findPermissions(username));
         return authorizationInfo;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException{
-       String username=(String)token.getPrincipal();
-       User user=null;
+        String username=(String)token.getPrincipal();
+        User user=null;
         try {
             user=userService.findByUsername(username);
-        }catch (NullPointerException e)
-        {}
+        }catch (NullPointerException e) {}
         if(user==null)
         {
             throw new UnknownAccountException();
@@ -84,7 +82,6 @@ public class UserRealm extends AuthorizingRealm {
      * 自定义方法：清除所有 授权缓存
      */
     public void clearAllCachedAuthorizationInfo() {
-        System.out.println("清除");
         getAuthorizationCache().clear();
     }
 
@@ -92,7 +89,6 @@ public class UserRealm extends AuthorizingRealm {
      * 自定义方法：清除所有 认证缓存
      */
     public void clearAllCachedAuthenticationInfo() {
-        System.out.println("清除");
         getAuthenticationCache().clear();
     }
 

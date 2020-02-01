@@ -7,13 +7,12 @@ import java.util.Set;
 
 @Component
 public interface UserDao {
-    public String findUsernameById(int id);
-    public User findUserByUsernameAndPassword(String username,String password);
-    public User findByUsername(String username);
-    public Set<String> findRoles(String username);
-    public Set<String> findPermissions(String username);
-    public void createUser(User user);
-    public void updateUser(User user);
-    public void createUserRole(int user_id);
-    public int findUserIdByUsername(String username);
+    String findUsernameById(Long id);
+    User findUserByUsernameAndPassword(String username,String password);
+    User findByUsername(String username);
+    Set<String> findRoles(String username);
+    void createUser(User user);
+    void updateUser(User user);
+    void createUserRole(Long user_id);
+    Long findUserIdByUsername(String username);
 }

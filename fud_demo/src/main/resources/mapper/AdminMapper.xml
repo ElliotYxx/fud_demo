@@ -6,22 +6,22 @@
         SELECT *
         FROM fud.user
     </select>
-    <select id="getUserState" resultType="int" parameterType="int">
+    <select id="getUserState" resultType="int" parameterType="long">
         SELECT fud.user.state
         FROM fud.user
         WHERE fud.user.id=#{user_id}
     </select>
-    <update id="banUser" parameterType="int">
+    <update id="banUser" parameterType="long">
        UPDATE fud.user
        SET fud.user.state=1
        WHERE fud.user.id=#{user_id}
     </update>
-    <update id="releaseUser" parameterType="int">
+    <update id="releaseUser" parameterType="long">
        UPDATE fud.user
        SET fud.user.state=false
        WHERE fud.user.id=#{user_id}
     </update>
-    <select id="getUserExceptAdminAndSuperVIP" resultType="com.centerm.fud_demo.entity.User" parameterType="int">
+    <select id="getUserExceptAdminAndSuperVIP" resultType="com.centerm.fud_demo.entity.User" parameterType="long">
         SELECT fud.user.*
         FROM fud.user
         LEFT JOIN fud.user_role
