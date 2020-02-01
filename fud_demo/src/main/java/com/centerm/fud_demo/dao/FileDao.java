@@ -1,5 +1,6 @@
 package com.centerm.fud_demo.dao;
 
+import com.centerm.fud_demo.entity.DownloadRecord;
 import com.centerm.fud_demo.entity.FileRecord;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -19,6 +20,18 @@ public interface FileDao {
     * @return
     */
    FileRecord getFileById(Long id);
+
+   /**
+    * 获取所有文件
+    * @return
+    */
    List<FileRecord> getAllFile();
    List<Integer> getDownloadNumbers();
+
+   /**
+    * 添加下载记录
+    * @param downloadRecord
+    * @return
+    */
+   Boolean addDownloadRecord(DownloadRecord downloadRecord);
 }

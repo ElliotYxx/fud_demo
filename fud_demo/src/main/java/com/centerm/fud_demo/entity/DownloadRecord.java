@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class Download {
+public class DownloadRecord {
     private Integer id;
     private Date create_time;
     private Integer user_id;

@@ -1,6 +1,7 @@
 package com.centerm.fud_demo.service.Impl;
 
 import com.centerm.fud_demo.dao.FileDao;
+import com.centerm.fud_demo.entity.DownloadRecord;
 import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.service.DownloadService;
 import lombok.extern.slf4j.Slf4j;

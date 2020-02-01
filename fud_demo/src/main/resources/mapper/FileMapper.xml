@@ -3,6 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.FileDao">
     <parameterMap id="FileRecord" type="com.centerm.fud_demo.entity.FileRecord"/>
+    <parameterMap id="DownloadRecord" type="com.centerm.fud_demo.entity.DownloadRecord"/>
     <select id="getAllFileByUsername" parameterType="string" resultType="com.centerm.fud_demo.entity.FileRecord">
       SELECT fud.file.id,fud.file.name,fud.file.suffix,fud.file.size,fud.file.download_times,fud.file.create_time
       FROM file
@@ -14,6 +15,10 @@
     <insert id="addFile" parameterMap="FileRecord">
         INSERT INTO file(name, local_url, size, user_id, md5, suffix, create_time)
         VALUES(#{name}, #{local_url}, #{size}, #{user_id}, #{md5}, #{suffix}, #{create_time})
+    </insert>
+    <insert id="addDownloadRecord" parameterMap="DownloadRecord">
+        INSERT INTO download(create_time, user_id, file_id)
+        VALUES (#{create_time}, #{user_id}, #{file_id})
     </insert>
     <select id="getFileById" parameterType="long" resultType="com.centerm.fud_demo.entity.FileRecord">
         SELECT fud.file.id, fud.file.name,fud.file.local_url, fud.file.create_time from fud.file

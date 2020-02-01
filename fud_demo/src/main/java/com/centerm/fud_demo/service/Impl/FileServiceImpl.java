@@ -1,6 +1,7 @@
 package com.centerm.fud_demo.service.Impl;
 
 import com.centerm.fud_demo.dao.FileDao;
+import com.centerm.fud_demo.entity.DownloadRecord;
 import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,11 @@ public class FileServiceImpl implements FileService {
     @Override
     public List<Integer> getDownloadNumbers() {
         return fileDao.getDownloadNumbers();
+    }
+
+    @Override
+    public Boolean addDownloadRecord(DownloadRecord downloadRecord) {
+        return fileDao.addDownloadRecord(downloadRecord);
     }
 
 }

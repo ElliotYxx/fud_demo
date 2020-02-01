@@ -44,6 +44,7 @@ public class FileController {
     @RequestMapping("list")
     public String list(Model model, HttpServletRequest request){
         user = (User) request.getSession().getAttribute("user");
+        log.info("user的角色是： " + user.getRole());
         List<FileRecord> fileList=fileService.getAllFileByUsername(user.getUsername());
         model.addAttribute("fileList", fileList);
         return "logged/user_index";
