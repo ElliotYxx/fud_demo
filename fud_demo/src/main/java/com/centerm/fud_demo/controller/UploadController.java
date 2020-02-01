@@ -1,4 +1,5 @@
 package com.centerm.fud_demo.controller;
+import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,8 @@ public class UploadController {
 
     @Autowired
     UploadService uploadService;
+
+    User uploader = null;
     /**
      * 跳转到上传界面
      * @return
@@ -49,8 +52,9 @@ public class UploadController {
      */
     @PostMapping("save")
     @ResponseBody
-    public void upload(@RequestParam MultipartFile file, Integer chunk, String guid) throws Exception {
-        uploadService.upload(file, chunk, guid);
+    public void upload(@RequestParam MultipartFile file, Integer chunk, String guid, HttpServletRequest request) throws Exception {
+        uploader = (User) request.getSession().getAttribute("user");
+        uploadService.upload(file, chunk, guid, uploader.getId());
     }
     /**
      * 合并文件

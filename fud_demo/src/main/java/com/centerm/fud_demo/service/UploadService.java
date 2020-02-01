@@ -19,7 +19,7 @@ public interface UploadService {
      * @param guid　md5值
      * @throws Exception
      */
-    void upload(MultipartFile file, Integer chunk, String guid) throws Exception;
+    void upload(MultipartFile file, Integer chunk, String guid, Integer uploaderId) throws Exception;
 
     /**
      * 文件块的合并

@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8792b8-1a24-4a25-81b0-80c84ced6120" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/DownloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/DownloadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UploadServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/utils/FileUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/utils/PasswordHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/utils/PasswordHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logged/user_uploading.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/logged/user_uploading.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/DownloadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/DownloadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/UploadServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/UploadServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/UploadService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +68,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1X3pbpj3FNXwmNgUoEqCKmUo1fk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -93,7 +92,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -120,37 +119,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@47113685" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@24da09dc" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@3682962" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@7fec1087" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@3b21a62d" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -175,6 +144,7 @@
       <workItem from="1580357100364" duration="17084000" />
       <workItem from="1580444741836" duration="4090000" />
       <workItem from="1580452648010" duration="6532000" />
+      <workItem from="1580527775206" duration="512000" />
     </task>
     <task id="LOCAL-00001" summary="初步整合">
       <created>1580287623061</created>

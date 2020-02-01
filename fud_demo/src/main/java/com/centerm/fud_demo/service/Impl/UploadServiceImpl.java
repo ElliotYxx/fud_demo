@@ -31,12 +31,16 @@ public class UploadServiceImpl implements UploadService {
     private String uploadPath;
     @Value("${backupPath}")
     private String backupPath;
+
+    private Integer userId = null;
+
     @Autowired
     FileDao fileDao;
     @Override
-    public void upload(MultipartFile file, Integer chunk, String guid) throws Exception {
+    public void upload(MultipartFile file, Integer chunk, String guid, Integer uploaderId) throws Exception {
         String filePath = uploadPath + "temp" + File.separator + guid;
         File tempFile = new File(filePath);
+        userId = uploaderId;
         if (!tempFile.exists()) {
             tempFile.mkdirs();
         }
@@ -77,7 +81,7 @@ public class UploadServiceImpl implements UploadService {
         if (!realPath.exists()) {
             realPath.mkdir();
         }
-        File realFile = new File(uploadPath + File.separator + "real" + File.separator + fileName);
+        File realFile = new File(uploadPath + "real" + File.separator + fileName);
         // 文件追加写入
         FileOutputStream os = null;
         FileChannel fcin = null;
@@ -170,7 +174,7 @@ public class UploadServiceImpl implements UploadService {
             log.error(e.getMessage());
         }
         FileRecord fileRecord = new FileRecord(fileName, copyFrom + fileName,
-                fileSize, 2, guid, fileType, new Date());
+                fileSize, userId, guid, fileType, new Date());
         fileDao.addFile(fileRecord);
         long end = System.currentTimeMillis();
         log.info("backup finished...");
