@@ -16,6 +16,10 @@ import javax.servlet.ServletResponse;
 import java.io.Serializable;
 import java.util.Deque;
 import java.util.LinkedList;
+
+/**
+ * @author jerry
+ */
 @Slf4j
 public class KickoutSessionControllerFilter extends AccessControlFilter {
     private String kickoutUrl;

@@ -29,7 +29,7 @@ public class UploadController {
      */
     @GetMapping("index")
     public String toUpload() {
-        return "/logged/user_uploading";
+        return "user/upload";
     }
 
     /**

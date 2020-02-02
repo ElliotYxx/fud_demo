@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+/**
+ * 用户相关操作实现类
+ * @author jerry
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired

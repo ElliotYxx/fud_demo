@@ -16,6 +16,10 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * 数据库配置类
+ * @author jerry
+ */
 @Configuration
 @MapperScan(basePackages =DataSourceConfig.PACKAGE,sqlSessionFactoryRef = "sqlSessionFactory")
 public class DataSourceConfig {

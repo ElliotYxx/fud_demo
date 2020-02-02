@@ -32,6 +32,6 @@ public class DownloadController {
     @GetMapping("toDownload")
     public String toDownload(Long id, HttpServletResponse response, HttpServletRequest request) throws Exception {
         downloadService.downloadFile(id, response, request);
-        return "logged/user_index";
+        return "user/index";
     }
 }

@@ -22,13 +22,6 @@ import java.util.List;
 @Service
 public class FileServiceImpl implements FileService {
 
-    @Value("${filePath}")
-    private String filePath;
-    @Value("${backupPath}")
-    private String backupPath;
-    @Value("${downloadPath}")
-    private String downloadPath;
-
     @Autowired
     private FileDao fileDao;
 
