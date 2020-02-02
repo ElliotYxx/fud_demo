@@ -3,26 +3,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.AdminDao">
     <select id="getAllUser" resultType="com.centerm.fud_demo.entity.User">
-        SELECT *
+        SELECT user.id, user.username, user.password, user.create_time createTime, user.state
         FROM fud.user
     </select>
     <select id="getUserState" resultType="int" parameterType="long">
         SELECT fud.user.state
         FROM fud.user
-        WHERE fud.user.id=#{user_id}
+        WHERE fud.user.id=#{userId}
     </select>
     <update id="banUser" parameterType="long">
        UPDATE fud.user
        SET fud.user.state=1
-       WHERE fud.user.id=#{user_id}
+       WHERE fud.user.id=#{userId}
     </update>
     <update id="releaseUser" parameterType="long">
        UPDATE fud.user
        SET fud.user.state=false
-       WHERE fud.user.id=#{user_id}
+       WHERE fud.user.id=#{userId}
     </update>
     <select id="getUserExceptAdminAndSuperVIP" resultType="com.centerm.fud_demo.entity.User" parameterType="long">
-        SELECT fud.user.*
+        SELECT user.id, user.username, user.password, user.create_time createTime, user.state
         FROM fud.user
         LEFT JOIN fud.user_role
         ON fud.user_role.user_id=fud.user.id

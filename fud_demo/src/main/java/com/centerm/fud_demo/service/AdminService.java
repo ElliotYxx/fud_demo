@@ -7,9 +7,37 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface AdminService {
+    /**
+     * 获取所有用户
+     * @return
+     */
     List<User> getAllUser();
+
+    /**
+     * 获取用户状态
+     * @param user_id
+     * @return
+     */
     Integer getUserState(Long user_id);
-    Boolean banUser(Long user_id);
-    Boolean releaseUser(Long user_id);
-    List<User> getUserExceptAdminAndSuperVIP(Long user_id);
+
+    /**
+     * ban用户
+     * @param userId
+     * @return
+     */
+    Boolean banUser(Long userId);
+
+    /**
+     * 释放用户
+     * @param userId 用户id
+     * @return
+     */
+    Boolean releaseUser(Long userId);
+
+    /**
+     * 获取用户（除了管理员和超级管理员）
+     * @param userId 用户id
+     * @return
+     */
+    List<User> getUserExceptAdminAndSuperVIP(Long userId);
 }

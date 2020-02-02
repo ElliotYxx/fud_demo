@@ -64,20 +64,20 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
-                    <li class="active"> <a class="waves-effect waves-dark" th:href="@{/user/toUser_index}" aria-expanded="false"><i class="fa fa-bar-chart" style="color: #51b2fd"></i><span class="hide-menu" >数据分析</span></a>
+                    <li class="active"> <a class="waves-effect waves-dark" th:href="@{/user/index}" aria-expanded="false"><i class="fa fa-bar-chart" style="color: #51b2fd"></i><span class="hide-menu" >数据分析</span></a>
                     </li>
-                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_information}" aria-expanded="false"><i class="fa fa-user-circle-o" style="color: #fdca56"></i><span class="hide-menu">个人信息</span></a>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/information}" aria-expanded="false"><i class="fa fa-user-circle-o" style="color: #fdca56"></i><span class="hide-menu">个人信息</span></a>
                     </li>
-                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_download}" aria-expanded="false"><i class="fa fa-chevron-circle-down" style="color: #aa61fd"></i><span class="hide-menu">我的文件下载</span></a>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/download}" aria-expanded="false"><i class="fa fa-chevron-circle-down" style="color: #aa61fd"></i><span class="hide-menu">我的文件下载</span></a>
                     </li>
-                    <li> <a class="waves-effect waves-dark" th:href="@{/upload/index}" aria-expanded="false"><i class="fa fa-chevron-circle-up" style="color: #5a84fd"></i><span class="hide-menu">文件上传</span></a>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUpload}" aria-expanded="false"><i class="fa fa-chevron-circle-up" style="color: #5a84fd"></i><span class="hide-menu">文件上传</span></a>
                     </li>
-                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_hotFile}" aria-expanded="false"><i class="fa fa-heart" style="color: #fd5e6f"></i><span class="hide-menu">查看热门文件</span></a>
-                    </li>
-                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_fileManage}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">已上传文件管理</span></a>
+<!--                    <li> <a class="waves-effect waves-dark" th:href="@{/user/hotfile}" aria-expanded="false"><i class="fa fa-heart" style="color: #fd5e6f"></i><span class="hide-menu">查看热门文件</span></a>-->
+<!--                    </li>-->
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/filemanager}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">已上传文件管理</span></a>
                     </li>
                     <shiro:hasAnyRoles name="SUPERVIP,ADMIN">
-                        <li> <a class="waves-effect waves-dark" th:href="@{/admin/toAdmin_index}" aria-expanded="false"><i class="fa fa-user-plus" style="color: #fd55af"></i><span class="hide-menu">管理员中心</span></a>
+                        <li> <a class="waves-effect waves-dark" th:href="@{/admin/index}" aria-expanded="false"><i class="fa fa-user-plus" style="color: #fd55af"></i><span class="hide-menu">管理员中心</span></a>
                         </li>
                     </shiro:hasAnyRoles>
                 </ul>
@@ -185,36 +185,9 @@
                                             <h6 th:text="${file.name}"></h6><small class="text-muted" th:text="${file.size}"></small>
                                         </td>
                                         <td th:text="${file.suffix}"></td>
-                                        <td th:text="${file.create_time}"></td>
-                                        <td th:text="${file.download_times}"></td>
+                                        <td th:text="${file.createTime}"></td>
+                                        <td th:text="${file.downloadTimes}"></td>
                                     </tr>
-<!--                                    <tr>-->
-<!--                                        <td style="width:50px;"><span class="round">冰</span></td>-->
-<!--                                        <td>-->
-<!--                                            <h6 th:text="${file.name}"></h6><small class="text-muted" th:text="${file.size}"></small>-->
-<!--                                        </td>-->
-<!--                                        <td th:text="${file.suffix}"></td>-->
-<!--                                        <td th:text="${file.create_time}"></td>-->
-<!--                                        <td th:text="${file.download_times}"></td>-->
-<!--                                    </tr>-->
-<!--                                    <tr>-->
-<!--                                        <td><span class="round round-success">庆</span></td>-->
-<!--                                        <td>-->
-<!--                                            <h6 th:text="${file.name}"></h6><small class="text-muted" th:text="${file.size}"></small>-->
-<!--                                        </td>-->
-<!--                                        <td th:text="${file.suffix}"></td>-->
-<!--                                        <td th:text="${file.create_time}"></td>-->
-<!--                                        <td th:text="${file.download_times}"></td>-->
-<!--                                    </tr>-->
-<!--                                    <tr>-->
-<!--                                        <td><span class="round round-primary">S</span></td>-->
-<!--                                        <td>-->
-<!--                                            <h6 th:text="${file.name}"></h6><small class="text-muted" th:text="${file.size}"></small>-->
-<!--                                        </td>-->
-<!--                                        <td th:text="${file.suffix}"></td>-->
-<!--                                        <td th:text="${file.create_time}"></td>-->
-<!--                                        <td th:text="${file.download_times}"></td>-->
-<!--                                    </tr>-->
                                     </tbody>
                                 </table>
                             </div>

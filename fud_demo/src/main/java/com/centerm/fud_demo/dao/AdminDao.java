@@ -11,9 +11,37 @@ import java.util.List;
  */
 @Component
 public interface AdminDao {
+    /**
+     * 获取所有用户
+     * @return
+     */
     List<User> getAllUser();
-    int getUserState(Long user_id);
-    Boolean banUser(Long user_id);
-    Boolean releaseUser(Long user_id);
-    List<User> getUserExceptAdminAndSuperVIP(Long user_id);
+
+    /**
+     * 获取用户状态
+     * @param userId
+     * @return
+     */
+    int getUserState(Long userId);
+
+    /**
+     * ban用户
+     * @param userId 用户id
+     * @return
+     */
+    Boolean banUser(Long userId);
+
+    /**
+     * 释放用户
+     * @param userId 用户id
+     * @return
+     */
+    Boolean releaseUser(Long userId);
+
+    /**
+     * 获取用户（除了管理员和超级管理员）
+     * @param userId 用户id
+     * @return
+     */
+    List<User> getUserExceptAdminAndSuperVIP(Long userId);
 }

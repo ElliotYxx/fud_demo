@@ -3,21 +3,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.UserDao">
     <select id="findUsernameById" parameterType="long" resultType="string">
-        SELECT fud.user.username,fud.role.role_name
+        SELECT user.username,role.role_name roleName
         FROM fud.user u,fud.role r,fud.user_role ur
         WHERE u.id=#{id}
         AND u.id=ur.user_id
         AND r.id=ur.role_id
     </select>
     <select id="findUserByUsernameAndPassword" resultType="com.centerm.fud_demo.entity.User">
-        SELECT fud.user.*
+        SELECT user.id, user.username, user.password, user.create_time createTime, user.state
         FROM  fud.user
-        WHERE fud.user.username=#{param1} and fud.user.password=#{param2}
+        WHERE user.username=#{param1} and user.password=#{param2}
     </select>
     <select id="findByUsername" resultType="com.centerm.fud_demo.entity.User" parameterType="string">
-        SELECT fud.user.*
+        SELECT user.id, user.username, user.password, user.create_time createTime, user.state
         FROM fud.user
-        WHERE fud.user.username=#{username}
+        WHERE user.username=#{username}
     </select>
     <insert id="createUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.centerm.fud_demo.entity.User">
         INSERT INTO fud.user(username,password,create_time,state)
@@ -37,7 +37,7 @@
     </select>
     <insert id="createUserRole" parameterType="long">
         INSERT INTO fud.user_role(user_id,role_id)
-        VALUES (#{user_id},1)
+        VALUES (#{userId}, 1)
     </insert>
     <select id="findUserIdByUsername" parameterType="string" resultType="long">
         SELECT fud.user.id

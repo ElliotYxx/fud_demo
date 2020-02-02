@@ -12,12 +12,13 @@ import java.util.List;
  */
 @Mapper
 public interface FileDao {
+
    /**
-    * 根据用户名查询上传的文件
-    * @param username 用户名
-    * @return 文件记录集合
+    * 根据用户id获取上传文件
+    * @param userId
+    * @return
     */
-   List<FileRecord> getAllFileByUsername(String username);
+   List<FileRecord> getFileByUserId(Long userId);
    /**
     * 添加文件
     * @param file 文件实体
@@ -36,7 +37,8 @@ public interface FileDao {
     * @return
     */
    List<FileRecord> getAllFile();
-   List<Integer> getDownloadNumbers();
+
+
 
    /**
     * 添加下载记录
@@ -58,7 +60,32 @@ public interface FileDao {
     */
    Long getDownloadTimesByUserId(Long userId);
 
+   /**
+    * 获取下载次数
+    * @return 下载次数
+    */
    Long getDownloadTimes();
 
+   /**
+    * 获取上传次数
+    * @return
+    */
    Long getUploadTimes();
+
+   /**
+    * 根据用户id与文件id删除文件
+    * @param userId
+    * @param fileId
+    * @return
+    */
+   Boolean deleteFileById(Long userId, Long fileId);
+
+   /**
+    * 根据文件id删除文件（管理员操作）
+    * @param fileId
+    * @return
+    */
+   Boolean deleteFile(Long fileId);
+
+
 }

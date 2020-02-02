@@ -4,41 +4,40 @@
 <mapper namespace="com.centerm.fud_demo.dao.FileDao">
     <parameterMap id="FileRecord" type="com.centerm.fud_demo.entity.FileRecord"/>
     <parameterMap id="DownloadRecord" type="com.centerm.fud_demo.entity.DownloadRecord"/>
-    <select id="getAllFileByUsername" parameterType="string" resultType="com.centerm.fud_demo.entity.FileRecord">
-      SELECT fud.file.id,fud.file.name,fud.file.suffix,fud.file.size,fud.file.download_times,fud.file.create_time
-      FROM file
-      WHERE fud.file.user_id=
-      (SELECT fud.user.id
-        FROM fud.user
-        WHERE fud.user.username=#{username})
+    <select id="getFileByUserId" parameterType="long" resultType="com.centerm.fud_demo.entity.FileRecord">
+        SELECT file.id, file.name, file.size, file.suffix, file.create_time createTime
+        FROM fud.file
+        WHERE fud.file.user_id=#{userId}
     </select>
     <insert id="addFile" parameterMap="FileRecord">
         INSERT INTO file(name, local_url, size, user_id, md5, suffix, create_time)
-        VALUES(#{name}, #{local_url}, #{size}, #{user_id}, #{md5}, #{suffix}, #{create_time})
+        VALUES(#{name}, #{localUrl}, #{size}, #{userId}, #{md5}, #{suffix}, #{createTime})
     </insert>
+    <delete id="deleteFileById" parameterType="long">
+        DELETE FROM fud.file
+        WHERE file.id=#{param2} AND file.user_id=#{param1}
+    </delete>
+    <delete id="deleteFile" parameterType="long">
+        DELETE FROM fud.file
+        WHERE file.id=#{fileId}
+    </delete>
     <insert id="addDownloadRecord" parameterMap="DownloadRecord">
         INSERT INTO download(create_time, user_id, file_id)
-        VALUES (#{create_time}, #{user_id}, #{file_id})
+        VALUES (#{createTime}, #{userId}, #{fileId})
     </insert>
     <select id="getFileById" parameterType="long" resultType="com.centerm.fud_demo.entity.FileRecord">
-        SELECT fud.file.id, fud.file.name,fud.file.local_url, fud.file.create_time from fud.file
+        SELECT file.id, file.name,file.local_url localUrl, file.create_time createTime
+        FROM fud.file
         WHERE id = #{id}
     </select>
     <select id="getAllFile" resultType="com.centerm.fud_demo.entity.FileRecord">
-        SELECT fud.file.*
+        SELECT file.id, file.name, file.size, file.suffix, file.create_time createTime
         FROM fud.file
     </select>
-    <select id="getDownloadNumbers" resultType="java.lang.Integer">
-        SELECT fud.download.file_id,count(*) AS count
-        FROM fud.download
-        GROUP BY
-          fud.download.file_id
-        ORDER BY
-          COUNT DESC
-    </select>
+
     <select id="getMostDownloadRecord" resultType="com.centerm.fud_demo.entity.FileRecord">
-        SELECT fud.file.name, fud.file.size, fud.file.download_times, fud.file.suffix, fud.file.create_time
-        FROM file
+        SELECT file.name, file.size, file.suffix, file.create_time createTime, file.download_times downloadTimes
+        FROM fud.file
         ORDER BY download_times DESC
         LIMIT 0,5
     </select>
@@ -55,4 +54,6 @@
         SELECT COUNT(*)
         FROM file
     </select>
+
+
 </mapper>

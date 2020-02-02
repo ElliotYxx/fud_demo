@@ -26,6 +26,7 @@ import java.util.List;
 @Service
 @Slf4j
 public class DownloadServiceImpl implements DownloadService {
+
     @Autowired
     FileDao fileDao;
 
@@ -53,10 +54,9 @@ public class DownloadServiceImpl implements DownloadService {
     public void downloadFile(Long id, HttpServletResponse response, HttpServletRequest request) {
         response.reset();
         FileRecord downloadFile = fileDao.getFileById(id);
-        File file = new File(downloadFile.getLocal_url());
+        File file = new File(downloadFile.getLocalUrl());
         response.reset();
         response.setContentLength((int) file.length());
-
         response.setContentType("application/force-download");
         try{
             response.addHeader("Content-Disposition",
@@ -100,5 +100,4 @@ public class DownloadServiceImpl implements DownloadService {
             }
         }
     }
-
 }

@@ -3,11 +3,9 @@ import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.exception.AccountBanException;
 import com.centerm.fud_demo.listener.Listener;
-import com.centerm.fud_demo.service.AdminService;
-import com.centerm.fud_demo.service.FileService;
-import com.centerm.fud_demo.service.UserService;
+import com.centerm.fud_demo.service.*;
 import com.centerm.fud_demo.shiro.UserRealm;
-import io.swagger.models.auth.In;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.Logical;
@@ -29,69 +27,84 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author jerry
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("admin")
 @Slf4j
 public class AdminController {
     @Autowired
-    private AdminService adminService;
+    AdminService adminService;
     @Autowired
-    private FileService fileService;
+    FileService fileService;
     @Autowired
-    private UserService userService;
-    @GetMapping("/toAdmin_download")
+    UserService userService;
+    @Autowired
+    DownloadService downloadService;
+    @Autowired
+    UploadService uploadService;
+
+
+    @GetMapping("file")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String toAdmin_download(ServletRequest request)
+    public String adminDownload(HttpServletRequest request)
     {
         List<FileRecord> fileList=fileService.getAllFile();
+        log.info("正在获取所有文件");
+        for (FileRecord file :
+                fileList) {
+            log.info(file.getName() + "");
+        }
         request.setAttribute("fileList",fileList);
-        return "admin/admin_download";
+        return "admin/filelist";
     }
-    @GetMapping("/toAdmin_index")
+
+    @GetMapping("index")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String toAdmin_index(ServletRequest request)
+    public String adminIndex(ServletRequest request)
     {
-       AtomicInteger userNum=Listener.sessionCount;
+        AtomicInteger userNum=Listener.sessionCount;
+        long fileNums = uploadService.getUploadTimes();
+        Long downloadTimes = downloadService.getDownloadTimes();
+        List<FileRecord> fileRecordList = downloadService.getMostDownloadRecord();
         request.setAttribute("userNum",userNum);
-        return "admin/admin_index";
+        request.setAttribute("fileNums", fileNums);
+        request.setAttribute("downloadTimes", downloadTimes);
+        request.setAttribute("fileList", fileRecordList);
+        return "admin/index";
     }
-    @GetMapping("/toAdmin_userView")
+
+
+    @GetMapping("ban")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String toAdmin_userView(ServletRequest request)
-    {
-        request.setAttribute("userNum", Listener.sessionCount);
-        return "admin/admin_userView";
-    }
-    @GetMapping("/toAdmin_ban")
-    @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public String toAdmin_ban(HttpServletRequest request) {
+    public String adminBan(HttpServletRequest request) {
         User user=(User)request.getSession().getAttribute("user");
-        Long user_id=user.getId();
-        List<User> userList = adminService.getUserExceptAdminAndSuperVIP(user_id);
+        Long userId=user.getId();
+        List<User> userList = adminService.getUserExceptAdminAndSuperVIP(userId);
         request.setAttribute("userList",userList);
-        return "admin/admin_ban";
+        return "admin/ban";
     }
-    @RequestMapping("/banUser")
+
+    @RequestMapping("banUser")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
-    public ModelAndView banUser(HttpServletRequest request)throws AccountBanException
+    public ModelAndView banUser(HttpServletRequest request)
+            throws AccountBanException
     {
         ModelAndView mv=new ModelAndView();
         String username=request.getParameter("username");
         User target=userService.findByUsername(username);
-        Integer user_state = target.getState();
-        Long user_id=target.getId();
-       if(user_state.equals(0))
+        Integer userState = target.getState();
+        Long userId=target.getId();
+       if(userState.equals(0))
        {
            //执行账号封禁
-           Boolean is_success= adminService.banUser(user_id);
-           if (is_success.equals(0))
+           Boolean isSuccess= adminService.banUser(userId);
+           if (isSuccess.equals(0))
            {
                throw new AccountBanException();
            }
            log.info("用户 "+username+"　被封禁");
        }else {
            //执行账号解锁
-           Boolean is_success = adminService.releaseUser(user_id);
-           if (is_success.equals(0))
+           Boolean isSuccess = adminService.releaseUser(userId);
+           if (isSuccess.equals(0))
            {
                throw new AccountBanException();
            }
@@ -101,7 +114,20 @@ public class AdminController {
         securityManager = (DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
         UserRealm shiroRealm = (UserRealm) securityManager.getRealms().iterator().next();
         shiroRealm.clearAllCache();
-        mv.setViewName("redirect:/admin/toAdmin_ban");
+        mv.setViewName("redirect:/admin/ban");
+        return mv;
+    }
+
+    /**
+     * @param fileId 文件id
+     * @return
+     */
+    @ApiOperation("删除文件")
+    @GetMapping("toDelete")
+    public ModelAndView toDelete(Long fileId) {
+        ModelAndView mv = new ModelAndView();
+        fileService.deleteFile(fileId);
+        mv.setViewName("redirect:/admin/file");
         return mv;
     }
 

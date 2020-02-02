@@ -25,14 +25,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserByUsernameAndPassword(String username, String password) {
-       User user= userDao.findUserByUsernameAndPassword(username,password);
+        User user= userDao.findUserByUsernameAndPassword(username,password);
         return user;
     }
 
     @Override
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
-
     }
 
     @Override
@@ -55,8 +54,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createUserRole(Long user_id) {
-        userDao.createUserRole(user_id);
+    public void createUserRole(Long userId) {
+        userDao.createUserRole(userId);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.centerm.fud_demo.service.Impl;
 import com.centerm.fud_demo.dao.FileDao;
 import com.centerm.fud_demo.entity.FileRecord;
-import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UploadService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import java.nio.channels.WritableByteChannel;
 import java.util.Arrays;
 import java.util.Date;
 
-
 /**
  * @author Sheva
  * @version 1.0
@@ -31,7 +29,6 @@ public class UploadServiceImpl implements UploadService {
     private String uploadPath;
     @Value("${backupPath}")
     private String backupPath;
-
     private Long userId = null;
 
     @Autowired
@@ -77,9 +74,6 @@ public class UploadServiceImpl implements UploadService {
             }
         }
     }
-
-
-
     @Override
     public void combineBlock(String guid, String fileName) {
         //分片文件临时目录

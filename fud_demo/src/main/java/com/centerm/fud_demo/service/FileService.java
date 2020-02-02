@@ -11,12 +11,16 @@ import java.util.List;
  * @author sheva
  */
 public interface FileService {
+
+
     /**
-     * 根据用户名来查询其上传的文件
-     * @param username 用户名
+     * 根据用户id获取文件
+     * @param userId
      * @return
      */
-    List<FileRecord> getAllFileByUsername(String username);
+    List<FileRecord> getFileByUserId(Long userId);
+
+
 
     /**
      * 添加文件
@@ -24,6 +28,21 @@ public interface FileService {
      * @return
      */
     Boolean addFile(FileRecord fileRecord);
+
+    /**
+     * 根据用户id和文件id删除文件
+     * @param userId 用户id
+     * @param fileId 文件id
+     * @return
+     */
+    Boolean deleteFileById(Long userId, Long fileId);
+
+    /**
+     * 根据文件id删除文件（管理员操作）
+     * @param fileId 文件id
+     * @return
+     */
+    Boolean deleteFile(Long fileId);
 
     /**
      * 通过id获取文件
@@ -38,7 +57,6 @@ public interface FileService {
      */
     List<FileRecord> getAllFile();
 
-    List<Integer> getDownloadNumbers();
 
 
 

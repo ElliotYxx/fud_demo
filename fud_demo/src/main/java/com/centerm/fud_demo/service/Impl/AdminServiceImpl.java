@@ -5,36 +5,41 @@ import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
+/**
+ * 管路员服务实现类
+ * @author jerry
+ */
 @Service
 public class AdminServiceImpl implements AdminService {
+
     @Autowired
     private AdminDao adminDao;
+
     @Override
     public List<User> getAllUser() {
-        List<User> userList=adminDao.getAllUser();
+        List<User> userList = adminDao.getAllUser();
         return userList;
     }
 
     @Override
-    public Integer getUserState(Long user_id) {
-      return   adminDao.getUserState(user_id);
+    public Integer getUserState(Long userId) {
+      return   adminDao.getUserState(userId);
     }
 
     @Override
-    public Boolean banUser(Long user_id) {
-        return adminDao.banUser(user_id);
+    public Boolean banUser(Long userId) {
+        return adminDao.banUser(userId);
     }
 
     @Override
-    public Boolean releaseUser(Long user_id) {
-        return adminDao.releaseUser(user_id);
+    public Boolean releaseUser(Long userId) {
+        return adminDao.releaseUser(userId);
     }
 
     @Override
-    public List<User> getUserExceptAdminAndSuperVIP(Long user_id) {
-        return adminDao.getUserExceptAdminAndSuperVIP(user_id);
+    public List<User> getUserExceptAdminAndSuperVIP(Long userId) {
+        return adminDao.getUserExceptAdminAndSuperVIP(userId);
     }
 }

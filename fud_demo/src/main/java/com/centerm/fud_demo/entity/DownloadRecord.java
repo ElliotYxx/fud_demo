@@ -4,10 +4,14 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * 下载记录
+ * @author jerry
+ */
 @Data
 public class DownloadRecord {
     private Long id;
     private Date create_time;
-    private Long user_id;
-    private Long file_id;
+    private Long userId;
+    private Long fileId;
 }

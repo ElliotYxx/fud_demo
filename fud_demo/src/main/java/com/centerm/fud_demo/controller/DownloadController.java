@@ -19,10 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("download")
 public class DownloadController {
-
     @Autowired
     DownloadService downloadService;
-
     /**
      * @param id 文件id
      * @param response
@@ -32,6 +30,6 @@ public class DownloadController {
     @GetMapping("toDownload")
     public String toDownload(Long id, HttpServletResponse response, HttpServletRequest request) throws Exception {
         downloadService.downloadFile(id, response, request);
-        return "user/index";
+        return "user/download";
     }
 }

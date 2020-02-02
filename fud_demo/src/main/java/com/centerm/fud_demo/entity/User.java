@@ -2,17 +2,20 @@ package com.centerm.fud_demo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
 public class User {
     private Long id;
     private String username;
     private String password;
-    private Date create_time;
+    private Date createTime;
     private Integer state;
-    private Integer is_Online;
+    private Integer isOnline;
     private String role;
     //salt 为用户名
 
@@ -24,20 +27,20 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String username, String password, Date create_time, Integer state) {
+    public User(Long id, String username, String password, Date createTime, Integer state) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.create_time = create_time;
+        this.createTime = createTime;
         this.state = state;
     }
 
-    public User(Long id, String username, String password, Date create_time, Integer state, Integer is_Online) {
+    public User(Long id, String username, String password, Date createTime, Integer state, Integer isOnline) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.create_time = create_time;
+        this.createTime = createTime;
         this.state = state;
-        this.is_Online = is_Online;
+        this.isOnline = isOnline;
     }
 }

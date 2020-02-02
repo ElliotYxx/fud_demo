@@ -3,8 +3,8 @@ package com.centerm.fud_demo.entity;
 import lombok.Data;
 
 @Data
-public class User_role {
+public class UserRole {
     private Integer id;
-    private Integer role_id;
-    private Integer user_id;
+    private Integer roleId;
+    private Integer userId;
 }

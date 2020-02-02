@@ -7,8 +7,10 @@ import com.centerm.fud_demo.exception.NotAcceptTermsException;
 import com.centerm.fud_demo.exception.PasswordNotEqualsRetypePasswordException;
 import com.centerm.fud_demo.exception.UsernameRepeatingException;
 import com.centerm.fud_demo.service.DownloadService;
+import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UploadService;
 import com.centerm.fud_demo.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -28,7 +30,7 @@ import java.util.List;
  * @author jerry sheva
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("user")
 @Slf4j
 public class UserController {
 
@@ -40,36 +42,44 @@ public class UserController {
     DownloadService downloadService;
     @Autowired
     UploadService uploadService;
+    @Autowired
+    FileService fileService;
 
-    @GetMapping("/toRegister")
+    @GetMapping("toRegister")
     public String toRegister(){return "register";}
-    @GetMapping("/toUser_fileManager")
-    public String toUser_fileManager()
+    @GetMapping("filemanager")
+    public String userFileManager(Model model)
     {
+        List<FileRecord> fileRecordList = fileService.getFileByUserId(currUser.getId());
+        model.addAttribute("fileList", fileRecordList);
         return "user/filemanager";
     }
-    @GetMapping("/toUser_hotFile")
-    public String toUser_hotFile()
+
+//    @GetMapping("hotfile")
+//    public String userHotFile()
+//    {
+//        return "user/hotfile";
+//    }
+
+    @GetMapping("download")
+    public String userDownload(Model model)
     {
-        return "user/hotfile";
-    }
-    @GetMapping("/toUser_download")
-    public String toUser_download()
-    {
+        List<FileRecord> fileRecordList = fileService.getFileByUserId(currUser.getId());
+        model.addAttribute("fileList", fileRecordList);
         return "user/download";
     }
-    @GetMapping("/toUploading")
+    @GetMapping("toUpload")
     public String toUploading()
     {
         return "user/upload";
     }
-    @GetMapping("/toUser_information")
-    public String toUser_information()
+    @GetMapping("information")
+    public String userInformation()
     {
         return "user/information";
     }
-    @GetMapping("/toUser_index")
-    public String toUser_index(Model model, HttpServletRequest request)
+    @GetMapping("index")
+    public String userIndex(Model model, HttpServletRequest request)
     {
         currUser = (User)request.getSession().getAttribute("user");
         Long currUserId = currUser.getId();
@@ -83,19 +93,14 @@ public class UserController {
         model.addAttribute("uploadTimes", uploadTimes);
         return "user/index";
     }
-    @GetMapping("/toUser_edit")
-    public String toUser_edit()
-    {
 
-        return "edit";
-    }
-    @GetMapping("/toLogin")
+    @GetMapping("toLogin")
     public String toLogin()
     {
         return "login";
     }
 
-    @PostMapping(value = "/login")
+    @PostMapping(value = "login")
     @ResponseBody
     public AjaxReturnMsg login(HttpServletRequest request)
     {
@@ -120,20 +125,20 @@ public class UserController {
         }
         return msg;
     }
-    @PostMapping("/register")
+    @PostMapping("register")
     @ResponseBody
     public AjaxReturnMsg register(HttpServletRequest request)throws Exception
     {
         AjaxReturnMsg msg=new AjaxReturnMsg();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String r_password =request.getParameter("r_password");
+        String rPassword =request.getParameter("r_password");
         String checkBox=request.getParameter("check");
 
-        if (username==null||password==null||username==""||password=="") {
+        if (username ==null || password == null || username == "" || password == "") {
             throw new AuthenticationException();
         }
-        if (!password.equals(r_password))
+        if (!password.equals(rPassword))
         {
             throw new PasswordNotEqualsRetypePasswordException();
         }
@@ -143,11 +148,11 @@ public class UserController {
         }
         User user=new User(username,password);
         User matching=userService.findByUsername(username);
-        if (matching==null)
+        if (null == matching)
         {
             userService.createUser(user);
-            Long user_id=userService.findUserIdByUsername(username);
-            userService.createUserRole(user_id);
+            Long userId=userService.findUserIdByUsername(username);
+            userService.createUserRole(userId);
             log.info("用户 "+username+" 注册成功"+",默认权限为user");
             msg.setUsername(username);
             msg.setFlag(1);
@@ -158,7 +163,7 @@ public class UserController {
         return msg;
     }
 
-    @PostMapping("/toUser_information")
+    @PostMapping("information")
     @ResponseBody
     public AjaxReturnMsg updateUser(HttpServletRequest request){
         String password = request.getParameter("password");
@@ -175,7 +180,7 @@ public class UserController {
         return msg;
     }
 
-    @RequestMapping("/logout")
+    @RequestMapping("logout")
     @ResponseBody
     public ModelAndView logout(HttpServletRequest request)
     {
@@ -186,4 +191,6 @@ public class UserController {
         mv.setViewName("login");
         return mv;
     }
+
+
 }
