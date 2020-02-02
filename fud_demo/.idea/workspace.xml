@@ -2,29 +2,172 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8792b8-1a24-4a25-81b0-80c84ced6120" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/ajax/AjaxReturnMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/exception/AccountBanException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/exception/MultiAccountOnlineException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/exception/NotAcceptTermsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/exception/PasswordNotEqualsRetypePasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/exception/UsernameRepeatingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/error/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/error/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index/c3.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index/dashboard1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index/morris.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index/perfect-scrollbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index/spinners.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/login/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/login/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/login/style_login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/util/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/util/bootsnav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/util/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/util/sweetalert2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootsnav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/c3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/d3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/dashboard1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/morris.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/raphael-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/sidebarmenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index/waves.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/modernizr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/sweetalert2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/405.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/415.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/download.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/filemanager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/hotfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/fud_demo.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/entity/DownloadRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/entity/ajax/AjaxReturnMsg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/exception/NotAcceptTermsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/exception/PasswordNotEqualsRetypePasswordException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/error/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/error/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/index/c3.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/index/dashboard1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/index/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/index/morris.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/index/perfect-scrollbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/index/spinners.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/index/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/login/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/login/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/login/style_login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/util/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/util/bootsnav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/util/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/util/sweetalert2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/bootsnav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/c3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/d3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/dashboard1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/morris.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/raphael-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/sidebarmenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index/waves.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/modernizr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/sweetalert2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/error/405.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/error/415.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/download.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/filemanager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/hotfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/information.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/upload.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/upload_status.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/config/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/config/DataSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/config/DruidConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/DownloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/DownloadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/enum_permission/PermissionEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/filter/KickoutSessionControllerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/filter/KickoutSessionControllerFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logged/upload_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/upload_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logged/user_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logged/user_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logged/user_information.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/information.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logged/user_uploading.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/DownloadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/DownloadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/logged/upload_status.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/logged/user_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/logged/user_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/logged/user_information.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/logged/user_uploading.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +325,7 @@
       <workItem from="1580444741836" duration="4090000" />
       <workItem from="1580452648010" duration="6532000" />
       <workItem from="1580527775206" duration="21789000" />
-      <workItem from="1580611659989" duration="1003000" />
+      <workItem from="1580611659989" duration="1574000" />
     </task>
     <task id="LOCAL-00001" summary="初步整合">
       <created>1580287623061</created>
@@ -226,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580564908203</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- 改了几个文件名 先备份">
+      <created>1580612686385</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580612686385</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +386,8 @@
     <MESSAGE value="初步整合" />
     <MESSAGE value="- 修改了uploadController" />
     <MESSAGE value="- 和前端的初步整合" />
-    <option name="LAST_COMMIT_MESSAGE" value="- 和前端的初步整合" />
+    <MESSAGE value="- 改了几个文件名 先备份" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 改了几个文件名 先备份" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1580285389546">
@@ -263,10 +414,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="299" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580544682477" />
-    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2" timestamp="1580564908118">
+    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2" timestamp="1580612686086">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1580564908118" />
+    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1580612686086" />
     <state x="815" y="339" width="825" height="610" key="FileChooserDialogImpl" timestamp="1580285411169">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -315,10 +466,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="721" y="222" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1580351528940" />
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1580564918373">
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1580612694300">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1580564918373" />
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1580612694300" />
     <state x="372" y="424" width="375" height="262" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1580544794128">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

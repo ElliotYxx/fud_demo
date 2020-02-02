@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>用户信息</title>
+
+    <link th:href="@{/css/util/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/css/index/style.css}" rel="stylesheet">
+    <link th:href="@{/css/index/default.css}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/index/spinners.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome/css/font-awesome.css}">
+
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function update(){
+                document.getElementById("update").disabled = true;
+                $.ajax({
+                    type:"POST",
+                    url:"/user/toUser_information",
+                    dataType:"json",
+                    data:{
+                        password:$("#password").val(),
+                    },
+                    success:function(data){
+                        if(data.flag == 1){
+                            swal({
+                                text: "Update successfully",
+                                type: "success",
+                                confirm:'ok',
+                                confirmButtonColor: '#5a84fd',
+                            }).then(function (){
+                                window.location.href="/user/toLogin";
+                            });
+                        }else{
+                            swal({
+                                text: data.msg,
+                                type: "error",
+                                confirm:'ok',
+                                confirmButtonColor: '#fd2c45',
+                            });
+
+                            document.getElementById("update").disabled = false;
+                        }
+                    },
+                });
+            }
+            $("#update").click(function(){
+                update();
+            });
+
+        })
+
+    </script>
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+
+
+<div id="main-wrapper">
+
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.github.com"/>
+                <span>
+                  <i class="fa fa-github fa-3x" style="color: #5a84fd"></i>
+                    </span>
+
+            </div>
+            <div class="navbar-collapse">
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                    <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                        <form class="app-search">
+                            <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="fa fa-times"></i></a> </form>
+                    </li>
+                </ul>
+                <ul class="navbar-nav my-lg-0">
+                    <li class="nav-item dropdown u-pro">
+                        <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="round round-success" th:text="${session.index}"></span>&nbsp;&nbsp;<span class="hidden-md-down" th:text="${session.user.username}"></span> </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_index}" aria-expanded="false"><i class="fa fa-bar-chart" style="color: #51b2fd"></i><span class="hide-menu" >数据分析</span></a>
+                    </li>
+                    <li class="active"> <a class="waves-effect waves-dark" th:href="@{/user/toUser_information}" aria-expanded="false"><i class="fa fa-user-circle-o" style="color: #fdca56"></i><span class="hide-menu">个人信息</span></a>
+                    </li>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_download}" aria-expanded="false"><i class="fa fa-chevron-circle-down" style="color: #aa61fd"></i><span class="hide-menu">我的文件下载</span></a>
+                    </li>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUploading}" aria-expanded="false"><i class="fa fa-chevron-circle-up" style="color: #5a84fd"></i><span class="hide-menu">文件上传</span></a>
+                    </li>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_hotFile}" aria-expanded="false"><i class="fa fa-heart" style="color: #fd5e6f"></i><span class="hide-menu">查看热门文件</span></a>
+                    </li>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/user/toUser_fileManage}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">已上传文件管理</span></a>
+                    </li>
+                    <shiro:hasAnyRoles name="SUPERVIP,ADMIN">
+                        <li> <a class="waves-effect waves-dark" th:href="@{/admin/toAdmin_index}" aria-expanded="false"><i class="fa fa-user-plus" style="color: #fd55af"></i><span class="hide-menu">管理员中心</span></a>
+                        </li>
+                    </shiro:hasAnyRoles>
+                </ul>
+
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">个人信息</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">个人信息</li>
+                    </ol>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <a th:href="@{/user/logout}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Logout</a>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-5 col-xlg-4 col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <center class="m-t-30"><!--<span class="round" width="150" th:text="${session.index}"></span>--><img th:src="@{/images/logo.png}" class="img-circle" width="60" />
+                                <h4 class="card-title m-t-10" th:text="${session.user.username}"></h4>
+                                <br/>
+                                <h6 class="card-subtitle">Welcome To Modify Information</h6>
+                                <br/>
+                                <div class="row text-center justify-content-md-center">
+                                    <div class="col-4"><i class="fa fa-chevron-circle-down fa-2x" style="color: #aa61fd"></i><h4 th:text="123"></h4> </div>
+                                    <div class="col-4"><i class="fa fa-chevron-circle-up fa-2x" style="color: #5a84fd"></i><h4 th:text="45"></h4> </div>
+                                    <!-- <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-picture"></i> <font class="font-medium">54</font></a></div>-->
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <!-- Column -->
+                <div class="col-lg-7 col-xlg-8 col-md-7">
+                    <div class="card">
+                        <!-- Tab panes -->
+                        <div class="card-body">
+                            <form class="form-horizontal form-material">
+                                <div class="form-group">
+                                    <label class="col-md-12">Username</label>
+                                    <div class="col-md-12">
+                                        <input type="text" th:value="${session.user.username}" readonly="true" class="form-control form-control-line">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Password</label>
+                                    <div class="col-md-12">
+                                        <input type="password" value="password" id="password" class="form-control form-control-line">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="update" type="submit">Update Profile</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+            </div>
+        </div>
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<script th:src="@{/js/jquery.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script th:src="@{/js/index/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script th:src="@{/js/perfect-scrollbar.jquery.min.js}"></script>
+<!--Wave Effects -->
+<script th:src="@{/js/index/waves.js}"></script>
+<!--Menu sidebar -->
+<script th:src="@{/js/index/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script th:src="@{/js/index/custom.min.js}"></script>
+</body>
+
+</html>
