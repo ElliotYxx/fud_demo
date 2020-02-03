@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="430daa2a-fc19-45f3-8b61-5636c298bff6" name="Default Changelist" comment="" />
+    <list default="true" id="430daa2a-fc19-45f3-8b61-5636c298bff6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/fud_demo_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/fud_demo_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65af22b3-bfb2-43cd-bf3c-fe9b28fad6d7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/65af22b3-bfb2-43cd-bf3c-fe9b28fad6d7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.css" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload1.html" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/target/classes/META-INF/fud_demo.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/target/classes/META-INF/fud_demo.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fud_demo/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fud_demo/target/classes/application.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/fud_demo/target/test-classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,8 +44,125 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="fud: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="fud: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="file: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.41469195">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/application.properties">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/index.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload1.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="406">
+                  <caret line="135" column="38" lean-forward="true" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="351">
+                  <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="174">
+                  <caret line="4894" column="46" lean-forward="true" selection-start-line="4894" selection-start-column="46" selection-end-line="4894" selection-end-column="46" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="294">
+                  <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="117">
+                  <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/shiro/UserRealm.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="351">
+                  <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload1.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="796">
+                  <caret line="136" column="39" selection-start-line="136" selection-start-column="39" selection-end-line="136" selection-end-column="39" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,6 +173,26 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>thelist</find>
+      <find>开始上传</find>
+      <find>ctlbtn</find>
+      <find>upload</find>
+      <find>uploader</find>
+      <find>btns</find>
+      <find>picker</find>
+      <find>pick</find>
+      <find>init</find>
+      <find>webupload-</find>
+      <find>btn</find>
+      <find>callback</find>
+      <find>webuploader-element-invisible</find>
+      <find>webuploader-pick</find>
+      <find>custom</find>
+      <find>customC</find>
+    </findStrings>
   </component>
   <component name="Git.Rebase.Settings">
     <option name="ONTO" value="refs/heads/master" />
@@ -53,12 +206,31 @@
       </map>
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/information.html" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.custom.js" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.css" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.js" />
+        <option value="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload1.html" />
+      </list>
+    </option>
+  </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
         <option value="$PROJECT_DIR$/.idea" />
       </set>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -67,9 +239,426 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="-7" />
+    <option name="width" value="3440" />
+    <option name="height" value="1447" />
+  </component>
   <component name="ProjectId" id="1WSzJ0LgmfrJ4Zo9T6CYSKmI8UH" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="listener" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="centerm" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="error" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="webuploader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="error" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="supervip" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fud_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="fud_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -87,7 +676,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579251252750" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580730861084" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
@@ -95,6 +684,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
@@ -106,6 +696,18 @@
       <recent name="$PROJECT_DIR$/fud_demo/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/fud_demo/src/main/resources/templates/user" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="FudDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -159,6 +761,8 @@
       <workItem from="1580284135681" duration="481000" />
       <workItem from="1580284636989" duration="73000" />
       <workItem from="1580527747653" duration="26000" />
+      <workItem from="1580718908173" duration="5747000" />
+      <workItem from="1580724986865" duration="5865000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1579157790673</created>
@@ -275,6 +879,50 @@
     <option name="localTasksCounter" value="17" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11612000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-7" width="3440" height="1447" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15432465" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Statistic" order="10" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32941177" />
+      <window_info anchor="right" id="Bean Validation" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Key Promoter X" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.10722749" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -287,6 +935,9 @@
         <option value="1" />
       </list>
     </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
@@ -367,5 +1018,136 @@
     <state x="777" y="235" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1580284696850" />
     <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1580283990947" />
     <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1580283990947" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4134">
+          <caret line="207" column="116" selection-start-line="207" selection-start-column="116" selection-end-line="207" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/shiro/UserRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="2558" column="68" selection-start-line="2558" selection-start-column="68" selection-end-line="2558" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.fis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="1810" column="12" selection-start-line="1810" selection-start-column="12" selection-end-line="1810" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.flashonly.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="1633" column="12" selection-start-line="1633" selection-start-column="12" selection-end-line="1633" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.noimage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.nolog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.withoutimage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.html5only.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="1900" column="37" selection-start-line="1900" selection-start-column="37" selection-end-line="1900" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/java/com/centerm/fud_demo/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/static/webuploader/webuploader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="4894" column="46" lean-forward="true" selection-start-line="4894" selection-start-column="46" selection-end-line="4894" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fud_demo/src/main/resources/templates/user/upload1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="796">
+          <caret line="136" column="39" selection-start-line="136" selection-start-column="39" selection-end-line="136" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

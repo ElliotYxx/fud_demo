@@ -50,7 +50,7 @@ public class UserController {
     @GetMapping("toUpload")
     public String toUploading()
     {
-        return "user/upload";
+        return "user/upload1";
     }
     @GetMapping("information")
     public String userInformation()
