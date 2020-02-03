@@ -1969,6 +1969,7 @@
             init: function( opts ) {
                 this.pickers = [];
                 return opts.pick && this.addBtn( opts.pick );
+                return opts.pick && this.addBtn( opts.pick );
             },
     
             refresh: function() {
