@@ -31,7 +31,7 @@ public interface SuperVipService {
      * @param userId 用户id
      * @return
      */
-    int getUserRoles(Long userId);
+    Long getUserRoles(Long userId);
 
     /**
      * 获取所有用户（除了超级管理员）
@@ -40,26 +40,10 @@ public interface SuperVipService {
     List<User> getAllUserExceptSuperVIP();
 
     /**
-     * 获取所有用户角色
-     * @return
-     */
-    List<Integer> getAllUserRoles();
-
-    /**
-     * 添加用户
-     * @param userId  用户id
-     */
-    void addUser(Long userId);
-
-    /**
      * 移除用户
      * @param userId 用户id
      */
     void removeUser(Long userId);
 
-    /**
-     * 删除用户
-     * @param userId
-     */
-    void deleteUser(Long userId);
+
 }

@@ -13,8 +13,10 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.WritableByteChannel;
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Sheva
@@ -37,6 +39,11 @@ public class UploadServiceImpl implements UploadService {
     @Override
     public Long getUploadTimes() {
         return fileDao.getUploadTimes();
+    }
+
+    @Override
+    public List<FileRecord> getLatestUploaded() {
+        return fileDao.getLatestUploaded();
     }
 
     @Override
@@ -176,7 +183,7 @@ public class UploadServiceImpl implements UploadService {
             log.error(e.getMessage());
         }
         FileRecord fileRecord = new FileRecord(fileName, copyFrom + fileName,
-                fileSize, userId, guid, fileType, new Date());
+                fileSize, userId, guid, fileType, new Timestamp(System.currentTimeMillis()));
         fileDao.addFile(fileRecord);
         long end = System.currentTimeMillis();
         log.info("backup finished...");
@@ -207,4 +214,6 @@ public class UploadServiceImpl implements UploadService {
             log.error(e.getMessage());
         }
     }
+
+
 }

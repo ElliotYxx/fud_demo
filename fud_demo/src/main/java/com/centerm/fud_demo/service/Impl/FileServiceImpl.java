@@ -34,7 +34,6 @@ public class FileServiceImpl implements FileService {
     @Override
     public Boolean deleteFileById(Long userId, Long fileId) {
         FileRecord deleteFile = fileDao.getFileById(fileId);
-        System.out.println("要删除的fileId为： " + fileId);
         deleteLocalFile(deleteFile.getLocalUrl());
         return fileDao.deleteFileById(userId, fileId);
     }
@@ -47,13 +46,13 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-    public FileRecord getFileById(Long id) {
-        return fileDao.getFileById(id);
+    public List<FileRecord> getAllFile() {
+        return fileDao.getAllFile();
     }
 
     @Override
-    public List<FileRecord> getAllFile() {
-        return fileDao.getAllFile();
+    public Boolean updateFile(Long fileId) {
+        return fileDao.updateFile(fileId);
     }
 
 

@@ -7,37 +7,26 @@ import com.centerm.fud_demo.utils.PasswordHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
-
 /**
- * 用户相关操作实现类
+ * 用户操作实现类
  * @author jerry
  */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
-    @Override
-    public String findUsernameById(Long id) {
-        String username=userDao.findUsernameById(id);
-        return username;
-    }
-
-    @Override
-    public User findUserByUsernameAndPassword(String username, String password) {
-        User user= userDao.findUserByUsernameAndPassword(username,password);
-        return user;
-    }
 
     @Override
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
+
     }
 
     @Override
-    public Set<String> findRoles(String username) {
+    public String findRoles(String username) {
         return userDao.findRoles(username);
     }
+
 
     @Override
     public void createUser(User user) {
@@ -53,13 +42,4 @@ public class UserServiceImpl implements UserService {
         userDao.updateUser(user);
     }
 
-    @Override
-    public void createUserRole(Long userId) {
-        userDao.createUserRole(userId);
-    }
-
-    @Override
-    public Long findUserIdByUsername(String username) {
-        return userDao.findUserIdByUsername(username);
-    }
 }

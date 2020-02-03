@@ -17,11 +17,8 @@ public interface DownloadService {
      * 下载文件
      * @param id　　文件id
      * @param response　　
-     * @param request
-     * @throws Exception
      */
-    void downloadFile(Long id, HttpServletResponse response, HttpServletRequest request)
-            throws Exception;
+    void downloadFile(Long id, HttpServletResponse response);
 
     /**
      * 添加下载记录
@@ -48,4 +45,17 @@ public interface DownloadService {
      * @return
      */
     Long getDownloadTimes();
+
+    /**
+     * 删除下载记录
+     * @param fileId 文件id
+     * @return
+     */
+    Boolean deleteDownloadRecord(Long fileId);
+
+    /**
+     * 获取最新下载文件的前五个
+     * @return
+     */
+    List<FileRecord> getLatestDownloaded();
 }

@@ -32,7 +32,7 @@ public interface SuperVipDao {
      * @param userId  用户id
      * @return
      */
-    int getUserRoles(Long userId);
+    Long getUserRoles(Long userId);
 
     /**
      * 获取所有用户（除了管理员）
@@ -40,17 +40,7 @@ public interface SuperVipDao {
      */
     List<User> getAllUserExceptSuperVIP();
 
-    /**
-     * 获取所有用户角色
-     * @return
-     */
-    List<Integer> getAllUserRoles();
 
-    /**
-     * 添加用户
-     * @param userId 用户id
-     */
-    void addUser(Long userId);
 
     /**
      * 移除用户
@@ -58,9 +48,4 @@ public interface SuperVipDao {
      */
     void removeUser(Long userId);
 
-    /**
-     * 删除用户
-     * @param userId 用户id
-     */
-    void deleteUser(Long userId);
 }

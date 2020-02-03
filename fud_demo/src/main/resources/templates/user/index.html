@@ -257,15 +257,20 @@
             <!-- ============================================================== -->
             <!-- Notification And Feeds -->
             <!-- ============================================================== -->
-<!--            <div class="row">-->
-<!--                &lt;!&ndash; Start Notification &ndash;&gt;-->
-<!--                <div class="col-lg-6 col-md-12">-->
-<!--                    <div class="card ">-->
-<!--                        <div class="card-body">-->
-<!--                            <h5 class="card-title">最新下载文件</h5>-->
-<!--                            <ul class="feeds">-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-info"><i class="fa fa-bell-o"></i></div>IMG_20100102_xxx <span class="text-muted">Just Now</span></li>-->
+            <div class="row">
+                <!-- Start Notification -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card ">
+                        <div class="card-body">
+                            <h5 class="card-title">最新下载文件</h5>
+                            <ul class="feeds">
+                                <li th:each="file:${latestDownloaded}">
+                                    <div class="bg-light-info">
+                                        <i class="fa fa-bell-o">
+                                        </i>
+                                    </div>
+                                    <span class="text-muted" th:text="${file.createTime}"></span>
+                                </li>
 <!--                                <li>-->
 <!--                                    <div class="bg-light-success"><i class="fa fa-server"></i></div>Tomcat开发指南<span class="text-muted">2 Hours ago</span></li>-->
 <!--                                <li>-->
@@ -273,32 +278,32 @@
 <!--                                <li>-->
 <!--                                    <div class="bg-light-danger"><i class="fa fa-user"></i></div>什么值得买<span class="text-muted">30 May</span></li>-->
 <!--                                <li>-->
-<!--                                    <div class="bg-light-inverse"><i class="fa fa-bell-o"></i></div>MacPro说明书<span class="text-muted">27 May</span></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; End Notification &ndash;&gt;-->
-<!--                &lt;!&ndash; Start Feeds &ndash;&gt;-->
-<!--                <div class="col-lg-6">-->
-<!--                    <div class="card">-->
-<!--                        <div class="card-body">-->
-<!--                            <h5 class="card-title">最新上传文件</h5>-->
-<!--                            <ul class="feeds">-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-info"><i class="fa fa-bell-o"></i></div>爱笑的眼睛 <span class="text-muted">Just Now</span></li>-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-success"><i class="fa fa-server"></i></div>一生有你<span class="text-muted">2 Hours ago</span></li>-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> 遇见<span class="text-muted">31 May</span></li>-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-danger"><i class="fa fa-user"></i></div>会呼吸的痛<span class="text-muted">30 May</span></li>-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-inverse"><i class="fa fa-bell-o"></i></div>碟中谍 <span class="text-muted">27 May</span></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+<!--                                    <div class="bg-light-inverse">-->
+<!--                                        <i class="fa fa-bell-o"></i>-->
+<!--                                    </div>MacPro说明书-->
+<!--                                    <span class="text-muted">27 May</span>-->
+<!--                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Notification -->
+                <!-- Start Feeds -->
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">最新上传文件</h5>
+                            <ul class="feeds">
+                                <li th:each="file:${latestUploaded}">
+                                    <div class="bg-light-info">
+                                        <i class="fa fa-bell-o"></i>
+                                    </div>
+                                    <span class="text-muted" th:text="${file.createTime}"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <!-- End Feeds -->
             </div>
 

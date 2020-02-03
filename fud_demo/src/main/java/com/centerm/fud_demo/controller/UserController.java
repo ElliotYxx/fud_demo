@@ -23,11 +23,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
  * 用户控制类
- * @author jerry sheva
+ * @author jerry
  */
 @Controller
 @RequestMapping("user")
@@ -35,7 +36,6 @@ import java.util.List;
 public class UserController {
 
     User currUser = null;
-
     @Autowired
     UserService userService;
     @Autowired
@@ -47,6 +47,21 @@ public class UserController {
 
     @GetMapping("toRegister")
     public String toRegister(){return "register";}
+    @GetMapping("toUpload")
+    public String toUploading()
+    {
+        return "user/upload";
+    }
+    @GetMapping("information")
+    public String userInformation()
+    {
+        return "user/information";
+    }
+    @GetMapping("toLogin")
+    public String toLogin()
+    {
+        return "login";
+    }
     @GetMapping("filemanager")
     public String userFileManager(Model model)
     {
@@ -68,16 +83,7 @@ public class UserController {
         model.addAttribute("fileList", fileRecordList);
         return "user/download";
     }
-    @GetMapping("toUpload")
-    public String toUploading()
-    {
-        return "user/upload";
-    }
-    @GetMapping("information")
-    public String userInformation()
-    {
-        return "user/information";
-    }
+
     @GetMapping("index")
     public String userIndex(Model model, HttpServletRequest request)
     {
@@ -87,17 +93,15 @@ public class UserController {
         Long downloadTimes = downloadService.getDownloadTimes();
         Long downloadTimesByCurrUser = downloadService.getDownloadTimesByUserId(currUserId);
         Long uploadTimes = uploadService.getUploadTimes();
+        List<FileRecord> latestDownloaded = downloadService.getLatestDownloaded();
+        List<FileRecord> latestUploaded = uploadService.getLatestUploaded();
         model.addAttribute("mostDownloaded", mostDownloaded);
         model.addAttribute("downloadTimesByCurrUser", downloadTimesByCurrUser);
         model.addAttribute("downloadTimes", downloadTimes);
         model.addAttribute("uploadTimes", uploadTimes);
+        model.addAttribute("latestDownloaded", latestDownloaded);
+        model.addAttribute("latestUploaded", latestUploaded);
         return "user/index";
-    }
-
-    @GetMapping("toLogin")
-    public String toLogin()
-    {
-        return "login";
     }
 
     @PostMapping(value = "login")
@@ -115,7 +119,7 @@ public class UserController {
             subject.login(token);
         }
         String exception=(String)request.getAttribute("shiroLoginFailure");
-        if (exception == null){
+        if (null == exception){
             log.info("用户 " + username + " 登录成功");
             User to_index=userService.findByUsername(username);
             request.getSession().setAttribute("user", to_index);
@@ -135,14 +139,14 @@ public class UserController {
         String rPassword =request.getParameter("r_password");
         String checkBox=request.getParameter("check");
 
-        if (username ==null || password == null || username == "" || password == "") {
+        if (null == username || null == password || "" == username || "" == password) {
             throw new AuthenticationException();
         }
         if (!password.equals(rPassword))
         {
             throw new PasswordNotEqualsRetypePasswordException();
         }
-        if (checkBox.equals("0"))
+        if (("0").equals(checkBox))
         {
             throw new NotAcceptTermsException();
         }
@@ -151,8 +155,6 @@ public class UserController {
         if (null == matching)
         {
             userService.createUser(user);
-            Long userId=userService.findUserIdByUsername(username);
-            userService.createUserRole(userId);
             log.info("用户 "+username+" 注册成功"+",默认权限为user");
             msg.setUsername(username);
             msg.setFlag(1);
@@ -166,17 +168,23 @@ public class UserController {
     @PostMapping("information")
     @ResponseBody
     public AjaxReturnMsg updateUser(HttpServletRequest request){
-        String password = request.getParameter("password");
         AjaxReturnMsg msg=new AjaxReturnMsg();
-        if (null == password || "".equals(password)){
-            //TODO
-            return null;
-        }else{
-            userService.changePassword(currUser.getUsername(), password);
-            log.info("用户：" + currUser.getUsername() + " 修改密码成功...");
-            msg.setUsername(currUser.getUsername());
-            msg.setFlag(1);
+        String password=request.getParameter("password");
+        String username=((User)request.getSession().getAttribute("user")).getUsername();
+        if ((password.equals(null)||password.equals("")))
+        {
+            msg.setFlag(0);
+            msg.setMsg("没有提交数据更新");
+            return msg;
         }
+        if (!(password.equals(null)||password.equals("")))
+        {
+            userService.changePassword(username,password);
+        }
+        User user=userService.findByUsername(username);
+        request.getSession().setAttribute("user",user);
+        msg.setFlag(1);
+        msg.setMsg("数据更新成功");
         return msg;
     }
 

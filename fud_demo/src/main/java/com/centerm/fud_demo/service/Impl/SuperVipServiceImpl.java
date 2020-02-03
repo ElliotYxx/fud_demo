@@ -27,7 +27,7 @@ public class SuperVipServiceImpl implements SuperVipService {
     }
 
     @Override
-    public int getUserRoles(Long userId) {
+    public Long getUserRoles(Long userId) {
         return superVipDao.getUserRoles(userId);
     }
 
@@ -35,23 +35,11 @@ public class SuperVipServiceImpl implements SuperVipService {
     public List<User> getAllUserExceptSuperVIP() {
         return superVipDao.getAllUserExceptSuperVIP();
     }
-    @Override
-    public List<Integer> getAllUserRoles() {
-        return superVipDao.getAllUserRoles();
-    }
 
-    @Override
-    public void addUser(Long userId) {
-        superVipDao.addUser(userId);
-    }
 
     @Override
     public void removeUser(Long userId) {
         superVipDao.removeUser(userId);
     }
 
-    @Override
-    public void deleteUser(Long userId) {
-        superVipDao.deleteUser(userId);
-    }
 }

@@ -1,9 +1,11 @@
 package com.centerm.fud_demo.service;
 
+import com.centerm.fud_demo.entity.FileRecord;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * @author Sheva
@@ -42,4 +44,10 @@ public interface UploadService {
      * @param response
      */
     void checkMd5(HttpServletRequest request, HttpServletResponse response);
+
+    /**
+     * 获取最新上传文件的前五个
+     * @return
+     */
+    List<FileRecord> getLatestUploaded();
 }

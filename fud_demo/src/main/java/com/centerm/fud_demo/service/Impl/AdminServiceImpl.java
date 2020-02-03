@@ -17,16 +17,6 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminDao adminDao;
 
-    @Override
-    public List<User> getAllUser() {
-        List<User> userList = adminDao.getAllUser();
-        return userList;
-    }
-
-    @Override
-    public Integer getUserState(Long userId) {
-      return   adminDao.getUserState(userId);
-    }
 
     @Override
     public Boolean banUser(Long userId) {

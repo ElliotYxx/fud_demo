@@ -12,9 +12,13 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
+/**
+ *
+ * @author jerry
+ */
 @Component
 @Slf4j
 public class UserRealm extends AuthorizingRealm {
@@ -25,25 +29,24 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String username=(String)principals.getPrimaryPrincipal();
-        System.out.println(username);
+        log.info("当前用户为：　" + username);
         SimpleAuthorizationInfo authorizationInfo=new SimpleAuthorizationInfo();
-        authorizationInfo.setRoles(userService.findRoles(username));
-        Set<String> set=userService.findRoles(username);
-        for (String s:set)
-        {
-            System.out.println(s);
-        }
+        String roleName=userService.findRoles(username);
+        Set<String> set=new HashSet<>();
+        set.add(roleName);
+        authorizationInfo.setRoles(set);
+        log.info("当前用户角色名为： " + roleName);
         return authorizationInfo;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException{
         String username=(String)token.getPrincipal();
-        User user=null;
+        User user = null;
         try {
-            user=userService.findByUsername(username);
+            user = userService.findByUsername(username);
         }catch (NullPointerException e) {}
-        if(user==null)
+        if(null == user)
         {
             throw new UnknownAccountException();
         }

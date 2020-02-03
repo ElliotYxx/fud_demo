@@ -3,6 +3,7 @@ package com.centerm.fud_demo.dao;
 import com.centerm.fud_demo.entity.DownloadRecord;
 import com.centerm.fud_demo.entity.FileRecord;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  * File相关操作映射
  * @author sheva
  */
-@Mapper
+@Component
 public interface FileDao {
 
    /**
@@ -31,15 +32,11 @@ public interface FileDao {
     * @return
     */
    FileRecord getFileById(Long id);
-
    /**
     * 获取所有文件
     * @return
     */
    List<FileRecord> getAllFile();
-
-
-
    /**
     * 添加下载记录
     * @param downloadRecord
@@ -88,4 +85,29 @@ public interface FileDao {
    Boolean deleteFile(Long fileId);
 
 
+   /**
+    * 更新文件信息（下载次数）
+    * @param fileId 文件id
+    * @return
+    */
+   Boolean updateFile(Long fileId);
+
+   /**
+    * 删除下载信息
+    * @param fileId 文件id
+    * @return
+    */
+   Boolean deleteDownloadRecord(Long fileId);
+
+   /**
+    * 获取最新上传的前五个文件
+    * @return 文件集合
+    */
+   List<FileRecord> getLatestUploaded();
+
+   /**
+    * 获取最新下载的前五个文件
+    * @return 文件集合
+    */
+   List<FileRecord> getLatestDownloaded();
 }

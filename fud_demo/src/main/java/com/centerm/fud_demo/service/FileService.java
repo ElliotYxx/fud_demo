@@ -45,17 +45,17 @@ public interface FileService {
     Boolean deleteFile(Long fileId);
 
     /**
-     * 通过id获取文件
-     * @param id 文件id
-     * @return file实体类
-     */
-    FileRecord getFileById(Long id);
-
-    /**
      * 获取所有文件
      * @return
      */
     List<FileRecord> getAllFile();
+
+    /**
+     * 更新文件（downloadTimes加1）
+     * @param fileId 文件id
+     * @return
+     */
+    Boolean updateFile(Long fileId);
 
 
 

@@ -4,6 +4,11 @@
 <mapper namespace="com.centerm.fud_demo.dao.FileDao">
     <parameterMap id="FileRecord" type="com.centerm.fud_demo.entity.FileRecord"/>
     <parameterMap id="DownloadRecord" type="com.centerm.fud_demo.entity.DownloadRecord"/>
+    <update id="updateFile" parameterType="long">
+        UPDATE fud.file
+        SET download_times=download_times+1
+        WHERE file.id=#{fileId}
+    </update>
     <select id="getFileByUserId" parameterType="long" resultType="com.centerm.fud_demo.entity.FileRecord">
         SELECT file.id, file.name, file.size, file.suffix, file.create_time createTime
         FROM fud.file
@@ -20,6 +25,10 @@
     <delete id="deleteFile" parameterType="long">
         DELETE FROM fud.file
         WHERE file.id=#{fileId}
+    </delete>
+    <delete id="deleteDownloadRecord" parameterType="long">
+        DELETE FROM fud.download
+        WHERE download.file_id=#{fileId}
     </delete>
     <insert id="addDownloadRecord" parameterMap="DownloadRecord">
         INSERT INTO download(create_time, user_id, file_id)
@@ -42,17 +51,30 @@
         LIMIT 0,5
     </select>
     <select id="getDownloadTimesByUserId" parameterType="long" resultType="java.lang.Long">
-        SELECT SUM(fud.file.download_times)
-        FROM file
-        WHERE fud.file.user_id = #{userId}
+        SELECT IFNULL(SUM(file.download_times), 0)
+        FROM fud.file
+        WHERE file.user_id = #{userId}
     </select>
     <select id="getDownloadTimes" resultType="java.lang.Long">
-        SELECT SUM(fud.file.download_times)
-        FROM file
+        SELECT IFNULL(SUM(file.download_times), 0)
+        FROM fud.file
     </select>
     <select id="getUploadTimes" resultType="java.lang.Long">
-        SELECT COUNT(*)
-        FROM file
+        SELECT IFNULL(COUNT(*), 0)
+        FROM fud.file
+    </select>
+    <select id="getLatestUploaded" resultType="com.centerm.fud_demo.entity.FileRecord">
+        SELECT file.name, file.create_time createTime
+        FROM fud.file
+        ORDER BY create_time
+        LIMIT 0, 5
+    </select>
+    <select id="getLatestDownloaded" resultType="com.centerm.fud_demo.entity.FileRecord">
+        SELECT f.name, d.create_time
+        FROM fud.file f, fud.download d
+        WHERE d.file_id=f.id
+        ORDER BY d.create_time
+        LIMIT 0, 5
     </select>
 
 

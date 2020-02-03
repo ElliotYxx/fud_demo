@@ -7,18 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface AdminService {
-    /**
-     * 获取所有用户
-     * @return
-     */
-    List<User> getAllUser();
-
-    /**
-     * 获取用户状态
-     * @param user_id
-     * @return
-     */
-    Integer getUserState(Long user_id);
 
     /**
      * ban用户

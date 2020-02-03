@@ -6,6 +6,7 @@ import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.service.*;
 import com.centerm.fud_demo.shiro.UserRealm;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.Logical;
@@ -30,6 +31,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RequestMapping("admin")
 @Slf4j
 public class AdminController {
+
+    static final Integer BAN = 1;
     @Autowired
     AdminService adminService;
     @Autowired
@@ -47,11 +50,6 @@ public class AdminController {
     public String adminDownload(HttpServletRequest request)
     {
         List<FileRecord> fileList=fileService.getAllFile();
-        log.info("正在获取所有文件");
-        for (FileRecord file :
-                fileList) {
-            log.info(file.getName() + "");
-        }
         request.setAttribute("fileList",fileList);
         return "admin/filelist";
     }
@@ -78,6 +76,13 @@ public class AdminController {
         User user=(User)request.getSession().getAttribute("user");
         Long userId=user.getId();
         List<User> userList = adminService.getUserExceptAdminAndSuperVIP(userId);
+        for (User currUSer : userList) {
+            if (currUSer.getState().equals(BAN)) {
+                currUSer.setStateName("封禁");
+            }else{
+                currUSer.setStateName("正常");
+            }
+        }
         request.setAttribute("userList",userList);
         return "admin/ban";
     }

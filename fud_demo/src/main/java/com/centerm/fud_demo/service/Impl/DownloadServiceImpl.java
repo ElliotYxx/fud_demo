@@ -11,10 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.net.URLEncoder;
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class DownloadServiceImpl implements DownloadService {
 
     @Override
     public Boolean addDownloadRecord(DownloadRecord downloadRecord) {
-        return null;
+        return fileDao.addDownloadRecord(downloadRecord);
     }
 
     @Override
@@ -51,53 +48,38 @@ public class DownloadServiceImpl implements DownloadService {
     }
 
     @Override
-    public void downloadFile(Long id, HttpServletResponse response, HttpServletRequest request) {
-        response.reset();
+    public Boolean deleteDownloadRecord(Long fileId) {
+        return fileDao.deleteDownloadRecord(fileId);
+    }
+
+    @Override
+    public List<FileRecord> getLatestDownloaded() {
+        return fileDao.getLatestDownloaded();
+    }
+
+    @Override
+    public void downloadFile(Long id, HttpServletResponse response) {
         FileRecord downloadFile = fileDao.getFileById(id);
         File file = new File(downloadFile.getLocalUrl());
+        if (!file.exists()){
+            log.error("文件不存在");
+        }
         response.reset();
+        response.setContentType("application/octet-stream");
+        response.setCharacterEncoding("utf-8");
         response.setContentLength((int) file.length());
-        response.setContentType("application/force-download");
-        try{
-            response.addHeader("Content-Disposition",
-                    "attachment;fileName=" + URLEncoder.encode(downloadFile.getName(), "UTF-8"));
-        }catch (UnsupportedEncodingException e){
-            log.error("UnsupportedEncodingException...");
-            log.error(e.getMessage());
-        }
-        FileInputStream fileInputStream = null;
-        ServletOutputStream outputStream = null;
-        try{
-            log.info("download start....");
-            fileInputStream = new FileInputStream(file);
-            byte[] buffers = new byte[1024];
-            outputStream = response.getOutputStream();
-            int length;
-            while((length = fileInputStream.read(buffers)) > 0){
-                outputStream.write(buffers, 0, length);
+        response.setHeader("Content-Disposition", "attachment;filename=" + file.getName());
+        try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file))){
+            byte[] buff = new byte[1024];
+            OutputStream os = response.getOutputStream();
+            int i = 0;
+            while((i = bis.read(buff)) != -1){
+                os.write(buff, 0, i);
+                os.flush();
             }
-            log.info("download finished...");
         }catch (IOException e){
-            log.error("IOException...");
-            log.error(e.getMessage());
-        }finally {
-            if (fileInputStream != null){
-                try{
-                    fileInputStream.close();
-                }catch (IOException e){
-                    log.error("IOException");
-                    log.error(e.getMessage());
-                }
-            }
-            if (outputStream != null){
-                try{
-                    outputStream.flush();
-                    outputStream.close();
-                }catch (IOException e){
-                    log.error("IOException");
-                    log.error(e.getMessage());
-                }
-            }
+            log.error("{}", e);
         }
+        log.info("下载成功");
     }
 }

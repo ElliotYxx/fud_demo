@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.centerm.fud_demo.dao.AdminDao">
     <select id="getAllUser" resultType="com.centerm.fud_demo.entity.User">
-        SELECT user.id, user.username, user.password, user.create_time createTime, user.state
+        SELECT user.id, user.username, user.password, user.create_time createTime, user.state, user.role_id roleId
         FROM fud.user
     </select>
     <select id="getUserState" resultType="int" parameterType="long">
@@ -22,10 +22,8 @@
        WHERE fud.user.id=#{userId}
     </update>
     <select id="getUserExceptAdminAndSuperVIP" resultType="com.centerm.fud_demo.entity.User" parameterType="long">
-        SELECT user.id, user.username, user.password, user.create_time createTime, user.state
+        SELECT user.id, user.username, user.password, user.create_time createTime, user.state, user.role_id roleId
         FROM fud.user
-        LEFT JOIN fud.user_role
-        ON fud.user_role.user_id=fud.user.id
-        WHERE fud.user_role.role_id !=2 AND fud.user_role.role_id !=3
+        WHERE fud.user.role_id!=2 AND fud.user.role_id!=3
     </select>
 </mapper>
