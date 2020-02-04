@@ -210,10 +210,10 @@
                                         <td style="width:50px;">
                                             <span class="round" th:id="a+${fileStat.index+1}" th:text="${#strings.substring(file.name,0,1)}" ></span></td>
                                         <td>
-                                            <h6 th:text="${file.name}"></h6><small class="text-muted" th:text="${file.size}"></small>
+                                            <h6 th:text="${#strings.substring(file.name, 0, file.name.lastIndexOf('.'))}"></h6><small class="text-muted" th:text="${file.size}"></small>
                                         </td>
                                         <td th:text="${file.suffix}"></td>
-                                        <td th:text="${file.createTime}"></td>
+                                        <td th:text="${#dates.format(file.createTime, 'yyyy-MM-dd')}"></td>
                                         <td th:text="${file.downloadTimes}"></td>
                                     </tr>
                                     </tbody>
@@ -308,7 +308,7 @@
                                         <td>
                                             <h6 th:text="${file.name}"></h6>
                                         </td>
-                                        <td class="text-muted" th:text="${file.createTime}"></td>
+                                        <td class="text-muted" th:text="${#dates.format(file.createTime, 'yyyy-MM-dd')}"></td>
                                     </tr>
                                     </tbody>
 
@@ -341,7 +341,7 @@
                                         <td>
                                             <h6 th:text="${file.name}"></h6>
                                         </td>
-                                        <td class="text-muted" th:text="${file.createTime}"></td>
+                                        <td class="text-muted" th:text="${#dates.format(file.createTime, 'yyyy-MM-dd')}"></td>
                                     </tr>
                                     </tbody>
                                 </table>
