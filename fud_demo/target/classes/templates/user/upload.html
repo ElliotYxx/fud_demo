@@ -1,36 +1,158 @@
 <!DOCTYPE html>
-<html lang="en" xml:th="http://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
-<link>
-<meta charset="UTF-8">
-<title>Title</title>
-<link rel="stylesheet" th:href="@{/webuploader/webuploader.css}"/>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>文件上传</title>
+    <link th:href="@{/css/util/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/css/index/style.css}" rel="stylesheet">
+    <link th:href="@{/css/index/default.css}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/index/spinners.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome/css/font-awesome.css}">
+    <link rel="stylesheet" th:href="@{/css/util/animate.css}">
+    <link th:href="@{/css/util/sweetalert2.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/webuploader/webuploader.css}"/>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+   <!-- <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">-->
 </head>
-<body>
-<div class="container">
-    <div class="row" style="margin-top: 20px;">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">上传</h3>
+
+<body class="fix-header card-no-border fix-sidebar">
+
+
+<div id="main-wrapper">
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.github.com"/>
+                <span>
+                  <i class="fa fa-github fa-2x" style="color: #5a84fd"></i>
+                    </span>
+            </div>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                    <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                        <form class="app-search">
+                            <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="fa fa-times"></i></a> </form>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav my-lg-0">
+                    <li class="nav-item dropdown u-pro">
+                        <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="round round-success" th:text="${session.index}"></span>&nbsp;<span class="hidden-md-down" th:text="${session.user.username}"></span> </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li>
+                        <a class="waves-effect waves-dark" th:href="@{/user/index}" aria-expanded="false"><i class="fa fa-bar-chart" style="color: #51b2fd"></i><span class="hide-menu" >数据分析</span></a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-dark" th:href="@{/user/information}" aria-expanded="false"><i class="fa fa-user-circle-o" style="color: #fdca56"></i><span class="hide-menu">个人信息</span></a>
+                    </li>
+                    <li >
+                        <a class="waves-effect waves-dark" th:href="@{/user/download}" aria-expanded="false"><i class="fa fa-chevron-circle-down" style="color: #aa61fd"></i><span class="hide-menu">我的文件下载</span></a>
+                    </li>
+                    <li class="active">
+                        <a class="waves-effect waves-dark" th:href="@{/user/toUploading}" aria-expanded="false"><i class="fa fa-bar-chart" style="color: #51b2fd"></i><span class="hide-menu" >文件上传</span></a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a class="waves-effect waves-dark" th:href="@{/user/toUser_hotFile}" aria-expanded="false"><i class="fa fa-heart" style="color: #fd5e6f"></i><span class="hide-menu">查看热门文件</span></a>-->
+<!--                    </li>-->
+                    <li>
+                        <a class="waves-effect waves-dark" th:href="@{/user/filemanager}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">已上传文件管理</span></a>
+                    </li>
+                    <shiro:hasAnyRoles name="SUPERVIP,ADMIN">
+                        <li>
+                            <a class="waves-effect waves-dark" th:href="@{/admin/index}" aria-expanded="false"><i class="fa fa-user-plus" style="color: #fd55af"></i><span class="hide-menu">管理员中心</span></a>
+                        </li>
+                    </shiro:hasAnyRoles>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+
+        <div class="container-fluid">
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">文件上传</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">上传</li>
+                    </ol>
                 </div>
-                <div class="panel-body">
-                    <div id="uploader" class="wu-example">
-                        <!--用来存放文件信息-->
-                        <div id="thelist" class="uploader-list"></div>
-                        <div class="btns">
-                            <div id="picker">选择文件</div>
-                            <button id="ctlBtn" class="btn btn-default">开始上传</button>
+                <div class="col-md-7 align-self-center">
+                    <a th:href="@{/user/logout}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Logout</a>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <!-- column -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">File Upload</h4>
+                            <div class="table-responsive">
+                                <form action="#" method="#" class="form-horizontal form-material">
+                                <div class="form-group">
+                                    <div class="col-sm-4 control-label">选择文件</div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input id='location' class="form-control" onclick="$('#i-file').click();">
+                                            <label class="input-group-btn">
+                                                <input type="button" id="i-check" value="浏览文件" class="btn btn-primary" onclick="$('#i-file').click();">
+                                            </label>
+                                            <div id="picker">选择文件</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12" style="right: -160px">
+                                        <button id="ctlBtn" type="button" class="btn btn-success">Upload</button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div id="thelist" class="uploader-list"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-</body>
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/js/index/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.jquery.min.js}"></script>
+<script th:src="@{/js/index/waves.js}"></script>
+<script th:src="@{/js/index/sidebarmenu.js}"></script>
+<script th:src="@{/js/index/custom.min.js}"></script>
+<script th:src="@{/js/index/jquery.peity.min.js}"></script>
+<script th:src="@{/js/index/jquery.peity.init.js}"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script type="application/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 <script type="application/javascript" th:src="@{/js/jquery-3.4.1.min.js}"></script>
@@ -42,21 +164,31 @@
         $btn = $('#ctlBtn'),
         state = 'pending',
         uploader;
-    var fileMd5;//文件的MD5值
-    var fileName;//文件名称
+    //文件的MD5值
+    var fileMd5;
+    //文件名称
+    var fileName;
     var blockSize = 10 * 1024 * 1024;
-    var md5Arr = new Array(); //文件MD5数组
-    var timeArr = new Array();//文件上传时间戳数组
+    //文件MD5数组
+    var md5Arr = new Array();
+    //文件上传时间戳数组
+    var timeArr = new Array();
     WebUploader.Uploader.register({
-        "before-send-file": "beforeSendFile",//整个文件上传前
-        "before-send": "beforeSend",//每个分片上传前
-        "after-send-file": "afterSendFile"//分片上传完毕
+        //整个文件上传前
+        "before-send-file": "beforeSendFile",
+        //每个分片上传前
+        "before-send": "beforeSend",
+        //分片上传完毕
+        "after-send-file": "afterSendFile"
     }, {
         //1.生成整个文件的MD5值
         beforeSendFile: function (file) {
-            var index = file.id.slice(8);//文件下标
-            var startTime = new Date();//一个文件上传初始化时，开始计时
-            timeArr[index] = startTime;//将每一个文件初始化时的时间放入时间数组
+            //文件下标
+            var index = file.id.slice(8);
+            //一个文件上传初始化时，开始计时
+            var startTime = new Date();
+            //将每一个文件初始化时的时间放入时间数组
+            timeArr[index] = startTime;
             var deferred = WebUploader.Deferred();
             //计算文件的唯一标记fileMd5，用于断点续传  如果.md5File(file)方法里只写一个file参数则计算MD5值会很慢 所以加了后面的参数：10*1024*1024
             (new WebUploader.Uploader())
@@ -68,8 +200,10 @@
                     $("#" + file.id).find('p.state').text('成功获取文件信息...');
                     fileMd5 = value;
                     var index = file.id.slice(8);
-                    md5Arr[index] = fileMd5;//将文件的MD5值放入数组，以便分片合并时能够取到当前文件对应的MD5
-                    uploader.options.formData.guid = fileMd5;//全局的MD5
+                    //将文件的MD5值放入数组，以便分片合并时能够取到当前文件对应的MD5
+                    md5Arr[index] = fileMd5;
+                    //全局的MD5
+                    uploader.options.formData.guid = fileMd5;
                     deferred.resolve();
                 });
             fileName = file.name;
@@ -89,8 +223,10 @@
                     guid: uploader.options.formData.guid,
                 },
                 cache: false,
-                async: false, // 与js同步
-                timeout: 1000, // 超时的话，只能认为该分片未上传过
+                // 与js同步
+                async: false,
+                // 超时的话，只能认为该分片未上传过
+                timeout: 1000,
                 dataType: "json",
                 success: function (response) {
                     if (response.ifExist) {
@@ -195,12 +331,13 @@
             $btn.text('开始上传');
         }
     });
-    //开始上传，暂停上传的函数
+    //开始上传，暂停上传的函数 1
     $btn.on('click', function () {
         //每个文件的删除按钮不可用
         $(".delbtn").attr("disabled", true);
         if (state === 'uploading') {
-            uploader.stop(true);//暂停
+            //暂停
+            uploader.stop(true);
             //删除按钮可用
             $(".delbtn").removeAttr("disabled");
         } else {
@@ -240,10 +377,11 @@
         if (seconds > 0) {
             str += seconds + " 秒 ";
         } else {
-
             str += " < 1 秒";
         }
         return str;
     }
 </script>
+</body>
+
 </html>

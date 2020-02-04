@@ -1,4 +1,5 @@
 package com.centerm.fud_demo.controller;
+import com.centerm.fud_demo.entity.BackupRecord;
 import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.exception.AccountBanException;
@@ -43,15 +44,25 @@ public class AdminController {
     DownloadService downloadService;
     @Autowired
     UploadService uploadService;
+    @Autowired
+    BackupService backupService;
 
 
     @GetMapping("file")
     @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
     public String adminDownload(HttpServletRequest request)
     {
-        List<FileRecord> fileList=fileService.getAllFile();
+        List<FileRecord> fileList = fileService.getAllFile();
         request.setAttribute("fileList",fileList);
         return "admin/filelist";
+    }
+
+    @GetMapping("backup")
+    @RequiresRoles(value = {"ADMIN","SUPERVIP"},logical = Logical.OR)
+    public String backupList(HttpServletRequest request){
+        List<BackupRecord> backupList = backupService.getAllBackup();
+        request.setAttribute("backupList", backupList);
+        return "admin/backup";
     }
 
     @GetMapping("index")
@@ -132,7 +143,21 @@ public class AdminController {
     public ModelAndView toDelete(Long fileId) {
         ModelAndView mv = new ModelAndView();
         fileService.deleteFile(fileId);
+        downloadService.deleteDownloadRecord(fileId);
         mv.setViewName("redirect:/admin/file");
+        return mv;
+    }
+
+    /**
+     * @param fileId 文件id
+     * @return
+     */
+    @ApiOperation("删除备份文件")
+    @GetMapping("deleteBackup")
+    public ModelAndView deleteBackup(Long fileId) {
+        ModelAndView mv = new ModelAndView();
+        backupService.deleteBackup(fileId);
+        mv.setViewName("redirect:/admin/backup");
         return mv;
     }
 

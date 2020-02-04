@@ -1,6 +1,9 @@
 package com.centerm.fud_demo.service.Impl;
 import com.centerm.fud_demo.dao.FileDao;
+import com.centerm.fud_demo.entity.BackupRecord;
 import com.centerm.fud_demo.entity.FileRecord;
+import com.centerm.fud_demo.service.BackupService;
+import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UploadService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +38,8 @@ public class UploadServiceImpl implements UploadService {
 
     @Autowired
     FileDao fileDao;
+    @Autowired
+    BackupService backupService;
 
     @Override
     public Long getUploadTimes() {
@@ -47,7 +52,7 @@ public class UploadServiceImpl implements UploadService {
     }
 
     @Override
-    public void upload(MultipartFile file, Integer chunk, String guid, Long uploaderId) throws Exception {
+    public void upload(MultipartFile file, Integer chunk, String guid, Long uploaderId){
         String filePath = uploadPath + "temp" + File.separator + guid;
         File tempFile = new File(filePath);
         userId = uploaderId;
@@ -71,13 +76,21 @@ public class UploadServiceImpl implements UploadService {
                 raFile.write(buf, 0, length);
             }
         } catch (Exception e) {
-            throw new IOException(e.getMessage());
+            log.error("Exception: " + e.getMessage());
         } finally {
             if (inputStream != null) {
-                inputStream.close();
+                try{
+                    inputStream.close();
+                }catch (Exception e){
+                    log.error("inputStream: " + e.getMessage());
+                }
             }
             if (raFile != null) {
-                raFile.close();
+                try{
+                    raFile.close();
+                }catch (Exception e){
+                    log.error("raFile: " + e.getMessage());
+                }
             }
         }
     }
@@ -86,7 +99,8 @@ public class UploadServiceImpl implements UploadService {
         //分片文件临时目录
         File tempPath = new File(uploadPath + "temp" + File.separator + guid);
         //真实上传路径
-        File realPath = new File(uploadPath + "real");
+        String filePath = uploadPath + "real";
+        File realPath = new File(filePath);
         if (!realPath.exists()) {
             realPath.mkdir();
         }
@@ -141,8 +155,11 @@ public class UploadServiceImpl implements UploadService {
                 }
                 log.info("combine finished...");
                 log.info("file name is " + fileName + ", MD5: " + guid);
+                FileRecord fileRecord = new FileRecord(fileName, uploadPath + "real" + File.separator + fileName,
+                        String.valueOf(realFile.length()), userId, guid, fileName.substring(fileName.lastIndexOf("."), fileName.length()), new Timestamp(System.currentTimeMillis()));
+                fileDao.addFile(fileRecord);
                 //备份
-                backup(uploadPath + "real" + File.separator, backupPath, fileName, guid);
+                backupFile(filePath + File.separator, backupPath, fileName);
             }
         } catch (Exception e) {
             log.error("combine failed...");
@@ -150,45 +167,7 @@ public class UploadServiceImpl implements UploadService {
         }
     }
 
-    public void backup(String copyFrom, String copyTo, String fileName, String guid){
-        log.info("backup start...");
-        long start = System.currentTimeMillis();
-        File source = new File(copyFrom + fileName);
-        File target = new File(copyTo + fileName);
-        File targetFolder = new File(copyTo);
-        FileInputStream in = null;
-        FileOutputStream out = null;
-        if (!source.exists() || !source.isFile()){
-            log.error("source doesn't exists or source isn't a file...");
-        }
-        String fileSize = String.valueOf(source.length());
-        String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
-        if (!targetFolder.exists()){
-            targetFolder.mkdirs();
-        }
-        try{
-            target.createNewFile();
-            in = new FileInputStream(source);
-            out = new FileOutputStream(target);
-            FileChannel inChannel = in.getChannel();
-            WritableByteChannel outChannel = out.getChannel();
-            inChannel.transferTo(0, inChannel.size(), outChannel);
-            inChannel.close();
-            outChannel.close();
-            in.close();
-            out.close();
-        }catch (FileNotFoundException e){
-            log.error("File not found...");
-        }catch (IOException e){
-            log.error(e.getMessage());
-        }
-        FileRecord fileRecord = new FileRecord(fileName, copyFrom + fileName,
-                fileSize, userId, guid, fileType, new Timestamp(System.currentTimeMillis()));
-        fileDao.addFile(fileRecord);
-        long end = System.currentTimeMillis();
-        log.info("backup finished...");
-        log.info("backup lasts：" + (end-start) + "ms");
-   }
+
 
     @Override
     public void checkMd5(HttpServletRequest request, HttpServletResponse response) {
@@ -211,8 +190,48 @@ public class UploadServiceImpl implements UploadService {
                 response.getWriter().write("{\"ifExist\":0}");
             }
         } catch (IOException e) {
+            log.error("IOException: " + e.getMessage());
+        }
+    }
+
+    public void backupFile(String copyFrom, String copyTo, String fileName) {
+        log.info("backup start...");
+        long start = System.currentTimeMillis();
+        File source = new File(copyFrom + fileName);
+        File target = new File(copyTo + fileName);
+        File targetFolder = new File(copyTo);
+        FileInputStream in = null;
+        FileOutputStream out = null;
+        if (!source.exists() || !source.isFile()){
+            log.error("source doesn't exists or source isn't a file...");
+        }
+        if (!targetFolder.exists()){
+            targetFolder.mkdirs();
+        }
+        try{
+            target.createNewFile();
+            in = new FileInputStream(source);
+            out = new FileOutputStream(target);
+            FileChannel inChannel = in.getChannel();
+            WritableByteChannel outChannel = out.getChannel();
+            inChannel.transferTo(0, inChannel.size(), outChannel);
+            inChannel.close();
+            outChannel.close();
+            in.close();
+            out.close();
+        }catch (FileNotFoundException e){
+            log.error("File not found...");
+        }catch (IOException e){
             log.error(e.getMessage());
         }
+
+
+        log.info("backup finished...");
+        Long fileId = fileDao.getFileIdByFileName(fileName);
+        BackupRecord backupRecord = new BackupRecord(fileId, fileName, copyTo + fileName, userId, new Timestamp(System.currentTimeMillis()));
+        fileDao.addBackupRecord(backupRecord);
+        long end = System.currentTimeMillis();
+        log.info("backup lasts：" + (end-start) + "ms");
     }
 
 

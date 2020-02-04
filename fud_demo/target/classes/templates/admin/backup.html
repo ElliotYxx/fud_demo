@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>账号管理</title>
+    <title>备份文件管理</title>
     <link th:href="@{/css/util/bootstrap.css}" rel="stylesheet">
     <link th:href="@{/css/index/style.css}" rel="stylesheet">
     <link th:href="@{/css/index/default.css}" id="theme" rel="stylesheet">
@@ -59,14 +59,14 @@
                     </li>
                     <li> <a class="waves-effect waves-dark" th:href="@{/admin/file}" aria-expanded="false"><i class="fa fa-envelope" style="color: #ff74c3"></i><span class="hide-menu">文件查询</span></a>
                     </li>
-                    <li class="active"> <a class="waves-effect waves-dark" th:href="@{/admin/ban}" aria-expanded="false"><i class="fa fa-window-close-o" style="color: #5fb9ff"></i><span class="hide-menu">账号封禁</span></a>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/admin/ban}" aria-expanded="false"><i class="fa fa-window-close-o" style="color: #5fb9ff"></i><span class="hide-menu">账号封禁</span></a>
                     </li>
                     <shiro:hasAnyRoles name="SUPERVIP">
                         <li> <a class="waves-effect waves-dark" th:href="@{/supervip/permission}" aria-expanded="false"><i class="fa fa-user-plus" style="color: #9fff53"></i><span class="hide-menu">授权管理员</span></a>
                         </li>
                     </shiro:hasAnyRoles>
                     </li>
-                    <li> <a class="waves-effect waves-dark" th:href="@{/admin/backup}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">备份文件管理</span></a>
+                    <li class="active"> <a class="waves-effect waves-dark" th:href="@{/admin/backup}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">备份文件管理</span></a>
                     </li>
                     <li> <a class="waves-effect waves-dark" th:href="@{/user/index}" aria-expanded="false"><i class="fa fa-exchange" style="color: #c37fff"></i><span class="hide-menu">返回用户页面</span></a>
                     </li>
@@ -86,10 +86,10 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">账号管理</h3>
+                    <h3 class="text-themecolor">所有备份文件管理</h3>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
-                        <li class="breadcrumb-item active">账号管理</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">备份文件管理</li>
                     </ol>
                 </div>
                 <div class="col-md-7 align-self-center">
@@ -104,25 +104,25 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Account Management</h4>
+                            <h4 class="card-title">File Management</h4>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                     <tr>
-<!--                                        <th>#</th>-->
-                                        <th>账号名</th>
-                                        <th>创建时间</th>
-                                        <th>账号状态</th>
-                                        <th>封禁/解冻</th>
+                                        <th>文件名</th>
+                                        <th>文件地址</th>
+                                        <th>备份时间</th>
+                                        <th>文件下载</th>
+                                        <th>文件删除</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="user:${userList}">
-<!--                                        <th scope="row" th:text="${user.id}"/>-->
-                                        <td th:text="${user.username}"></td>
-                                        <td th:text="${user.createTime}"></td>
-                                        <td th:text="${user.stateName}"></td>
-                                        <td><a th:href="@{/admin/banUser(username=${user.username})}">操作</a></td>
+                                    <tr th:each="file:${backupList}">
+                                        <td th:text="${file.name}"></td>
+                                        <td th:text="${file.localUrl}"></td>
+                                        <td th:text="${file.createTime}"></td>
+                                        <td><a th:href="@{/download/toDownload(id=${file.fileId})}">下载</a></td>
+                                        <td><a th:href="@{/admin/deleteBackup(fileId=${file.fileId})}">删除</a></td>
                                     </tr>
                                     </tbody>
                                 </table>

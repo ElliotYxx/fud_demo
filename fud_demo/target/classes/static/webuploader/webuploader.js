@@ -8,7 +8,6 @@
  */
 (function (root, factory) {
     var modules = {},
-
         // 内部require, 简单不完全实现。
         // https://github.com/amdjs/amdjs-api/wiki/require
         _require = function (deps, callback) {

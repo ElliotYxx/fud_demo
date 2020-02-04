@@ -70,6 +70,7 @@ public class DownloadServiceImpl implements DownloadService {
         response.setContentLength((int) file.length());
         response.setHeader("Content-Disposition", "attachment;filename=" + file.getName());
         try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file))){
+            log.info("开始下载: " + downloadFile.getName());
             byte[] buff = new byte[1024];
             OutputStream os = response.getOutputStream();
             int i = 0;
@@ -77,9 +78,11 @@ public class DownloadServiceImpl implements DownloadService {
                 os.write(buff, 0, i);
                 os.flush();
             }
+            log.info("下载成功");
+
         }catch (IOException e){
-            log.error("{}", e);
+            log.error("{用户取消了下载...}");
         }
-        log.info("下载成功");
+
     }
 }

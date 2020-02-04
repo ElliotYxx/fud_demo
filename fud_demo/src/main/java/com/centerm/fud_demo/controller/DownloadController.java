@@ -5,6 +5,7 @@ import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.service.DownloadService;
 import com.centerm.fud_demo.service.FileService;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -24,6 +26,7 @@ import java.util.Date;
 
 @Controller
 @ResponseBody
+@Slf4j
 @RequestMapping("download")
 public class DownloadController {
     User currUser = null;
@@ -45,7 +48,6 @@ public class DownloadController {
         DownloadRecord downloadRecord = new DownloadRecord(new Timestamp(System.currentTimeMillis()), currUser.getId(), id);
         downloadService.addDownloadRecord(downloadRecord);
         fileService.updateFile(id);
-        downloadService.deleteDownloadRecord(id);
         return "user/download";
     }
 }

@@ -18,6 +18,33 @@
     <link th:href="@{/css/index/default.css}" id="theme" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/font-awesome/css/font-awesome.css}">
     <link rel="stylesheet" th:href="@{/css/index/spinners.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var a1=document.getElementById("a1"); getColor(a1);
+            var a2=document.getElementById("a2"); getColor(a2);
+            var a3=document.getElementById("a3"); getColor(a3);
+            var a4=document.getElementById("a4");getColor(a4);
+            var a5=document.getElementById("a5");getColor(a5);
+
+            /*  var b1=document.getElementById("b1"); getColor(b1);
+              var b2=document.getElementById("b2"); getColor(b2);
+              var b3=document.getElementById("b3"); getColor(b3);
+              var b4=document.getElementById("b4");getColor(b4);
+              var b5=document.getElementById("b5");getColor(b5);*/
+
+            var c1=document.getElementById("c1"); getColor(c1);
+            var c2=document.getElementById("c2"); getColor(c2);
+            var c3=document.getElementById("c3"); getColor(c3);
+            var c4=document.getElementById("c4");getColor(c4);
+            var c5=document.getElementById("c5");getColor(c5);
+            function getColor(x) {
+                x.style.background = 'rgb(' + Math.ceil(Math.random() * 255) + ',' + Math.ceil(Math.random() * 255) + ',' + Math.ceil(Math.random() * 255) + ')';
+            }
+        });
+
+
+    </script>
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -35,7 +62,7 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="http://www.github.com"/>
                 <span>
-                    <i class="fa fa-github fa-3x" style="color: #5a84fd"></i>
+                    <i class="fa fa-github fa-2x" style="color: #5a84fd"></i>
                 </span>
             </div>
 
@@ -72,8 +99,8 @@
                     </li>
                     <li> <a class="waves-effect waves-dark" th:href="@{/user/toUpload}" aria-expanded="false"><i class="fa fa-chevron-circle-up" style="color: #5a84fd"></i><span class="hide-menu">文件上传</span></a>
                     </li>
-<!--                    <li> <a class="waves-effect waves-dark" th:href="@{/user/hotfile}" aria-expanded="false"><i class="fa fa-heart" style="color: #fd5e6f"></i><span class="hide-menu">查看热门文件</span></a>-->
-<!--                    </li>-->
+                    <!--                    <li> <a class="waves-effect waves-dark" th:href="@{/user/hotfile}" aria-expanded="false"><i class="fa fa-heart" style="color: #fd5e6f"></i><span class="hide-menu">查看热门文件</span></a>-->
+                    <!--                    </li>-->
                     <li> <a class="waves-effect waves-dark" th:href="@{/user/filemanager}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">已上传文件管理</span></a>
                     </li>
                     <shiro:hasAnyRoles name="SUPERVIP,ADMIN">
@@ -128,7 +155,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="" id="sales-chart" style="height: 355px;"></div>
+                            <div class="" id="upload-download-chart" style="height: 355px;"></div>
                         </div>
                     </div>
                 </div>
@@ -145,10 +172,10 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="visitor" style="height:260px; width:100%;"></div>
+                            <div id="files" style="height:260px; width:100%;"></div>
                             <ul class="list-inline m-t-30 text-center font-12">
-                                <li><i class="fa fa-circle text-purple"></i>视频</li>
-                                <li><i class="fa fa-circle text-success"></i>文档</li>
+                                <li><i class="fa fa-circle text-purple"></i>文档</li>
+                                <li><i class="fa fa-circle text-success"></i>媒体</li>
                                 <li><i class="fa fa-circle text-info"></i>其他</li>
                             </ul>
                         </div>
@@ -180,7 +207,8 @@
                                     </thead>
                                     <tbody>
                                     <tr th:each="file:${mostDownloaded}">
-                                        <td style="width:50px;"><span class="round">白</span></td>
+                                        <td style="width:50px;">
+                                            <span class="round" th:id="a+${fileStat.index+1}" th:text="${#strings.substring(file.name,0,1)}" ></span></td>
                                         <td>
                                             <h6 th:text="${file.name}"></h6><small class="text-muted" th:text="${file.size}"></small>
                                         </td>
@@ -263,27 +291,30 @@
                     <div class="card ">
                         <div class="card-body">
                             <h5 class="card-title">最新下载文件</h5>
-                            <ul class="feeds">
-                                <li th:each="file:${latestDownloaded}">
-                                    <div class="bg-light-info">
-                                        <i class="fa fa-bell-o">
-                                        </i>
-                                    </div>
-                                    <span class="text-muted" th:text="${file.createTime}"></span>
-                                </li>
-<!--                                <li>-->
-<!--                                    <div class="bg-light-success"><i class="fa fa-server"></i></div>Tomcat开发指南<span class="text-muted">2 Hours ago</span></li>-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div>操作系统<span class="text-muted">31 May</span></li>-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-danger"><i class="fa fa-user"></i></div>什么值得买<span class="text-muted">30 May</span></li>-->
-<!--                                <li>-->
-<!--                                    <div class="bg-light-inverse">-->
-<!--                                        <i class="fa fa-bell-o"></i>-->
-<!--                                    </div>MacPro说明书-->
-<!--                                    <span class="text-muted">27 May</span>-->
-<!--                                </li>-->
-                            </ul>
+                            <div class="table-responsive m-t-20 no-wrap">
+                                <table class="table vm no-th-brd pro-of-month">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2">文件名</th>
+                                        <th>下载日期</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="file:${latestDownloaded}">
+                                        <td style="width:50px;">
+                                        <span class="round" th:id="b+${fileStat.index+1}" th:text="${#strings.substring(file.name,0,1)}" >
+                                        </span>
+                                        </td>
+                                        <td>
+                                            <h6 th:text="${file.name}"></h6>
+                                        </td>
+                                        <td class="text-muted" th:text="${file.createTime}"></td>
+                                    </tr>
+                                    </tbody>
+
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -293,47 +324,60 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">最新上传文件</h5>
-                            <ul class="feeds">
-                                <li th:each="file:${latestUploaded}">
-                                    <div class="bg-light-info">
-                                        <i class="fa fa-bell-o"></i>
-                                    </div>
-                                    <span class="text-muted" th:text="${file.createTime}"></span>
-                                </li>
-                            </ul>
+                            <div class="table-responsive m-t-20 no-wrap">
+                                <table class="table vm no-th-brd pro-of-month">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2">文件名</th>
+                                        <th>上传日期</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="file:${latestUploaded}">
+                                        <td style="width:50px;">
+                                        <span class="round" th:id="c+${fileStat.index+1}" th:text="${#strings.substring(file.name,0,1)}" >
+                                        </span>
+                                        </td>
+                                        <td>
+                                            <h6 th:text="${file.name}"></h6>
+                                        </td>
+                                        <td class="text-muted" th:text="${file.createTime}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
+                    <!-- End Feeds -->
                 </div>
-                <!-- End Feeds -->
+
             </div>
 
         </div>
 
     </div>
 
-</div>
-
-<script th:src="@{/js/jquery.js}"></script>
-<!-- Bootstrap popper Core JavaScript -->
-<script th:src="@{/js/index/popper.min.js}"></script>
-<script th:src="@{/js/bootstrap.min.js}"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
-<script th:src="@{/js/index/perfect-scrollbar.jquery.min.js}"></script>
-<!--Wave Effects -->
-<script th:src="@{/js/index/waves.js}"></script>
-<!--Menu sidebar -->
-<script th:src="@{/js/index/sidebarmenu.js}"></script>
-<!--Custom JavaScript -->
-<script th:src="@{/js/index/custom.min.js}"></script>
-<!-- ============================================================== -->
-<!--morris JavaScript -->
-<script th:src="@{/js/index/raphael-min.js}"></script>
-<script th:src="@{/js/index/morris.min.js}"></script>
-<!--c3 JavaScript -->
-<script th:src="@{/js/index/d3.min.js}"></script>
-<script th:src="@{/js/index/c3.min.js}"></script>
-<!-- Chart JS -->
-<script th:src="@{/js/index/dashboard1.js}"></script>
+    <script th:src="@{/js/jquery.js}"></script>
+    <!-- Bootstrap popper Core JavaScript -->
+    <script th:src="@{/js/index/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script th:src="@{/js/index/perfect-scrollbar.jquery.min.js}"></script>
+    <!--Wave Effects -->
+    <script th:src="@{/js/index/waves.js}"></script>
+    <!--Menu sidebar -->
+    <script th:src="@{/js/index/sidebarmenu.js}"></script>
+    <!--Custom JavaScript -->
+    <script th:src="@{/js/index/custom.min.js}"></script>
+    <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script th:src="@{/js/index/raphael-min.js}"></script>
+    <script th:src="@{/js/index/morris.min.js}"></script>
+    <!--c3 JavaScript -->
+    <script th:src="@{/js/index/d3.min.js}"></script>
+    <script th:src="@{/js/index/c3.min.js}"></script>
+    <!-- Chart JS -->
+    <script th:src="@{/js/index/dashboard1.js}"></script>
 </body>
 
 </html>

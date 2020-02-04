@@ -10,7 +10,6 @@ import com.centerm.fud_demo.service.DownloadService;
 import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UploadService;
 import com.centerm.fud_demo.service.UserService;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -23,7 +22,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -50,7 +48,7 @@ public class UserController {
     @GetMapping("toUpload")
     public String toUploading()
     {
-        return "user/upload1";
+        return "user/upload";
     }
     @GetMapping("information")
     public String userInformation()

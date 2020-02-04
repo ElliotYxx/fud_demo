@@ -22,7 +22,7 @@ public interface UploadService {
      * @param uploaderId 上传者id
      * @throws Exception
      */
-    void upload(MultipartFile file, Integer chunk, String guid, Long uploaderId) throws Exception;
+    void upload(MultipartFile file, Integer chunk, String guid, Long uploaderId);
 
 
     /**

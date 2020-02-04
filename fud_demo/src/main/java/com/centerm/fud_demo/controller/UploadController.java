@@ -34,7 +34,7 @@ public class UploadController {
      */
     @GetMapping("index")
     public String toUpload() {
-        return "uploadbackup";
+        return "user/upload";
     }
 
     /**
@@ -58,7 +58,7 @@ public class UploadController {
      */
     @PostMapping("save")
     @ResponseBody
-    public void upload(@RequestParam MultipartFile file, Integer chunk, String guid, HttpServletRequest request) throws Exception {
+    public void upload(@RequestParam MultipartFile file, Integer chunk, String guid, HttpServletRequest request){
         currUser = (User) request.getSession().getAttribute("user");
         uploadService.upload(file, chunk, guid, currUser.getId());
     }

@@ -1,5 +1,6 @@
 package com.centerm.fud_demo.dao;
 
+import com.centerm.fud_demo.entity.BackupRecord;
 import com.centerm.fud_demo.entity.DownloadRecord;
 import com.centerm.fud_demo.entity.FileRecord;
 import org.apache.ibatis.annotations.Mapper;
@@ -110,4 +111,14 @@ public interface FileDao {
     * @return 文件集合
     */
    List<FileRecord> getLatestDownloaded();
+
+   List<BackupRecord> getAllBackup();
+
+   Boolean addBackupRecord(BackupRecord backupRecord);
+
+    BackupRecord getBackupById(Long fileId);
+
+   Boolean deleteBackup(Long fileId);
+
+   Long getFileIdByFileName(String fileName);
 }

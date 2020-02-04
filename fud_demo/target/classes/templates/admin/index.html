@@ -72,6 +72,8 @@
                         </li>
                     </shiro:hasAnyRoles>
                     </li>
+                    <li> <a class="waves-effect waves-dark" th:href="@{/admin/backup}" aria-expanded="false"><i class="fa fa-reorder" style="color: #a1fd94"></i><span class="hide-menu">备份文件管理</span></a>
+                    </li>
                     <li> <a class="waves-effect waves-dark" th:href="@{/user/index}" aria-expanded="false"><i class="fa fa-exchange" style="color: #c37fff"></i><span class="hide-menu">返回用户页面</span></a>
                     </li>
                 </ul>
@@ -165,7 +167,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="" id="sales-chart" style="height: 355px;"></div>
+                            <div class="" id="chart" style="height: 355px;"></div>
                         </div>
                     </div>
                 </div>
@@ -182,10 +184,10 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="visitor" style="height:260px; width:100%;"></div>
+                            <div id="files" style="height:260px; width:100%;"></div>
                             <ul class="list-inline m-t-30 text-center font-12">
-                                <li><i class="fa fa-circle text-purple"></i>视频</li>
-                                <li><i class="fa fa-circle text-success"></i>文档</li>
+                                <li><i class="fa fa-circle text-purple"></i>文档</li>
+                                <li><i class="fa fa-circle text-success"></i>媒体</li>
                                 <li><i class="fa fa-circle text-info"></i>其他</li>
                             </ul>
                         </div>
@@ -241,7 +243,7 @@
 <script th:src="@{/js/index/morris.min.js}"></script>
 <script th:src="@{/js/index/d3.min.js}"></script>
 <script th:src="@{/js/index/c3.min.js}"></script>
-<script th:src="@{/js/index/dashboard1.js}"></script>
+<script th:src="@{/js/admin/dashboard.js}"></script>
 </body>
 
 </html>
