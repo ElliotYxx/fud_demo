@@ -120,7 +120,7 @@
                                     <tr th:each="file:${backupList}">
                                         <td th:text="${file.name}"></td>
                                         <td th:text="${file.localUrl}"></td>
-                                        <td th:text="${file.createTime}"></td>
+                                        <td th:text="${#dates.format(file.createTime, 'yyyy-MM-dd')}"></td>
                                         <td><a th:href="@{/download/toDownload(id=${file.fileId})}">下载</a></td>
                                         <td><a th:href="@{/admin/deleteBackup(fileId=${file.fileId})}">删除</a></td>
                                     </tr>
