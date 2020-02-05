@@ -28,20 +28,13 @@ public class SuperVipController {
     static final long ADMIN = 2;
 
     @Autowired
-    SuperVipService superVipService;
+    private SuperVipService superVipService;
 
     @GetMapping("permission")
     @RequiresRoles(value = "SUPERVIP")
     public String permission(ServletRequest request)
     {
         List<User> userList=superVipService.getAllUserExceptSuperVIP();
-        for (User user : userList) {
-            if (user.getRoleId().equals(USER)) {
-                user.setRole("user");
-            }else{
-                user.setRole("admin");
-            }
-        }
         request.setAttribute("userList",userList);
         return "supervip/permission";
     }

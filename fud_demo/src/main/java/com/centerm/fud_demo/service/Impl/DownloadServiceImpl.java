@@ -25,7 +25,7 @@ import java.util.List;
 public class DownloadServiceImpl implements DownloadService {
 
     @Autowired
-    FileDao fileDao;
+    private FileDao fileDao;
 
     @Override
     public Boolean addDownloadRecord(DownloadRecord downloadRecord) {
@@ -79,9 +79,8 @@ public class DownloadServiceImpl implements DownloadService {
                 os.flush();
             }
             log.info("下载成功");
-
         }catch (IOException e){
-            log.error("{用户取消了下载...}");
+            log.error("{当前用户取消了下载...}");
         }
 
     }

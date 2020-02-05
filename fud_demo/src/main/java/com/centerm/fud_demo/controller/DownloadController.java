@@ -29,11 +29,11 @@ import java.util.Date;
 @Slf4j
 @RequestMapping("download")
 public class DownloadController {
-    User currUser = null;
+    private User currUser = null;
     @Autowired
-    DownloadService downloadService;
+    private DownloadService downloadService;
     @Autowired
-    FileService fileService;
+    private FileService fileService;
 
     /**
      * @param id 文件id
@@ -43,9 +43,10 @@ public class DownloadController {
     @ApiOperation("下载文件")
     @GetMapping("toDownload")
     public String toDownload(Long id, HttpServletResponse response, HttpServletRequest request){
-        downloadService.downloadFile(id, response);
         currUser = (User) request.getSession().getAttribute("user");
-        DownloadRecord downloadRecord = new DownloadRecord(new Timestamp(System.currentTimeMillis()), currUser.getId(), id);
+        log.info("用户: " + currUser.getUsername() + "  下载了文件： " + id);
+        downloadService.downloadFile(id, response);
+        DownloadRecord downloadRecord = new DownloadRecord(currUser.getId(), id);
         downloadService.addDownloadRecord(downloadRecord);
         fileService.updateFile(id);
         return "user/download";

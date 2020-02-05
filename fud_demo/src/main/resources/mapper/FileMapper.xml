@@ -16,8 +16,8 @@
         WHERE fud.file.user_id=#{userId}
     </select>
     <insert id="addFile" parameterMap="FileRecord">
-        INSERT INTO file(name, local_url, size, user_id, md5, suffix, create_time)
-        VALUES(#{name}, #{localUrl}, #{size}, #{userId}, #{md5}, #{suffix}, #{createTime})
+        INSERT INTO file(name, local_url, size, user_id, md5, suffix)
+        VALUES(#{name}, #{localUrl}, #{size}, #{userId}, #{md5}, #{suffix})
     </insert>
     <delete id="deleteFileById" parameterType="long">
         DELETE FROM fud.file
@@ -37,12 +37,12 @@
 
     </delete>
     <insert id="addDownloadRecord" parameterMap="DownloadRecord">
-        INSERT INTO download(create_time, user_id, file_id)
-        VALUES (#{createTime}, #{userId}, #{fileId})
+        INSERT INTO download(user_id, file_id)
+        VALUES (#{userId}, #{fileId})
     </insert>
     <insert id="addBackupRecord" parameterMap="BackupRecord">
-        INSERT INTO backup(file_id, name, local_url, user_id, create_time)
-        VALUES(#{fileId}, #{name}, #{localUrl}, #{userId}, #{createTime})
+        INSERT INTO backup(file_id, name, local_url, user_id)
+        VALUES(#{fileId}, #{name}, #{localUrl}, #{userId})
     </insert>
     <select id="getFileById" parameterType="long" resultType="com.centerm.fud_demo.entity.FileRecord">
         SELECT file.id, file.name,file.local_url localUrl, file.create_time createTime

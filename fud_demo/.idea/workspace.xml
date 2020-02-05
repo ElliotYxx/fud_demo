@@ -4,14 +4,36 @@
     <list default="true" id="ef8792b8-1a24-4a25-81b0-80c84ced6120" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/aed19108-10f6-4ce0-b663-763db47615e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aed19108-10f6-4ce0-b663-763db47615e7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/DownloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/DownloadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/SuperVipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/SuperVipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/BackupRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/BackupRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/DownloadRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/DownloadRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/FileRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/FileRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/BackupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/BackupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UploadServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/backup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/backup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/filelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/filelist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/download.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/filemanager.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/filemanager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/centerm/fud_demo/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/FileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/FileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/ban.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/ban.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/supervip/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/supervip/permission.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/DownloadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/DownloadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/SuperVipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/SuperVipController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/BackupServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/BackupServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/DownloadServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/UploadServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/UploadServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/centerm/fud_demo/service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/ban.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/ban.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/supervip/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/supervip/permission.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +79,28 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="fud: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="download: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="fud: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="file: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="fud: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="role: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="fud: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -103,7 +146,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -139,12 +182,17 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@ffd99ec" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@249fb654" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@462d9dd7" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@331a0121" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@4b0d21e2" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -179,7 +227,8 @@
       <workItem from="1580730130226" duration="7881000" />
       <workItem from="1580782869245" duration="3426000" />
       <workItem from="1580788511387" duration="4420000" />
-      <workItem from="1580811235633" duration="3080000" />
+      <workItem from="1580811235633" duration="3453000" />
+      <workItem from="1580814762652" duration="8498000" />
     </task>
     <task id="LOCAL-00001" summary="初步整合">
       <created>1580287623061</created>
@@ -258,7 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580792898851</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- 下载的数据库更新&#10;- 新增文件备份管理操作&#10;- 修改一些小细节">
+      <created>1580814395951</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1580814395951</updated>
+    </task>
+    <task id="LOCAL-00013" summary="- 下载的数据库更新&#10;- 新增文件备份管理操作&#10;- 修改一些小细节">
+      <created>1580814423771</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1580814423771</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +333,8 @@
     <MESSAGE value="- 和前端的初步整合" />
     <MESSAGE value="- 改了几个文件名 先备份" />
     <MESSAGE value="- 下载的数据库更新&#10;- 新增文件备份管理操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="- 下载的数据库更新&#10;- 新增文件备份管理操作" />
+    <MESSAGE value="- 下载的数据库更新&#10;- 新增文件备份管理操作&#10;- 修改一些小细节" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 下载的数据库更新&#10;- 新增文件备份管理操作&#10;- 修改一些小细节" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1580285389546">
@@ -281,10 +345,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="448" y="206" width="1282" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580285587824" />
-    <state x="801" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1580789314368">
+    <state x="801" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1580876498496">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="801" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1580789314368" />
+    <state x="801" y="260" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1580876498496" />
     <state x="1256" y="240" width="390" height="625" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1580285342708">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -301,10 +365,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="299" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580651003713" />
-    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2" timestamp="1580814395724">
+    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2" timestamp="1580814423677">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1580814395724" />
+    <state x="439" y="121" width="1099" height="863" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1580814423677" />
     <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1580731669766">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -317,66 +381,66 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="787" y="418" key="Github.ShareDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580287532027" />
-    <state width="1799" height="214" key="GridCell.Tab.0.bottom" timestamp="1580814246128">
+    <state width="1799" height="137" key="GridCell.Tab.0.bottom" timestamp="1580877387853">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246128" />
-    <state width="1799" height="214" key="GridCell.Tab.0.center" timestamp="1580814246128">
+    <state width="1799" height="137" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387853" />
+    <state width="1799" height="137" key="GridCell.Tab.0.center" timestamp="1580877387852">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246128" />
-    <state width="1799" height="214" key="GridCell.Tab.0.left" timestamp="1580814246128">
+    <state width="1799" height="137" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387852" />
+    <state width="1799" height="137" key="GridCell.Tab.0.left" timestamp="1580877387852">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246128" />
-    <state width="1799" height="214" key="GridCell.Tab.0.right" timestamp="1580814246128">
+    <state width="1799" height="137" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387852" />
+    <state width="1799" height="137" key="GridCell.Tab.0.right" timestamp="1580877387853">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246128" />
-    <state width="1799" height="214" key="GridCell.Tab.1.bottom" timestamp="1580814246129">
+    <state width="1799" height="137" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387853" />
+    <state width="1799" height="137" key="GridCell.Tab.1.bottom" timestamp="1580877387853">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246129" />
-    <state width="1799" height="214" key="GridCell.Tab.1.center" timestamp="1580814246129">
+    <state width="1799" height="137" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387853" />
+    <state width="1799" height="137" key="GridCell.Tab.1.center" timestamp="1580877387853">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246129" />
-    <state width="1799" height="214" key="GridCell.Tab.1.left" timestamp="1580814246129">
+    <state width="1799" height="137" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387853" />
+    <state width="1799" height="137" key="GridCell.Tab.1.left" timestamp="1580877387853">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246129" />
-    <state width="1799" height="214" key="GridCell.Tab.1.right" timestamp="1580814246129">
+    <state width="1799" height="137" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387853" />
+    <state width="1799" height="137" key="GridCell.Tab.1.right" timestamp="1580877387853">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1799" height="214" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580814246129" />
+    <state width="1799" height="137" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580877387853" />
     <state width="273" height="606" key="HiddenNamespacesPopup" timestamp="1580371765575">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="273" height="606" key="HiddenNamespacesPopup/67.27.1853.1053@67.27.1853.1053" timestamp="1580371765575" />
-    <state x="721" y="222" width="1024" height="845" key="SettingsEditor" timestamp="1580351528940">
+    <state x="721" y="222" width="1024" height="845" key="SettingsEditor" timestamp="1580814742300">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="721" y="222" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1580351528940" />
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1580792904768">
+    <state x="721" y="222" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1580814742300" />
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1580814429035">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1580792904768" />
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1580814429035" />
     <state x="372" y="424" width="375" height="262" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1580812231528">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="372" y="424" width="375" height="262" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/67.27.1853.1053@67.27.1853.1053" timestamp="1580812231528" />
-    <state x="846" y="424" width="357" height="256" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog" timestamp="1580791209960">
+    <state x="846" y="424" width="357" height="256" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog" timestamp="1580877340342">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="846" y="424" width="357" height="256" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580791209960" />
+    <state x="846" y="424" width="357" height="256" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580877340342" />
     <state x="743" y="349" width="491" height="399" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1580553907839">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="743" y="349" width="491" height="399" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580553907839" />
-    <state x="862" y="178" width="552" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1580812202062">
+    <state x="862" y="178" width="552" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1580877031773">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="862" y="178" width="552" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580812202062" />
+    <state x="862" y="178" width="552" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1580877031773" />
     <state x="667" y="333" width="643" height="439" key="git4idea.merge.GitPullDialog" timestamp="1580731520331">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

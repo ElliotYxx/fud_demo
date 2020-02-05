@@ -117,11 +117,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="user:${userList}">
+                                    <tr th:each="user:${userList}" th:switch="${user.state}">
 <!--                                        <th scope="row" th:text="${user.id}"/>-->
                                         <td th:text="${user.username}"></td>
-                                        <td th:text="${user.createTime}"></td>
-                                        <td th:text="${user.stateName}"></td>
+                                        <td th:text="${#dates.format(user.createTime, 'yyyy-MM-dd')}"></td>
+                                        <td th:case="0">正常</td>
+                                        <td th:case="1">封禁</td>
+<!--                                        <td th:text="${user.stateName}"></td>-->
                                         <td><a th:href="@{/admin/banUser(username=${user.username})}">操作</a></td>
                                     </tr>
                                     </tbody>

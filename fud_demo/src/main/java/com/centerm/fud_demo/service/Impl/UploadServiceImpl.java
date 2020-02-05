@@ -3,7 +3,6 @@ import com.centerm.fud_demo.dao.FileDao;
 import com.centerm.fud_demo.entity.BackupRecord;
 import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.service.BackupService;
-import com.centerm.fud_demo.service.FileService;
 import com.centerm.fud_demo.service.UploadService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +12,12 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.WritableByteChannel;
 import java.sql.Timestamp;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,12 +34,8 @@ public class UploadServiceImpl implements UploadService {
     @Value("${backupPath}")
     private String backupPath;
     private Long userId = null;
-
     @Autowired
-    FileDao fileDao;
-    @Autowired
-    BackupService backupService;
-
+    private FileDao fileDao;
     @Override
     public Long getUploadTimes() {
         return fileDao.getUploadTimes();
@@ -61,7 +56,7 @@ public class UploadServiceImpl implements UploadService {
         }
         RandomAccessFile raFile = null;
         BufferedInputStream inputStream = null;
-        if (chunk == null) {
+        if (null == chunk) {
             chunk = 0;
         }
         try {
@@ -78,14 +73,14 @@ public class UploadServiceImpl implements UploadService {
         } catch (Exception e) {
             log.error("Exception: " + e.getMessage());
         } finally {
-            if (inputStream != null) {
+            if (null != inputStream) {
                 try{
                     inputStream.close();
                 }catch (Exception e){
                     log.error("inputStream: " + e.getMessage());
                 }
             }
-            if (raFile != null) {
+            if (null != raFile) {
                 try{
                     raFile.close();
                 }catch (Exception e){
@@ -156,7 +151,7 @@ public class UploadServiceImpl implements UploadService {
                 log.info("combine finished...");
                 log.info("file name is " + fileName + ", MD5: " + guid);
                 FileRecord fileRecord = new FileRecord(fileName, uploadPath + "real" + File.separator + fileName,
-                        String.valueOf(realFile.length()), userId, guid, fileName.substring(fileName.lastIndexOf(".")), new Timestamp(System.currentTimeMillis()));
+                        getFormatSize(realFile.length()), userId, guid, fileName.substring(fileName.lastIndexOf(".")));
                 fileDao.addFile(fileRecord);
                 //备份
                 backupFile(filePath + File.separator, backupPath, fileName);
@@ -224,15 +219,38 @@ public class UploadServiceImpl implements UploadService {
         }catch (IOException e){
             log.error(e.getMessage());
         }
-
-
         log.info("backup finished...");
         Long fileId = fileDao.getFileIdByFileName(fileName);
-        BackupRecord backupRecord = new BackupRecord(fileId, fileName, copyTo + fileName, userId, new Timestamp(System.currentTimeMillis()));
+        BackupRecord backupRecord = new BackupRecord(fileId, fileName, copyTo + fileName, userId);
         fileDao.addBackupRecord(backupRecord);
         long end = System.currentTimeMillis();
         log.info("backup lasts：" + (end-start) + "ms");
     }
 
+    public String getFormatSize(double size){
+        double kiloByte = size / 1024;
+        if (kiloByte < 1){
+            return size + "Byte(s)";
+        }
+        double megaByte = kiloByte / 1024;
+        if (megaByte < 1){
+            BigDecimal result1 = new BigDecimal(Double.toString(kiloByte));
+            return result1.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString() + "KB";
+        }
+
+        double gigaByte = megaByte/1024;
+        if (gigaByte < 1){
+            BigDecimal result2 = new BigDecimal(Double.toString(megaByte));
+            return result2.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString() + "MB";
+        }
+
+        double teraBytes = gigaByte / 1024;
+        if (teraBytes < 1){
+            BigDecimal result3 = new BigDecimal(Double.toString(gigaByte));
+            return result3.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString() + "GB";
+        }
+        BigDecimal result4 = new BigDecimal(teraBytes);
+        return result4.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString() + "TB";
+    }
 
 }

@@ -2,16 +2,12 @@ package com.centerm.fud_demo.service.Impl;
 
 import com.centerm.fud_demo.dao.FileDao;
 import com.centerm.fud_demo.entity.BackupRecord;
-import com.centerm.fud_demo.entity.FileRecord;
 import com.centerm.fud_demo.service.BackupService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.nio.channels.FileChannel;
-import java.nio.channels.WritableByteChannel;
-import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -23,7 +19,7 @@ import java.util.List;
 @Slf4j
 public class BackupServiceImpl implements BackupService {
     @Autowired
-    FileDao fileDao;
+    private FileDao fileDao;
     @Override
     public List<BackupRecord> getAllBackup() {
         return fileDao.getAllBackup();

@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -33,15 +34,15 @@ import java.util.List;
 @Slf4j
 public class UserController {
 
-    User currUser = null;
+    private User currUser = null;
     @Autowired
-    UserService userService;
+    private UserService userService;
     @Autowired
-    DownloadService downloadService;
+    private DownloadService downloadService;
     @Autowired
-    UploadService uploadService;
+    private UploadService uploadService;
     @Autowired
-    FileService fileService;
+    private FileService fileService;
 
     @GetMapping("toRegister")
     public String toRegister(){return "register";}
@@ -109,7 +110,7 @@ public class UserController {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         AjaxReturnMsg msg=new AjaxReturnMsg();
-        User user=new User(username,password);
+        User user = new User(username, password);
         Subject subject= SecurityUtils.getSubject();
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
 
@@ -148,7 +149,7 @@ public class UserController {
         {
             throw new NotAcceptTermsException();
         }
-        User user=new User(username,password);
+        User user = new User(username, password);
         User matching=userService.findByUsername(username);
         if (null == matching)
         {

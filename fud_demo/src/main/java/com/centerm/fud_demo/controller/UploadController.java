@@ -21,12 +21,12 @@ import java.io.*;
 @RequestMapping("upload")
 public class UploadController {
 
-    User currUser = null;
+    private User currUser = null;
 
     @Autowired
-    UploadService uploadService;
+    private UploadService uploadService;
     @Autowired
-    FileService fileService;
+    private FileService fileService;
 
     /**
      * 跳转到上传界面

@@ -125,12 +125,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="user:${userList}">
+                                    <tr th:each="user:${userList}" th:switch="${user.roleId}">
                                         <td th:text="${user.username}"></td>
-                                        <td th:text="${user.createTime}"></td>
-                                        <td th:text="${user.role}"></td>
+                                        <td th:text="${#dates.format(user.createTime, 'yyyy-MM-dd')}"></td>
+                                        <td th:case="1">USER</td>
+                                        <td th:case="2">ADMIN</td>
+<!--                                        <td th:text="${user.role}"></td>-->
                                         <td><a th:href="@{/supervip/delete(userId=${user.id})}">删除</a></td>
-                                        <td><a th:href="@{/supervip/handleAdmin(id=${user.id})}" onclick="doFilter()">操作</a></td>
+                                        <td><a th:href="@{/supervip/handleAdmin(id=${user.id})}" onclick="doFilter()">修改</a></td>
                                     </tr>
                                     </tbody>
                                 </table>

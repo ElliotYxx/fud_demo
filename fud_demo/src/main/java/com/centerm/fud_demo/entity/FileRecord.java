@@ -27,13 +27,12 @@ public class FileRecord {
 
     public FileRecord(){}
 
-    public FileRecord(String name, String localUrl, String size, Long userId, String md5, String suffix, Timestamp createTime) {
+    public FileRecord(String name, String localUrl, String size, Long userId, String md5, String suffix) {
         this.name = name;
         this.localUrl = localUrl;
         this.size = size;
         this.userId = userId;
         this.md5 = md5;
         this.suffix = suffix;
-        this.createTime = createTime;
     }
 }

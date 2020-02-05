@@ -16,8 +16,7 @@ public class DownloadRecord {
     private Long userId;
     private Long fileId;
 
-    public DownloadRecord(Timestamp createTime, Long userId, Long fileId) {
-        this.createTime = createTime;
+    public DownloadRecord(Long userId, Long fileId) {
         this.userId = userId;
         this.fileId = fileId;
     }

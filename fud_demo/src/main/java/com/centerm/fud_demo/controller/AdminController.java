@@ -34,18 +34,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AdminController {
 
     static final Integer BAN = 1;
+    static final Integer NORMAL = 0;
     @Autowired
-    AdminService adminService;
+    private AdminService adminService;
     @Autowired
-    FileService fileService;
+    private FileService fileService;
     @Autowired
-    UserService userService;
+    private UserService userService;
     @Autowired
-    DownloadService downloadService;
+    private DownloadService downloadService;
     @Autowired
-    UploadService uploadService;
+    private UploadService uploadService;
     @Autowired
-    BackupService backupService;
+    private BackupService backupService;
 
 
     @GetMapping("file")
@@ -87,13 +88,6 @@ public class AdminController {
         User user=(User)request.getSession().getAttribute("user");
         Long userId=user.getId();
         List<User> userList = adminService.getUserExceptAdminAndSuperVIP(userId);
-        for (User currUSer : userList) {
-            if (currUSer.getState().equals(BAN)) {
-                currUSer.setStateName("封禁");
-            }else{
-                currUSer.setStateName("正常");
-            }
-        }
         request.setAttribute("userList",userList);
         return "admin/ban";
     }
@@ -108,11 +102,11 @@ public class AdminController {
         User target=userService.findByUsername(username);
         Integer userState = target.getState();
         Long userId=target.getId();
-       if(userState.equals(0))
+       if(userState.equals(NORMAL))
        {
            //执行账号封禁
            Boolean isSuccess= adminService.banUser(userId);
-           if (isSuccess.equals(0))
+           if (!isSuccess)
            {
                throw new AccountBanException();
            }
@@ -120,7 +114,7 @@ public class AdminController {
        }else {
            //执行账号解锁
            Boolean isSuccess = adminService.releaseUser(userId);
-           if (isSuccess.equals(0))
+           if (!isSuccess)
            {
                throw new AccountBanException();
            }
