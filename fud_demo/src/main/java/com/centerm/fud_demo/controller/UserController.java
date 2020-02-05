@@ -34,6 +34,7 @@ import java.util.List;
 @Slf4j
 public class UserController {
 
+    static final String ACCEPT = "1";
     private User currUser = null;
     @Autowired
     private UserService userService;
@@ -138,19 +139,22 @@ public class UserController {
         String rPassword =request.getParameter("r_password");
         String checkBox=request.getParameter("check");
 
-        if (null == username || null == password || "" == username || "" == password) {
+        if (null == username || null == password || ("").equals(username) || ("").equals(password)) {
+            log.warn("未输入用户名或密码...");
             throw new AuthenticationException();
         }
         if (!password.equals(rPassword))
         {
+            log.warn("前后两次输入的密码不一致....");
             throw new PasswordNotEqualsRetypePasswordException();
         }
-        if (("0").equals(checkBox))
+        if (!(ACCEPT).equals(checkBox))
         {
+            log.warn("没有勾选同意协议...。");
             throw new NotAcceptTermsException();
         }
         User user = new User(username, password);
-        User matching=userService.findByUsername(username);
+        User matching = userService.findByUsername(username);
         if (null == matching)
         {
             userService.createUser(user);
@@ -170,17 +174,19 @@ public class UserController {
         AjaxReturnMsg msg=new AjaxReturnMsg();
         String password=request.getParameter("password");
         String username=((User)request.getSession().getAttribute("user")).getUsername();
-        if ((password.equals(null)||password.equals("")))
+        if ((null == password||("").equals(password)))
         {
             msg.setFlag(0);
             msg.setMsg("没有提交数据更新");
+            log.info("没有提交数据更新....");
             return msg;
         }
-        if (!(password.equals(null)||password.equals("")))
+        if (!(null == password||("").equals(password)))
         {
             userService.changePassword(username,password);
+            log.info("密码修改成功...");
         }
-        User user=userService.findByUsername(username);
+        User user = userService.findByUsername(username);
         request.getSession().setAttribute("user",user);
         msg.setFlag(1);
         msg.setMsg("数据更新成功");

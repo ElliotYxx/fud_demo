@@ -18,6 +18,7 @@ import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.Cookie;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
@@ -40,13 +41,10 @@ public class ShiroConfig {
     {
         ShiroFilterFactoryBean shiroFilterFactoryBean=new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-
         Map<String,String> filterMap=new LinkedHashMap<>();
         Map<String, Filter> filter=new LinkedHashMap<>();
-
         filter.put("kickout",kickoutSessionControllerFilter());
         shiroFilterFactoryBean.setFilters(filter);
-
         shiroFilterFactoryBean.setLoginUrl("/user/toLogin");
         shiroFilterFactoryBean.setUnauthorizedUrl("/user/toLogin");
         filterMap.put("/config/**", "anon");
@@ -106,13 +104,19 @@ public class ShiroConfig {
         sessionManager.setSessionListeners(listeners);
         sessionManager.setSessionIdCookie(sessionIdCookie());
         sessionManager.setSessionDAO(sessionDAO());
-        sessionManager.setCacheManager(ehCacheManager());
-        sessionManager.setGlobalSessionTimeout(1800000);
-        sessionManager.setDeleteInvalidSessions(true);
-        sessionManager.setSessionValidationInterval(3600000);
-        sessionManager.setSessionIdUrlRewritingEnabled(false);
+//        sessionManager.setCacheManager(ehCacheManager());
+////        sessionManager.setGlobalSessionTimeout(1800000);
+////        sessionManager.setDeleteInvalidSessions(true);
+////        sessionManager.setSessionValidationInterval(3600000);
+////        sessionManager.setSessionIdUrlRewritingEnabled(false);
+        //避免与SERVLET容器默认的Cookie名冲突
+        Cookie cookie = new SimpleCookie("wms.session.id");
+        cookie.setMaxAge(10);
+        sessionManager.setSessionIdCookie(cookie);
         return sessionManager;
     }
+
+
     @Bean
     public SessionDAO sessionDAO()
     {

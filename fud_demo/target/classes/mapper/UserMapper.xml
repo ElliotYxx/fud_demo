@@ -8,7 +8,7 @@
         WHERE fud.user.username=#{username}
     </select>
     <insert id="createUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.centerm.fud_demo.entity.User">
-        INSERT INTO fud.user(username, password, create_time, state, role_id)
+        INSERT INTO fud.user(username, password, state, role_id)
         VALUES (#{username}, #{password}, 0, 1)
     </insert>
     <update id="updateUser" parameterType="com.centerm.fud_demo.entity.User">
