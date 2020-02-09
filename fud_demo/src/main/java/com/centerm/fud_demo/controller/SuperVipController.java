@@ -2,7 +2,6 @@ package com.centerm.fud_demo.controller;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.service.SuperVipService;
 import com.centerm.fud_demo.shiro.UserRealm;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -63,7 +62,6 @@ public class SuperVipController {
      * @param userId 用户id
      * @return
      */
-    @ApiOperation("删除用户")
     @GetMapping("delete")
     public ModelAndView deleteUser(Long userId) {
         ModelAndView mv=new ModelAndView();

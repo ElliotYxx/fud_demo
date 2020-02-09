@@ -4,7 +4,6 @@ import com.centerm.fud_demo.entity.DownloadRecord;
 import com.centerm.fud_demo.entity.User;
 import com.centerm.fud_demo.service.DownloadService;
 import com.centerm.fud_demo.service.FileService;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.Timestamp;
-import java.util.Date;
-
 /**
  * @author Sheva
  * @version 1.0

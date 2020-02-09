@@ -6,8 +6,6 @@ import com.centerm.fud_demo.exception.AccountBanException;
 import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.service.*;
 import com.centerm.fud_demo.shiro.UserRealm;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.Logical;
@@ -132,7 +130,6 @@ public class AdminController {
      * @param fileId 文件id
      * @return
      */
-    @ApiOperation("删除文件")
     @GetMapping("toDelete")
     public ModelAndView toDelete(Long fileId) {
         ModelAndView mv = new ModelAndView();
@@ -146,7 +143,6 @@ public class AdminController {
      * @param fileId 文件id
      * @return
      */
-    @ApiOperation("删除备份文件")
     @GetMapping("deleteBackup")
     public ModelAndView deleteBackup(Long fileId) {
         ModelAndView mv = new ModelAndView();
