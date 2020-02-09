@@ -40,11 +40,10 @@ public class DownloadController {
      * @param response
      * @return
      */
-    @ApiOperation("下载文件")
     @GetMapping("toDownload")
     public String toDownload(Long id, HttpServletResponse response, HttpServletRequest request){
         currUser = (User) request.getSession().getAttribute("user");
-        log.info("用户: " + currUser.getUsername() + "  下载了文件： " + id);
+        log.info("用户: " + currUser.getUsername() + "  下载了文件(id)： " + id);
         downloadService.downloadFile(id, response);
         DownloadRecord downloadRecord = new DownloadRecord(currUser.getId(), id);
         downloadService.addDownloadRecord(downloadRecord);

@@ -112,11 +112,25 @@ public interface FileDao {
     */
    List<FileRecord> getLatestDownloaded();
 
+   /**
+    * 获取服务器所有备份文件
+    * @return
+    */
    List<BackupRecord> getAllBackup();
 
+   /**
+    * 添加备份文件记录
+    * @param backupRecord
+    * @return
+    */
    Boolean addBackupRecord(BackupRecord backupRecord);
 
-    BackupRecord getBackupById(Long fileId);
+   /**
+    * 获取某一条备份文件
+    * @param fileId
+    * @return
+    */
+   BackupRecord getBackupById(Long fileId);
 
    Boolean deleteBackup(Long fileId);
 

@@ -7,6 +7,7 @@ import com.centerm.fud_demo.service.UploadService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
@@ -71,20 +72,20 @@ public class UploadServiceImpl implements UploadService {
                 raFile.write(buf, 0, length);
             }
         } catch (Exception e) {
-            log.error("Exception: " + e.getMessage());
+            log.error("(upload)Exception: " + e.getMessage());
         } finally {
             if (null != inputStream) {
                 try{
                     inputStream.close();
                 }catch (Exception e){
-                    log.error("inputStream: " + e.getMessage());
+                    log.error("(upload)inputStream: " + e.getMessage());
                 }
             }
             if (null != raFile) {
                 try{
                     raFile.close();
                 }catch (Exception e){
-                    log.error("raFile: " + e.getMessage());
+                    log.error("(upload)raFile: " + e.getMessage());
                 }
             }
         }
@@ -166,7 +167,6 @@ public class UploadServiceImpl implements UploadService {
 
     @Override
     public void checkMd5(HttpServletRequest request, HttpServletResponse response) {
-        log.info("checkMd5...");
         //当前分片
         String chunk = request.getParameter("chunk");
         //分片大小
@@ -185,7 +185,7 @@ public class UploadServiceImpl implements UploadService {
                 response.getWriter().write("{\"ifExist\":0}");
             }
         } catch (IOException e) {
-            log.error("IOException: " + e.getMessage());
+            log.error("(checkMD5)IOException: " + e.getMessage());
         }
     }
 

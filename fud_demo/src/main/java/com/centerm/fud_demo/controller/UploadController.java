@@ -77,7 +77,6 @@ public class UploadController {
      * @param fileId 文件id
      * @return
      */
-    @ApiOperation("删除文件")
     @GetMapping("toDelete")
     public ModelAndView toDelete(Long fileId, HttpServletRequest request) {
         ModelAndView mv=new ModelAndView();

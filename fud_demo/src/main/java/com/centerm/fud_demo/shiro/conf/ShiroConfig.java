@@ -1,7 +1,6 @@
 package com.centerm.fud_demo.shiro.conf;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-import com.centerm.fud_demo.exception.GlobalExceptionHandler;
 import com.centerm.fud_demo.filter.KickoutSessionControllerFilter;
 import com.centerm.fud_demo.listener.Listener;
 import com.centerm.fud_demo.shiro.UserRealm;
@@ -26,7 +25,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.MethodInvokingFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import javax.servlet.Filter;
 import java.util.ArrayList;
@@ -34,6 +32,11 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+
+/**
+ * Shiro配置类
+ * @author jerry sheva
+ */
 @Configuration
 public class ShiroConfig {
     @Bean(name = "shiroFilter")
@@ -104,14 +107,13 @@ public class ShiroConfig {
         sessionManager.setSessionListeners(listeners);
         sessionManager.setSessionIdCookie(sessionIdCookie());
         sessionManager.setSessionDAO(sessionDAO());
-//        sessionManager.setCacheManager(ehCacheManager());
-////        sessionManager.setGlobalSessionTimeout(1800000);
-////        sessionManager.setDeleteInvalidSessions(true);
-////        sessionManager.setSessionValidationInterval(3600000);
-////        sessionManager.setSessionIdUrlRewritingEnabled(false);
+        sessionManager.setCacheManager(ehCacheManager());
+        sessionManager.setGlobalSessionTimeout(1800000);
+        sessionManager.setDeleteInvalidSessions(true);
+        sessionManager.setSessionValidationInterval(3600000);
+        sessionManager.setSessionIdUrlRewritingEnabled(false);
         //避免与SERVLET容器默认的Cookie名冲突
         Cookie cookie = new SimpleCookie("wms.session.id");
-        cookie.setMaxAge(10);
         sessionManager.setSessionIdCookie(cookie);
         return sessionManager;
     }
