@@ -25,7 +25,8 @@ public interface BackupService {
 
     /**
      * 删除备份
-     * @param fileId
+     * @param fileId 文件id
+     * @return
      */
     Boolean deleteBackup(Long fileId);
 }

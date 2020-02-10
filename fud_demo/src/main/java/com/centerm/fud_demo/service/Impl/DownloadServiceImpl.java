@@ -62,7 +62,7 @@ public class DownloadServiceImpl implements DownloadService {
         FileRecord downloadFile = fileDao.getFileById(id);
         File file = new File(downloadFile.getLocalUrl());
         if (!file.exists()){
-            log.error("文件不存在...");
+            log.warn("文件不存在...");
         }
         response.reset();
         response.setContentType("application/octet-stream");
@@ -80,7 +80,7 @@ public class DownloadServiceImpl implements DownloadService {
             }
             log.info("下载成功...");
         }catch (IOException e){
-            log.error("当前用户取消了下载...");
+            log.warn("当前用户取消了下载...");
         }
 
     }
