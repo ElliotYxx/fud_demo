@@ -49,6 +49,7 @@ public class UploadServiceImpl implements UploadService {
 
     @Override
     public void upload(MultipartFile file, Integer chunk, String guid, Long uploaderId){
+        log.info("上传分片中...");
         String filePath = uploadPath + "temp" + File.separator + guid;
         File tempFile = new File(filePath);
         userId = uploaderId;

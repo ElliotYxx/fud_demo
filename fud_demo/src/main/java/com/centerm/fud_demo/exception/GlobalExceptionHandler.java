@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
         AjaxReturnMsg msg=new AjaxReturnMsg();
         msg.setFlag(0);
         msg.setMsg("用户名密码错误");
-        log.warn("IP"+request.getRemoteAddr()+" 登录失败"+",原因：用户名密码错误");
+        log.warn("IP:"+request.getRemoteAddr()+" 登录失败"+",原因：用户名密码错误");
         return msg;
     }
     @ExceptionHandler(value = IncorrectCredentialsException.class)
@@ -47,7 +47,7 @@ public class GlobalExceptionHandler {
         AjaxReturnMsg msg=new AjaxReturnMsg();
         msg.setFlag(0);
         msg.setMsg("用户名密码有误");
-        log.warn("IP"+request.getRemoteAddr()+" 登录失败"+",原因：用户名密码有误");
+        log.warn("IP:"+request.getRemoteAddr()+" 登录失败"+",原因：用户名密码有误");
         return msg;
     }
     @ExceptionHandler(value = LockedAccountException.class)

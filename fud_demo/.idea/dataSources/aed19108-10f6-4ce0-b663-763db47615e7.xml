@@ -1545,7 +1545,7 @@
     </column>
     <column id="339" parent="239" name="create_time">
       <Position>5</Position>
-      <DataType>timestamp|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
@@ -1567,7 +1567,7 @@
     <column id="342" parent="240" name="create_time">
       <Position>2</Position>
       <Comment>下载时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
@@ -1639,7 +1639,7 @@
     <column id="352" parent="241" name="create_time">
       <Position>7</Position>
       <Comment>文件上传日期</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
@@ -1708,7 +1708,7 @@
     <column id="362" parent="243" name="create_time">
       <Position>4</Position>
       <Comment>用户创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>

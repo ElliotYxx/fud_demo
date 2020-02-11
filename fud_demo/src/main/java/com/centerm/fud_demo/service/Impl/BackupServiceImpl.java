@@ -39,14 +39,13 @@ public class BackupServiceImpl implements BackupService {
 
     private void deleteLocalFile(String localUrl) {
         try{
-            System.out.println("开始删除本地文件: " + localUrl);
+            log.info("开始删除本地备份文件: " + localUrl);
             File deleteFile = new File(localUrl);
             deleteFile.delete();
+            log.info("删除成功...");
         }catch (Exception e){
-            System.out.println("删除本地文件出错");
+            log.info("删除本地备份文件出错...");
             e.printStackTrace();
         }
     }
-
-
 }
