@@ -1,45 +1,64 @@
-create table download
-(
-    id          bigint auto_increment comment '下载记录'
-        primary key,
-    create_time timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '下载时间',
-    user_id     bigint                              not null comment '下载文件的用户id',
-    file_id     bigint                              not null comment '下载的文件id'
-)
-    comment '用户下载表';
+DROP SCHEMA IF EXISTS `fud`;
 
-create table file
-(
-    id             bigint auto_increment comment '上传文件id'
-        primary key,
-    name           varchar(255)                           not null comment '上传文件名称',
-    local_url      varchar(255)                           not null comment '上传文件路径',
-    size           mediumtext                             not null comment '上传文件大小',
-    description    varchar(255) default ''                null comment '上传文件描述',
-    download_times bigint       default 0                 not null comment '上传文件下载次数',
-    user_id        bigint(11)                             not null comment '文件上传者id',
-    create_time    timestamp    default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '文件上传日期',
-    md5            varchar(255) default ''                not null,
-    suffix         varchar(50)  default ' '               null
-)
-    charset = utf8;
+CREATE SCHEMA IF NOT EXISTS `fud` DEFAULT CHARACTER SET utf8;
 
-create table role
-(
-    id        bigint auto_increment comment '用户角色id'
-        primary key,
-    role_name varchar(30) not null comment '用户角色名称'
-)
-    comment '角色表';
+USE `fud`;
 
-create table user
-(
-    id          bigint auto_increment comment '用户id'
-        primary key,
-    username    varchar(20)       not null comment '用户名',
-    password    varchar(100)      not null comment '用户密码',
-    create_time date              not null comment '用户创建时间',
-    state       tinyint default 0 not null comment '0：正常　１:锁死',
-    role_id     bigint            null
-);
 
+DROP TABLE IF EXISTS `fud`.`role`;
+CREATE TABLE IF NOT EXISTS `fud`.`role`(
+                                           `id` INT NOT NULL AUTO_INCREMENT COMMENT '角色id',
+                                           `role_name` VARCHAR(16) NOT NULL COMMENT '角色名称',
+                                           PRIMARY KEY(`id`)
+)ENGINE = InnoDB DEFAULT CHARSET utf8 COMMENT '角色信息表';
+
+INSERT INTO `fud`.`role`(role_name) VALUES('USER');
+INSERT INTO `fud`.`role`(role_name) VALUES('ADMIN');
+INSERT INTO `fud`.`role`(role_name) VALUES('SUPERVIP');
+
+DROP TABLE IF EXISTS `fud`.`user`;
+CREATE TABLE IF NOT EXISTS `fud`.`user`(
+                                           `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '用户id',
+                                           `username` VARCHAR(50) NOT NULL COMMENT '用户名',
+                                           `password` VARCHAR(255) NOT NULL COMMENT '密码',
+                                           `create_time` DATETIME NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
+                                           `state` TINYINT(4) DEFAULT 0 COMMENT '状态',
+                                           `role_id` INT COMMENT '角色id',
+                                           PRIMARY KEY(`id`)
+)ENGINE = InnoDB DEFAULT CHARSET utf8 COMMENT '用户信息表';
+
+INSERT INTO `fud`.`user`(username, password, create_time, state, role_id) VALUES('admin', '4b252ef32f83fdec9ce52366a161dbc0', '2020-02-12 17:01:15', 0, 3);
+
+DROP TABLE IF EXISTS `fud`.`file`;
+CREATE TABLE IF NOT EXISTS `fud`.`file`(
+                                           `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '文件id',
+                                           `name` VARCHAR(255) NOT NULL COMMENT '文件名',
+                                           `local_url` VARCHAR(255) NOT NULL COMMENT '文件地址',
+                                           `size` VARCHAR(50) NOT NULL COMMENT '文件大小',
+                                           `download_times` BIGINT NOT NULL DEFAULT 0 COMMENT '下载次数',
+                                           `user_id` BIGINT NOT NULL COMMENT '用户id',
+                                           `create_time` DATETIME NOT NULL DEFAULT current_timestamp COMMENT '创建日期',
+                                           `md5` VARCHAR(50) DEFAULT '' COMMENT 'md5值',
+                                           `suffix` varchar(25) DEFAULT ''COMMENT '文件后缀',
+                                           PRIMARY KEY(`id`)
+)ENGINE = InnoDB DEFAULT CHARSET utf8 COMMENT '文件信息表';
+
+DROP TABLE IF EXISTS `fud`.`download`;
+CREATE TABLE IF NOT EXISTS `fud`.`download`(
+                                               `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '下载id',
+                                               `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                               `user_id` BIGINT NOT NULL COMMENT '用户id',
+                                               `file_id` BIGINT NOT NULL COMMENT '文件id',
+                                               PRIMARY KEY(`id`)
+)ENGINE = InnoDB DEFAULT CHARSET utf8 COMMENT '下载信息表';
+
+DROP TABLE IF EXISTS `fud`.`backup`;
+CREATE TABLE IF NOT EXISTS `fud`.`backup`(
+                                             `file_id` BIGINT NOT NULL COMMENT '文件id',
+                                             `name` VARCHAR(255) NOT NULL COMMENT '文件名',
+                                             `local_url` VARCHAR(255) NOT NULL COMMENT '存储在服务器端的地址',
+                                             `user_id` BIGINT NOT NULL COMMENT '用户id',
+                                             `create_time` DATETIME NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
+                                             `md5` VARCHAR(50) DEFAULT '' COMMENT 'md5值',
+                                             `suffix` varchar(25) DEFAULT ''COMMENT '文件后缀'
+)ENGINE = InnoDB DEFAULT CHARSET utf8 COMMENT '备份信息表';
