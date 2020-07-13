@@ -16,11 +16,5 @@ public class AccountBanException extends Exception {
 
     public AccountBanException() {}
 
-    public AccountBanException(String errorCode, String errorMsg) {
-        this.errorCode = errorCode;
-        this.errorMsg  = errorMsg;
-    }
 }
 
-
-//~ Formatted by Jindent --- http://www.jindent.com

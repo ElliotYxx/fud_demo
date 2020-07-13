@@ -17,13 +17,6 @@ public interface BackupService {
     List<BackupRecord> getAllBackup();
 
     /**
-     * 添加备份文件记录
-     * @param backupRecord
-     * @return
-     */
-    Boolean addBackupRecord(BackupRecord backupRecord);
-
-    /**
      * 删除备份
      * @param fileId 文件id
      * @return

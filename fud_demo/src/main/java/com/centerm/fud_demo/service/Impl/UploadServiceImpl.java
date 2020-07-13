@@ -152,7 +152,7 @@ public class UploadServiceImpl implements UploadService {
                 }
                 log.info("combine finished...");
                 log.info("file name is " + fileName + ", MD5: " + guid);
-                FileRecord fileRecord = new FileRecord(fileName, uploadPath + "real" + File.separator + fileName,
+                FileRecord fileRecord = new FileRecord(fileName, uploadPath + "real/" + fileName,
                         getFormatSize(realFile.length()), userId, guid, fileName.substring(fileName.lastIndexOf(".")));
                 fileDao.addFile(fileRecord);
                 //备份

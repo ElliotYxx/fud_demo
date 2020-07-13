@@ -15,11 +15,5 @@ public class UsernameRepeatingException extends Exception {
     private String errorMsg;
 
     public UsernameRepeatingException() {}
-
-    public UsernameRepeatingException(String s, String errorCode, String errorMsg) {
-        super(s);
-        this.errorCode = errorCode;
-        this.errorMsg  = errorMsg;
-    }
 }
 

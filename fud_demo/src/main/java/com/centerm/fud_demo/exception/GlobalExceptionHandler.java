@@ -16,8 +16,11 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author jerry
+ * 全局异常管理
+ */
 @ControllerAdvice
-
 @Slf4j
 public class GlobalExceptionHandler {
     @ExceptionHandler(value = UnauthorizedException.class)

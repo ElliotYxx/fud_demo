@@ -26,11 +26,6 @@ public class BackupServiceImpl implements BackupService {
     }
 
     @Override
-    public Boolean addBackupRecord(BackupRecord backupRecord) {
-        return fileDao.addBackupRecord(backupRecord);
-    }
-
-    @Override
     public Boolean deleteBackup(Long fileId) {
         BackupRecord backupRecord = fileDao.getBackupById(fileId);
         deleteLocalFile(backupRecord.getLocalUrl());
